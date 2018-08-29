@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wyt.zdf.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.wind.wind.myapplication.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--BroadcastReceiver广播实现跨进程数据交互-->
+        <service android:name="com.wind.wind.myapplication.bassis.broadcast.MsgService"></service>
+        <activity android:name="com.wind.wind.myapplication.bassis.broadcast.MainActivity"/>
+
+        <!--binder跨进程数据交互-->
+        <service android:name="com.wind.wind.myapplication.bassis.broadcast.binder.MsgService"></service>
+        <activity android:name="com.wind.wind.myapplication.bassis.broadcast.binder.MainActivity"/>
+
+        <!--content provider实现-->
+        <provider
+            android:name="com.wind.wind.myapplication.bassis.provider.MyProvider"
+            android:authorities="cn.scu.myprovider" />
+        <activity android:name="com.wind.wind.myapplication.bassis.provider.ProviderActivity"
+            tools:ignore="DuplicateActivity" />
+
+        <!--RecyclerView加载多图-->
+        <activity android:name="com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity"></activity>
+
+    </application>
+
+</manifest>
