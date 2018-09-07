@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:name="com.wind.wind.myapplication.APP"
         >
-        <activity android:name="com.wind.wind.myapplication.MainActivity">
+        <activity android:name="com.wind.wind.myapplication.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
