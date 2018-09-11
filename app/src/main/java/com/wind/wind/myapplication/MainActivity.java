@@ -17,6 +17,8 @@ import android.view.View;
 
 import com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity;
 import com.wind.wind.myapplication.bassis.provider.ProviderActivity;
+import com.wind.wind.myapplication.img.BitmapActivity;
+import com.wind.wind.myapplication.okhttp.retrofit.GetRequest;
 import com.wyt.zdf.myapplication.R;
 
 public class MainActivity extends Activity {
@@ -77,7 +79,24 @@ public class MainActivity extends Activity {
                 startActivityForResult(getImage, REQUEST_CODE_GET_CONTENT);
             }
         });
-
+        //retrofit
+        findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, GetRequest.class);
+                startActivity(intent);
+            }
+        });
+        //bitmap
+        findViewById(R.id.btn6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, BitmapActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

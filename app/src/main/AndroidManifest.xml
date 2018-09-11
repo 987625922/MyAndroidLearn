@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:name="com.wind.wind.myapplication.APP"
         >
-        <activity android:name="com.wind.wind.myapplication.TestActivity">
+        <activity android:name="com.wind.wind.myapplication.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,10 @@
 
         <!--RecyclerView加载多图-->
         <activity android:name="com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity"></activity>
-
+        <!-- retrofit -->
+        <activity android:name="com.wind.wind.myapplication.okhttp.retrofit.GetRequest"></activity>
+        <!-- bitmap -->
+        <activity android:name="com.wind.wind.myapplication.img.BitmapActivity"></activity>
     </application>
 
 </manifest>
