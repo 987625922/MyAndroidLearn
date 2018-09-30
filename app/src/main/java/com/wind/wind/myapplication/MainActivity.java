@@ -19,6 +19,7 @@ import com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity;
 import com.wind.wind.myapplication.bassis.provider.ProviderActivity;
 import com.wind.wind.myapplication.img.BitmapActivity;
 import com.wind.wind.myapplication.okhttp.retrofit.GetRequest;
+import com.wind.wind.myapplication.screenmatch.DensityActivity;
 import com.wyt.zdf.myapplication.R;
 
 public class MainActivity extends Activity {
@@ -94,6 +95,15 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, BitmapActivity.class);
+                startActivity(intent);
+            }
+        });
+//        今日头条适配方案
+        findViewById(R.id.btn7).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, DensityActivity.class);
                 startActivity(intent);
             }
         });
