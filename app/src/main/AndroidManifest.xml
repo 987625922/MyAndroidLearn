@@ -45,6 +45,8 @@
         <activity android:name="com.wind.wind.myapplication.img.BitmapActivity"></activity>
         <!-- 头条适配方案 -->
         <activity android:name="com.wind.wind.myapplication.screenmatch.DensityActivity"/>
+        <!-- fragment使用 -->
+        <activity android:name="com.wind.wind.myapplication.fragment.FragmentActivity"/>
     </application>
 
 </manifest>

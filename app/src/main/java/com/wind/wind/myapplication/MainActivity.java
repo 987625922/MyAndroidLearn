@@ -17,6 +17,7 @@ import android.view.View;
 
 import com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity;
 import com.wind.wind.myapplication.bassis.provider.ProviderActivity;
+import com.wind.wind.myapplication.fragment.FragmentActivity;
 import com.wind.wind.myapplication.img.BitmapActivity;
 import com.wind.wind.myapplication.okhttp.retrofit.GetRequest;
 import com.wind.wind.myapplication.screenmatch.DensityActivity;
@@ -65,6 +66,7 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+        //跳转图片选择
         findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,6 +106,15 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, DensityActivity.class);
+                startActivity(intent);
+            }
+        });
+        //        fragment使用
+        findViewById(R.id.btn8).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, FragmentActivity.class);
                 startActivity(intent);
             }
         });
