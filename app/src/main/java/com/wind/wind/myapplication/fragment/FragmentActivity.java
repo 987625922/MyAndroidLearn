@@ -11,9 +11,9 @@ import com.wyt.zdf.myapplication.R;
 
 public class FragmentActivity extends AppCompatActivity {
 
-    private static final int PAGE_HOME = 0;
-    private static final int PAGE_WEIKE = 1;
-    private static final int PAGE_INFO = 2;
+    private static final int PAGE_HOME = 1;
+    private static final int PAGE_WEIKE = 2;
+    private static final int PAGE_INFO = 3;
 
     private int currentPage = 0;
 
