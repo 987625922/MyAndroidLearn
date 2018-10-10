@@ -8,6 +8,8 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.wind.wind.myapplication.screenmatch.Density;
+
 /**
  * 类 名： APP<br>
  * 说 明：<br>
@@ -22,32 +24,40 @@ public class APP extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //头条适配绑定
+        Density.setDensity(this);
         //在application中监听每一个activity的生命周期
         this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             public void onActivityStopped(Activity activity) {
             }
+
             public void onActivityStarted(Activity activity) {
             }
+
             @Override
             public void onActivityCreated(Activity arg0, Bundle arg1) {
                 // TODO Auto-generated method stub
-                Log.e("--->","onActivityCreated");
+                Log.e("--->", "onActivityCreated");
             }
+
             @Override
             public void onActivityDestroyed(Activity arg0) {
                 // TODO Auto-generated method stub
-                Log.e("--->","onDestroyed");
+                Log.e("--->", "onDestroyed");
             }
+
             @Override
             public void onActivityPaused(Activity arg0) {
                 // TODO Auto-generated method stub
-                Log.e("--->","onPause");
+                Log.e("--->", "onPause");
             }
+
             @Override
             public void onActivityResumed(Activity arg0) {
                 // TODO Auto-generated method stub
-                Log.d("application","---- onActivityResumed: "+arg0.toString());
+                Log.d("application", "---- onActivityResumed: " + arg0.toString());
             }
+
             @Override
             public void onActivitySaveInstanceState(Activity arg0, Bundle arg1) {
                 // TODO Auto-generated method stub
