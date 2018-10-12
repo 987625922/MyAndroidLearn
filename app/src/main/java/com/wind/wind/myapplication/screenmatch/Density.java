@@ -22,7 +22,7 @@ public class Density {
     private static float appScaledDensity;
     private static DisplayMetrics appDisplayMetrics;
     private static int barHeight;
-
+    //在application中设置这个方法，获取application
     public static void setDensity(@NonNull final Application application) {
         //获取application的DisplayMetrics
         appDisplayMetrics = application.getResources().getDisplayMetrics();
@@ -69,6 +69,7 @@ public class Density {
      * <p>
      * orientation:方向值,传入width或height
      */
+    //在baseactivity中设置这个方法，获取activity，设置Density，以便dp能转换成适配的px
     private static void setAppOrientation(@Nullable Activity activity, String orientation) {
 
         float targetDensity;
