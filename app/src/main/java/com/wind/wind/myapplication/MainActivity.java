@@ -23,6 +23,7 @@ import com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity;
 import com.wind.wind.myapplication.img.BitmapActivity;
 import com.wind.wind.myapplication.okhttp.retrofit.GetRequest;
 import com.wind.wind.myapplication.screenmatch.DensityActivity;
+import com.wind.wind.myapplication.viewpager.ViewpagerActivity;
 import com.wyt.zdf.myapplication.R;
 
 public class MainActivity extends Activity {
@@ -126,6 +127,15 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, VideoPlayerActivity.class);
+                startActivity(intent);
+            }
+        });
+        //       viewpager实现后台显示
+        findViewById(R.id.btn10).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, ViewpagerActivity.class);
                 startActivity(intent);
             }
         });

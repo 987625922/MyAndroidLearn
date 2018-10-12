@@ -36,6 +36,7 @@ android {
 //    签名配置
     buildTypes {
         release {
+            buildConfigField "boolean", "DebugMode", "true"//关闭DEBUG
             minifyEnabled true
             useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -45,6 +46,7 @@ android {
             minifyEnabled false
             useProguard false
             minifyEnabled false
+            buildConfigField "boolean", "DebugMode", "true"//关闭DEBUG
         }
     }
 

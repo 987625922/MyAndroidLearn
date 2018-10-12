@@ -98,4 +98,14 @@
         app:layout_constraintTop_toBottomOf="@+id/btn7"
         app:layout_constraintLeft_toLeftOf="@+id/btn7"
         />
+    <Button
+        android:id="@+id/btn10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="viewpager实现广告页"
+        app:layout_constraintTop_toBottomOf="@+id/btn7"
+        app:layout_constraintLeft_toRightOf="@id/btn9"
+        />
 </android.support.constraint.ConstraintLayout>

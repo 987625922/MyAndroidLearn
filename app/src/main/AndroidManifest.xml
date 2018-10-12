@@ -52,6 +52,8 @@
         <activity android:name="com.wind.wind.myapplication.ijkplayer.IjkplayActivity"/>
         <activity android:name="com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity"
             />
+        <!-- viewpager实现广告页 -->
+        <activity android:name="com.wind.wind.myapplication.viewpager.ViewpagerActivity"/>
     </application>
 
 </manifest>
