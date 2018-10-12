@@ -3,6 +3,7 @@ package com.wind.wind.myapplication.screenmatch;
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentCallbacks;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,9 @@ import android.util.DisplayMetrics;
 
 /**
  * 通过修改系统参数来适配android设备
+ * https://www.jianshu.com/p/4254ea9d1b27
+ * <p>
+ * Created by Raul_lsj on 2018/6/6.
  */
 
 public class Density {
@@ -17,11 +21,13 @@ public class Density {
     private static float appDensity;
     private static float appScaledDensity;
     private static DisplayMetrics appDisplayMetrics;
+    private static int barHeight;
 
     public static void setDensity(@NonNull final Application application) {
         //获取application的DisplayMetrics
         appDisplayMetrics = application.getResources().getDisplayMetrics();
         //获取状态栏高度
+        barHeight = getStatusBarHeight(application);
 
         if (appDensity == 0) {
             //初始化的时候赋值
@@ -47,13 +53,13 @@ public class Density {
 
     //此方法在BaseActivity中做初始化(如果不封装BaseActivity的话,直接用下面那个方法就好)
     public static void setDefault(Activity activity) {
-        setAppOrientation(activity);
+        setAppOrientation(activity, "w");
     }
 
-//    //此方法用于在某一个Activity里面更改适配的方向
-//    public static void setOrientation(Activity activity, String orientation) {
-//        setAppOrientation(activity, orientation);
-//    }
+    //此方法用于在某一个Activity里面更改适配的方向
+    public static void setOrientation(Activity activity, String orientation) {
+        setAppOrientation(activity, orientation);
+    }
 
     /**
      * targetDensity
@@ -63,13 +69,15 @@ public class Density {
      * <p>
      * orientation:方向值,传入width或height
      */
-    private static void setAppOrientation(@Nullable Activity activity) {
+    private static void setAppOrientation(@Nullable Activity activity, String orientation) {
 
         float targetDensity;
-        
 
-        targetDensity = appDisplayMetrics.widthPixels / 720f;
-
+        if (orientation.equals("height")) {
+            targetDensity = (appDisplayMetrics.heightPixels - barHeight) / 667f;
+        } else {
+            targetDensity = appDisplayMetrics.widthPixels / 360f;
+        }
 
         float targetScaledDensity = targetDensity * (appScaledDensity / appDensity);
         int targetDensityDpi = (int) (160 * targetDensity);
@@ -84,5 +92,21 @@ public class Density {
         activityDisplayMetrics.density = targetDensity;
         activityDisplayMetrics.scaledDensity = targetScaledDensity;
         activityDisplayMetrics.densityDpi = targetDensityDpi;
+    }
+
+    /**
+     * 获取状态栏高度
+     *
+     * @param context
+     * @return
+     */
+    public static int getStatusBarHeight(Context context) {
+        int result = 0;
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen",
+                "android");
+        if (resourceId > 0) {
+            result = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 }

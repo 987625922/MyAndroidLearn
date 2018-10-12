@@ -4,12 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.wind.wind.myapplication.screenmatch.Density;
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends Activity {
     protected Activity mActivity;
 
     protected abstract int getLayout();
@@ -19,6 +20,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mActivity = this;
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN); //隐藏状态栏
+
 //        Display display = getWindowManager().getDefaultDisplay();
 //        int screenWidth = display.getWidth();
 //        int screenHeight = display.getHeight();

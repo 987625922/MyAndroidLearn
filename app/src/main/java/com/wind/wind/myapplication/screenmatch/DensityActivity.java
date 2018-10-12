@@ -15,10 +15,18 @@ public class DensityActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setCustomDensity(this,this.getApplication());
+//        setCustomDensity(this,this.getApplication());
+        setOrientation();
         setContentView(R.layout.activity_density);
 
+
     }
+    //改版今日头条适配
+    public void setOrientation() {
+        Density.setDefault(this);
+    }
+
+    //今日头条适配
     private static float sRoncompatDennsity;
     private static float sRoncompatScaledDensity;
     private void setCustomDensity(@NonNull Activity activity, final @NonNull Application application) {

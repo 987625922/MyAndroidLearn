@@ -50,7 +50,8 @@
         <activity android:name="com.wind.wind.myapplication.fragment.FragmentActivity"/>
         <!-- b站视频播放 -->
         <activity android:name="com.wind.wind.myapplication.ijkplayer.IjkplayActivity"/>
-        <activity android:name="com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity" />
+        <activity android:name="com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity"
+            />
     </application>
 
 </manifest>

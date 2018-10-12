@@ -33,32 +33,40 @@ import java.util.Locale;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 
 public class VideoPlayerActivity extends BaseActivity implements View.OnClickListener {
-
+    //总布局
     private FrameLayout mFlVideoPlayer;
+    //b站视频控件
     private IjkVideoView mVideoPlayer;
     //控制面板
     private RelativeLayout mVideoPlayerControlFrame;
+    //返回
     private ImageView mVideoPlayerBack;
-    private TextView mVideoPlayerTitle;
+    //横竖屏切换
     private ImageView mVideoPlayerDirection;
+    //视频标题
+    private TextView mVideoPlayerTitle;
+    //视频播放的时间
     private TextView mVideoPlayerCurrentTime;
+    //视频总时间
     private TextView mVideoPlayerTotalTime;
-    private SeekBar mVideoPlayerSeekBar;
-    private ProgressBar mApp_video_loading;
+    //暂停
     private ImageView mVideoPlayerPauseResume;
-
+    //进度条
+    private SeekBar mVideoPlayerSeekBar;
+    //loading圈
+    private ProgressBar mApp_video_loading;
+    //获取屏幕宽，判断滑动的是左边还是右边，来判断调节音量还是亮度
     private int mWidthPixels;
     //手势
     private GestureDetector mDetector;
-    // 调节亮度
-    private AudioManager mAudioManager;
     // 调节声音
+    private AudioManager mAudioManager;
     private int mMaxVolume;
     //bug不知道为什么ijk需要设置这个控件
     private TableLayout tableLayout;
     //控件设置相关
     private QueryBean mQueryBean;
-
+    //链接地址
     private String url = "http://flv2.bn.netease.com/videolib3/1611/28/nNTov5571" +
             "/SD/nNTov5571-mobile.mp4";
     private String mVideoUrl;
@@ -70,10 +78,10 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void findView() {
-        //屏幕常亮
-        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         //声音
+        mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         mMaxVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         mQueryBean = new QueryBean(this);
@@ -90,11 +98,10 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         mVideoPlayerCurrentTime = findViewById(R.id.mVideoPlayerCurrentTime);
         mVideoPlayerTotalTime = findViewById(R.id.mVideoPlayerTotalTime);
         mVideoPlayerSeekBar = findViewById(R.id.mVideoPlayerSeekBar);
+
         mApp_video_loading = findViewById(R.id.app_video_loading);
         mApp_video_loading.setVisibility(View.VISIBLE);
         mVideoPlayerPauseResume = findViewById(R.id.mVideoPlayerPauseResume);
-
-
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -112,7 +119,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         tableLayout = findViewById(R.id.tab);
         //手势
         mDetector = new GestureDetector(this, new PlayerGestureListener());
-
+        //监听总布局的触控
         mFlVideoPlayer.setClickable(true);
         mFlVideoPlayer.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -122,6 +129,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
                 // 处理手势结束
                 switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
+                    //用户抬起触发，关闭显示的图标
                     case MotionEvent.ACTION_UP:
                         endGesture();
                         break;
@@ -456,7 +464,6 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
 
     private int mVolume = -1;
-
     /**
      * 滑动改变声音大小
      *
