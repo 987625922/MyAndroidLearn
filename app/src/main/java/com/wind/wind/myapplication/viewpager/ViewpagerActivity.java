@@ -46,7 +46,7 @@ public class ViewpagerActivity extends BaseActivity implements  ViewPager.OnPage
         views = new ArrayList<View>();
 
         // 实例化ViewPager
-        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = findViewById(R.id.viewpager);
 
         // 实例化ViewPager适配器
         vpAdapter = new ViewPagerAdapter(views);

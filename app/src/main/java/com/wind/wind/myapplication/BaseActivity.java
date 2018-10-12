@@ -31,7 +31,9 @@ public abstract class BaseActivity extends Activity {
 //                + "dimen yy1920：" + getResources().getDimension(R.dimen.yy1920) + "\n"
 //                + PhoneUtils.getOnlyNumber(this));
 //        ((CrashApplication)getApplication()).addActivity_(this);
+        //今日头条适配
         setOrientation();
+
         setContentView(getLayout());
         findView();
         setListener();

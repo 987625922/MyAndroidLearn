@@ -4,8 +4,7 @@
     package="com.wyt.zdf.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!--<uses-permission android:name="android.permission.CHANGE_CONFIGURATION"-->
-        <!--tools:ignore="ProtectedPermissions"></uses-permission>-->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

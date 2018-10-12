@@ -1,0 +1,53 @@
+打开
+Fragment onAttach()方法执行
+Fragment onCreate() 方法执行！
+Fragment onCreateView() 方法执行！
+Fragment onViewCreated()方法执行
+Activity onCreate() 方法执行！
+Fragment onActivityCreated() 方法执行！
+Activity onStart() 方法执行！
+Fragment onStart() 方法执行！
+Activity onResume() 方法执行！
+Fragment onResume() 方法执行！
+
+按下主屏幕键/锁屏
+Fragment onPause() 方法执行！
+Activity onPause() 方法执行！
+Fragment onStop() 方法执行！
+Activity onStop() 方法执行！
+
+再次打开
+Activity onRestart() 方法执行！
+Activity onStart() 方法执行！
+Fragment onStart() 方法执行！
+Activity onResume() 方法执行！
+Fragment onResume() 方法执行！
+
+按下后退键
+Fragment onPause() 方法执行！
+Activity onPause() 方法执行！
+Fragment onStop() 方法执行！
+Activity onStop() 方法执行！
+Fragment onDestroyView() 方法执行！
+Fragment onDestroy() 方法执行！
+Fragment onDetach() 方法执行！
+Activity onDestroy() 方法执行！
+
+
+在Fragment中调用Activity中的方法
+MainActivity mainActivity = (MainActivity) getActivity();
+mainActivity.methodA();
+
+懒加载
+@Override
+public void onStart() {
+    super.onStart();
+    Log.d("TAG", mTagName + " onStart()");
+
+    ...
+    如果fragment不可见就不加载数据
+    if(getUserVisibleHint()) {
+        pullData();
+    }
+
+}
