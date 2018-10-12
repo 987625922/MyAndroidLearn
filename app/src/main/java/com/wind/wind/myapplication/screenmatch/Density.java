@@ -72,7 +72,8 @@ public class Density {
     private static void setAppOrientation(@Nullable Activity activity, String orientation) {
 
         float targetDensity;
-
+        //一般用宽做适配的定义 ，美工出的图宽是360dp，下面就用360f，720就用720,
+        //然后控件就直接用美工的dp就行了
         if (orientation.equals("height")) {
             targetDensity = (appDisplayMetrics.heightPixels - barHeight) / 667f;
         } else {

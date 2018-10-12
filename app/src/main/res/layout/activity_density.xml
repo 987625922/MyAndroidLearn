@@ -16,8 +16,10 @@
             android:gravity="center"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="w-200dp"
-            android:textColor="@color/white" />
+            android:text="w-200dp size 16"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            />
 
         <View
             android:layout_width="0dp"
@@ -42,8 +44,11 @@
             android:gravity="center"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="w-160dp"
-            android:textColor="@color/white" />
+            android:text="w-160dp size 26"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+
+            />
     </LinearLayout>
 
 </LinearLayout>
