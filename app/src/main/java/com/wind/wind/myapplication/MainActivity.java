@@ -18,7 +18,6 @@ import android.view.View;
 import com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity;
 import com.wind.wind.myapplication.bassis.provider.ProviderActivity;
 import com.wind.wind.myapplication.fragment.FragmentActivity;
-import com.wind.wind.myapplication.ijkplayer.IjkplayActivity;
 import com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity;
 import com.wind.wind.myapplication.img.BitmapActivity;
 import com.wind.wind.myapplication.okhttp.retrofit.GetRequest;
@@ -29,6 +28,7 @@ import com.wyt.zdf.myapplication.R;
 public class MainActivity extends Activity {
     private static final int REQUEST_CODE_GET_CONTENT = 666;
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 444;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -164,12 +164,12 @@ public class MainActivity extends Activity {
         final Uri uri = data.getData();
 //        final int width = content.getMeasuredWidth() - content.getPaddingLeft() - content.getPaddingRight();
 //        content.image(uri, width);
-        String url = getRealFilePath(MainActivity.this,uri);
-        Log.e("--->",url);
+        String url = getRealFilePath(MainActivity.this, uri);
+        Log.e("--->", url);
     }
 
 
-    public static String getRealFilePath(final Context context, final Uri uri ) {
+    public static String getRealFilePath(final Context context, final Uri uri) {
         if (null == uri) return null;
         final String scheme = uri.getScheme();
         String data = null;
@@ -192,4 +192,4 @@ public class MainActivity extends Activity {
         return data;
     }
 
-    }
+}

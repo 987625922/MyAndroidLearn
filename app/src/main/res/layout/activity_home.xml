@@ -107,5 +107,6 @@
         android:text="viewpager实现广告页"
         app:layout_constraintTop_toBottomOf="@+id/btn7"
         app:layout_constraintLeft_toRightOf="@id/btn9"
+        android:background="@drawable/bg_corners"
         />
 </android.support.constraint.ConstraintLayout>
