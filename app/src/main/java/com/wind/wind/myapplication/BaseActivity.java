@@ -12,9 +12,7 @@ import com.wind.wind.myapplication.screenmatch.Density;
 public abstract class BaseActivity extends AppCompatActivity {
     protected Activity mActivity;
 
-    /**
-     * 加载中dialog
-     */
+    protected abstract int getLayout();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -64,7 +62,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    protected abstract int getLayout();
 
     /**
      * 今日头条适配

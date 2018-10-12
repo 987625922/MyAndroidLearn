@@ -36,6 +36,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
     private FrameLayout mFlVideoPlayer;
     private IjkVideoView mVideoPlayer;
+    //控制面板
     private RelativeLayout mVideoPlayerControlFrame;
     private ImageView mVideoPlayerBack;
     private TextView mVideoPlayerTitle;
@@ -49,25 +50,36 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
     private int mWidthPixels;
     //手势
     private GestureDetector mDetector;
-
     // 调节亮度
     private AudioManager mAudioManager;
     // 调节声音
     private int mMaxVolume;
+    //bug不知道为什么ijk需要设置这个控件
     private TableLayout tableLayout;
+    //控件设置相关
     private QueryBean mQueryBean;
 
-    @SuppressLint("ClickableViewAccessibility")
+    private String url = "http://flv2.bn.netease.com/videolib3/1611/28/nNTov5571" +
+            "/SD/nNTov5571-mobile.mp4";
+    private String mVideoUrl;
+
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_video_player;
+    }
+
     @Override
     protected void findView() {
         //屏幕常亮
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        //声音
         mMaxVolume = mAudioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         mQueryBean = new QueryBean(this);
 
         mWidthPixels = getResources().getDisplayMetrics().widthPixels;
+
         mFlVideoPlayer = findViewById(R.id.flVideoPlayer);
         mVideoPlayer = findViewById(R.id.mVideoPlayer);
         mVideoPlayerControlFrame = findViewById(R.id.mVideoPlayerControlFrame);
@@ -82,11 +94,12 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         mApp_video_loading.setVisibility(View.VISIBLE);
         mVideoPlayerPauseResume = findViewById(R.id.mVideoPlayerPauseResume);
 
-//        mVideoPlayerSeekBar.setMax(1000);
-//        mVideoPlayerSeekBar.setProgress(0);
-//        mVideoPlayerSeekBar.setSecondaryProgress(0);
-//        mVideoPlayerSeekBar.setThumbOffset(1);
-//        mVideoPlayerSeekBar.setOnSeekBarChangeListener(mSeekListener);
+
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    protected void setListener() {
 
         mVideoPlayerSeekBar.setMax(1000);
         mVideoPlayerSeekBar.setOnSeekBarChangeListener(mSeekListener);
@@ -96,10 +109,10 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         mVideoPlayerDirection.setOnClickListener(this);
         mVideoPlayerPauseResume.setOnClickListener(this);
 
-//        mConnectText = (TextView) findViewById(R.id.mConnect_text);
-//        mConnectText.setOnClickListener(this);
         tableLayout = findViewById(R.id.tab);
+        //手势
         mDetector = new GestureDetector(this, new PlayerGestureListener());
+
         mFlVideoPlayer.setClickable(true);
         mFlVideoPlayer.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -118,26 +131,19 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
             }
         });
 
-    }
-
-    @Override
-    protected void setListener() {
 
     }
 
-    private String url = "http://flv2.bn.netease.com/videolib3/1611/28/nNTov5571/SD/nNTov5571-mobile.mp4";
-    private String mVideoUrl;
 
     @Override
     protected void initData() {
 
         mVideoUrl = url;
+
         netMonitorHandler = new HyperHandler();
         // 5秒后控制面板消失
         mControlFrameTimer = new ControlFrameTimer(5000, 5000);
         mVideoPlayerTitle.setText("播放器");
-        // 初始为竖屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         initVideoView();
     }
@@ -147,6 +153,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
      */
     private void initVideoView() {
 //        mVideoPlayer.setDecodingType(IjkVideoView.SOFTWARE_DECODING);
+        //视频播放监听
         mVideoPlayer.setOnPreparedListener(new IMediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(IMediaPlayer mp) {
@@ -159,6 +166,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
                 }
             }
         });
+        //视频完成监听
         mVideoPlayer.setOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(IMediaPlayer mp) {
@@ -175,6 +183,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
             }
         });
+        //视频播放错误监听
         mVideoPlayer.setOnErrorListener(new IMediaPlayer.OnErrorListener() {
             @Override
             public boolean onError(IMediaPlayer mp, int framework_err, int extra) {
@@ -199,9 +208,9 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
                 if (null != netMonitorHandler) {
                     netMonitorHandler.obtainMessage(MSG_SHOW_ERROR_DIALOG, error).sendToTarget();
                 }
-                if (null != mApp_video_loading && mApp_video_loading.getVisibility() == View.VISIBLE) {
-                    mApp_video_loading.setVisibility(View.GONE);
-                }
+//                if (null != mApp_video_loading && mApp_video_loading.getVisibility() == View.VISIBLE) {
+//                    mApp_video_loading.setVisibility(View.GONE);
+//                }
                 // 返回true 不执行OnCompletion()
                 return true;
             }
@@ -214,15 +223,9 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
 
     @Override
-    protected int getLayout() {
-        return R.layout.activity_video_player;
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         play(false);
-
     }
 
     @Override
@@ -237,9 +240,11 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
             case R.id.mVideoPlayerBack:
                 finish();
                 break;
+            //显示或隐藏控制面板
             case R.id.mVideoPlayerControlFrame:
                 controlFrameOnClick();
                 break;
+            //屏幕方向切换
             case R.id.mVideoPlayerDirection:
                 directionSwitch();
                 break;
@@ -299,6 +304,11 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
     private int screenOrientation;
 
+    /**
+     * 屏幕方向改变回调
+     *
+     * @param newConfig
+     */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -348,6 +358,9 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         netMonitorHandler.sendEmptyMessageDelayed(MESSAGE_HIDE_CENTER_BOX, 500);
     }
 
+    /**
+     * 手势回调
+     */
     public class PlayerGestureListener extends GestureDetector.SimpleOnGestureListener {
         private boolean mFirstTouch;
         private boolean mVolumeControl;
@@ -675,7 +688,32 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         }
         return position;
     }
+    /**
+     * 重新加载
+     * boolean true 表示reload 成功 false 表示失败
+     */
+    private boolean reload() {
+        if (reloadCoolDown) {
+            Toast.makeText(this, "正在加载中，请稍后…", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        reloadCoolDown = true;
+        if (null != mApp_video_loading) {
+            mApp_video_loading.setVisibility(View.VISIBLE);
+        }
+        if (null != mVideoPlayer) {
+            mLastPosition = mVideoPlayer.getCurrentPosition();
+            mVideoPlayer.setVideoPath(mVideoUrl);
+        }
 
+        play(true);
+
+        if (null != netMonitorHandler) {
+            netMonitorHandler.sendEmptyMessageDelayed(MSG_RESET_RELOAD_COOL_DOWN, 8000);
+        }
+
+        return true;
+    }
 
     @Override
     protected void onDestroy() {
