@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -185,7 +186,6 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 //                    }
 //                } else
                 if (getPlayPercentage() >= 99) {
-//                    showCompletionDialog();
                     Toast.makeText(VideoPlayerActivity.this, "视频播放完成", Toast.LENGTH_LONG).show();
                 }
 
@@ -585,12 +585,8 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         }
     };
 
-    private static final int MSG_SHOW_NO_WIFI_DIALOG = 0X0001;
-    private static final int MSG_DISMISS_NO_WIFI_DIALOG = 0X0002;
     private static final int MSG_SHOW_PROGRESS = 0X0004;
     private static final int MSG_RESET_RELOAD_COOL_DOWN = 0X0005;
-    private static final int MSG_SHOW_NO_NETWORK = 0X0006;
-    private static final int MSG_HIDEN_NO_NETWORK = 0X0007;
     private static final int MSG_SHOW_ERROR_DIALOG = 0X0008;
     private static final int MESSAGE_HIDE_CENTER_BOX = 0X0009;
     private static final int SEEK_TO_POST_DELAY_MILLIS = 200;
@@ -607,17 +603,11 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
                 return;
             }
             switch (msg.what) {
-                case MSG_SHOW_NO_WIFI_DIALOG:
-//                    showNoWifiDialog();
-                    break;
                 case MESSAGE_HIDE_CENTER_BOX:
                     findViewById(R.id.app_video_volume_box).setVisibility(View.GONE);
                     findViewById(R.id.app_video_brightness_box).setVisibility(View.GONE);
                     findViewById(R.id.app_video_fastForward_box).setVisibility(View.GONE);
 
-                    break;
-                case MSG_DISMISS_NO_WIFI_DIALOG:
-//                    dismissNoWifiDialog();
                     break;
                 case MSG_SHOW_PROGRESS:
                     if (!mDragging && null != mVideoPlayerControlFrame
@@ -629,25 +619,11 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
                 case MSG_RESET_RELOAD_COOL_DOWN:
                     reloadCoolDown = false;
                     break;
-                case MSG_SHOW_NO_NETWORK:
-//                    if (null != mConnectText) {
-//                        mConnectText.setVisibility(View.VISIBLE);
-//                        if (null != mApp_video_loading &&
-//                                mApp_video_loading.getVisibility() == View.VISIBLE) {
-//                            mApp_video_loading.setVisibility(View.GONE);
-//                        }
-//                    }
-                    break;
-                case MSG_HIDEN_NO_NETWORK:
-//                    if (null != mConnectText) {
-//                        mConnectText.setVisibility(View.GONE);
-//                    }
-                    break;
                 case MSG_SHOW_ERROR_DIALOG:
-//                    if (null != msg.obj
-//                            && !TextUtils.isEmpty(msg.obj.toString())) {
-//                        showErrorDialog(msg.obj.toString());
-//                    }
+                    if (null != msg.obj
+                            && !TextUtils.isEmpty(msg.obj.toString())) {
+                        Log.e("播放器错误",msg.obj.toString());
+                    }
                     break;
             }
         }
@@ -732,8 +708,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
             mVideoPlayer.stopPlayback();
             mVideoPlayer = null;
         }
-//        mLastPosition = 0;
-//        isNoWifePlay = false;
+        mLastPosition = 0;
         super.onDestroy();
     }
 }
