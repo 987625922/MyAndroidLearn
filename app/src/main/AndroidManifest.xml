@@ -53,6 +53,8 @@
             />
         <!-- viewpager实现广告页 -->
         <activity android:name="com.wind.wind.myapplication.viewpager.ViewpagerActivity"/>
+        <!-- butter使用 -->
+        <activity android:name="com.wind.wind.myapplication.butterknifeuse.ButterActivity"/>
     </application>
 
 </manifest>

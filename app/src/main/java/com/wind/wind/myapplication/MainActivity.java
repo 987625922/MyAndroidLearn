@@ -17,6 +17,7 @@ import android.view.View;
 
 import com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity;
 import com.wind.wind.myapplication.bassis.provider.ProviderActivity;
+import com.wind.wind.myapplication.butterknifeuse.ButterActivity;
 import com.wind.wind.myapplication.fragment.FragmentActivity;
 import com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity;
 import com.wind.wind.myapplication.img.BitmapActivity;
@@ -144,6 +145,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 shareWeChat("分享到微信");
+            }
+        });
+        //       butter
+        findViewById(R.id.btn12).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ButterActivity.intentTo(MainActivity.this);
             }
         });
     }

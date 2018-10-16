@@ -68,8 +68,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
     //控件设置相关
     private QueryBean mQueryBean;
     //链接地址
-    private String url = "http://flv2.bn.netease.com/videolib3/1611/28/nNTov5571" +
-            "/SD/nNTov5571-mobile.mp4";
+    private String url = "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8";
     private String mVideoUrl;
 
     @Override
