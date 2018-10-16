@@ -130,13 +130,20 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        //       viewpager实现后台显示
+        //       viewpager实现广告页
         findViewById(R.id.btn10).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, ViewpagerActivity.class);
                 startActivity(intent);
+            }
+        });
+        //       分享到微信
+        findViewById(R.id.btn11).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                shareWeChat("分享到微信");
             }
         });
     }
@@ -191,5 +198,42 @@ public class MainActivity extends Activity {
         }
         return data;
     }
+
+    /**
+     * 分享到微信
+     *
+     * @param content 分享内容
+     */
+    private void shareWeChat(String content){
+        //判断是否安装了微信
+//        if (isClientInstalled(mActivity,"com.tencent.mm")) {
+            Intent weChatIntent = new Intent(Intent.ACTION_SEND);
+            weChatIntent.setPackage("com.tencent.mm");
+            weChatIntent.setType("text/plain");
+            weChatIntent.putExtra(Intent.EXTRA_TEXT, content);
+//            mActivity.startActivity(weChatIntent);
+//        }else {
+//            ToastUtils.showLong("请先安装微信");
+//        }
+    }
+
+
+    /**
+     * 分享到QQ
+     *
+     * @param content 分享内容
+     */
+    private void shareQQ(String content){
+//        if (isClientInstalled(mActivity,"com.tencent.mobileqq")) {
+            Intent qqIntent = new Intent(Intent.ACTION_SEND);
+            qqIntent.setPackage("com.tencent.mobileqq");
+            qqIntent.setType("text/plain");
+            qqIntent.putExtra(Intent.EXTRA_TEXT, content);
+//            mActivity.startActivity(qqIntent);
+//        }else {
+//            ToastUtils.showLong("请先安装QQ");
+//        }
+    }
+
 
 }

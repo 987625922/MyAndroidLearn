@@ -10,7 +10,8 @@ import com.wyt.zdf.myapplication.R;
 
 import java.util.ArrayList;
 
-public class ViewpagerActivity extends BaseActivity implements  ViewPager.OnPageChangeListener, View.OnClickListener {
+public class ViewpagerActivity extends BaseActivity implements  ViewPager.OnPageChangeListener,
+        View.OnClickListener {
     // 定义ViewPager对象
     private ViewPager viewPager;
 
