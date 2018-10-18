@@ -2,10 +2,10 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.wind.wind.myapplication.ijkplayer.media.bilibili.IjkVideoView
-        android:id="@+id/ijk_paly"
+    <com.wind.wind.myapplication.ijkplayer.media.bilibili.VideoView
+        android:id="@+id/mVideoPlayer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </com.wind.wind.myapplication.ijkplayer.media.bilibili.IjkVideoView>
+        android:layout_height="200dp"
+        >
+    </com.wind.wind.myapplication.ijkplayer.media.bilibili.VideoView>
 </android.support.constraint.ConstraintLayout>

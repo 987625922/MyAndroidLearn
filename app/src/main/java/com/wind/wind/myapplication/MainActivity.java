@@ -19,6 +19,7 @@ import com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity;
 import com.wind.wind.myapplication.bassis.provider.ProviderActivity;
 import com.wind.wind.myapplication.butterknifeuse.ButterActivity;
 import com.wind.wind.myapplication.fragment.FragmentActivity;
+import com.wind.wind.myapplication.ijkplayer.IjkplayActivity;
 import com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity;
 import com.wind.wind.myapplication.img.BitmapActivity;
 import com.wind.wind.myapplication.okhttp.retrofit.GetRequest;
@@ -126,9 +127,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn9).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, VideoPlayerActivity.class);
-                startActivity(intent);
+                IjkplayActivity.intentTo(MainActivity.this);
             }
         });
         //       viewpager实现广告页

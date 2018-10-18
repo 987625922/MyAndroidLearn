@@ -68,7 +68,6 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
     //控件设置相关
     private QueryBean mQueryBean;
     //链接地址
-    private String url = "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8";
     private String mVideoUrl;
 
     @Override
@@ -88,7 +87,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
         mWidthPixels = getResources().getDisplayMetrics().widthPixels;
 
-        mFlVideoPlayer = findViewById(R.id.flVideoPlayer);
+//        mFlVideoPlayer = findViewById(R.id.flVideoPlayer);
         mVideoPlayer = findViewById(R.id.mVideoPlayer);
         mVideoPlayerControlFrame = findViewById(R.id.mVideoPlayerControlFrame);
         mVideoPlayerBack = findViewById(R.id.mVideoPlayerBack);
@@ -146,7 +145,6 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void initData() {
 
-        mVideoUrl = url;
 
         netMonitorHandler = new HyperHandler();
         // 5秒后控制面板消失
@@ -264,7 +262,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
                     }
                 }
                 break;
-            case R.id.mConnect_text:
+//            case R.id.mConnect_text:
                 //点击重新加载
 //                if (StrUtils.isNetWorkConnected(VideoPlayerActivity.this)) {
 //                    if (null != netMonitorHandler) {
@@ -272,7 +270,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 //                    }
 //                    reload();
 //                }
-                break;
+//                break;
         }
     }
 
@@ -463,6 +461,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
 
 
     private int mVolume = -1;
+
     /**
      * 滑动改变声音大小
      *
@@ -621,7 +620,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
                 case MSG_SHOW_ERROR_DIALOG:
                     if (null != msg.obj
                             && !TextUtils.isEmpty(msg.obj.toString())) {
-                        Log.e("播放器错误",msg.obj.toString());
+                        Log.e("播放器错误", msg.obj.toString());
                     }
                     break;
             }
@@ -670,6 +669,7 @@ public class VideoPlayerActivity extends BaseActivity implements View.OnClickLis
         }
         return position;
     }
+
     /**
      * 重新加载
      * boolean true 表示reload 成功 false 表示失败

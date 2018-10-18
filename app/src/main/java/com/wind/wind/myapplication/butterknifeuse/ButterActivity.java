@@ -41,6 +41,4 @@ public class ButterActivity extends BaseActivity {
     protected void initData() {
         tvName.setText("222");
     }
-
-
 }
