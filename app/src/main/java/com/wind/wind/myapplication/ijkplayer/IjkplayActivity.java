@@ -60,6 +60,11 @@ public class IjkplayActivity extends BaseActivity {
             public void playEnd() {
 
             }
+
+            @Override
+            public void stop() {
+
+            }
         });
     }
 

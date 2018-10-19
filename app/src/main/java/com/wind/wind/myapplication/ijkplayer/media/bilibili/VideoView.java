@@ -27,14 +27,13 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.wyt.zdf.myapplication.R;
 
 import java.util.Locale;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 public class VideoView extends ViewGroup implements View.OnClickListener {
 
@@ -216,7 +215,6 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
         volumeImg = mView.findViewById(R.id.app_video_volume_icon);
         app_video_volume = mView.findViewById(R.id.app_video_volume);
         app_video_brightness = mView.findViewById(R.id.app_video_brightness);
-        mApp_video_loading.setVisibility(View.VISIBLE);
         addView(mView);
 
         initData();
@@ -240,7 +238,7 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
         mDetector = new GestureDetector(context, new PlayerGestureListener());
         //监听总布局的触控
         mFlVideoPlayer.setClickable(true);
-        mFlVideoPlayer.setOnTouchListener(new OnTouchListener() {
+        mFlVideoPlayer.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (mDetector.onTouchEvent(motionEvent))
@@ -269,6 +267,7 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
      * 初始化视频播放器
      */
     private void initVideoView() {
+
         //视频播放监听
         ijkVideoView.setOnPreparedListener(new IMediaPlayer.OnPreparedListener() {
             @Override
@@ -276,6 +275,8 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
                 if (null != mApp_video_loading &&
                         mApp_video_loading.getVisibility() == View.VISIBLE) {
                     mApp_video_loading.setVisibility(View.GONE);
+
+
                 }
 
             }
@@ -658,15 +659,15 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
             mViewHeight = this.getHeight();
             RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) this.getLayoutParams();
-            lp.height = LayoutParams.MATCH_PARENT;
-            lp.width = LayoutParams.MATCH_PARENT;
+            lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
+            lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
             this.setLayoutParams(lp);
         } else {
             this.isFull = isFull;
             activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) this.getLayoutParams();
             lp.height = mViewHeight;
-            lp.width = LayoutParams.MATCH_PARENT;
+            lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
             this.setLayoutParams(lp);
         }
     }
@@ -711,9 +712,51 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
      * @param url 视频路径
      */
     public void play(String url) {
+        mApp_video_loading.setVisibility(View.VISIBLE);
         ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_FIT_PARENT);
         ijkVideoView.setVideoURI(Uri.parse(url));
         ijkVideoView.start();
+    }
+
+    /**
+     * 播放视频
+     *
+     * @param url 视频路径
+     */
+    public void playNew(String url) {
+        onDestroy();
+        mDuration = 0;
+        this.setScaleType(SCALETYPE_FILLPARENT);
+        ijkVideoView.setVideoURI(Uri.parse(url));
+        ijkVideoView.start();
+    }
+
+    public void onDestroy() {
+        //重置播放器
+        //换源之后声音可播，画面卡住，主要是渲染问题，目前只是提供了软解方式
+        ijkVideoView.setRender(ijkVideoView.RENDER_TEXTURE_VIEW);
+        if (ijkVideoView == null) return;
+        ijkVideoView.stopPlayback();
+        ijkVideoView.release(true);
+
+    }
+
+    protected void onStop() {
+        onCallBack.stop();
+        if (null != netMonitorHandler) {
+            netMonitorHandler.removeCallbacksAndMessages(null);
+            netMonitorHandler = null;
+        }
+
+        if (!ijkVideoView.isBackgroundPlayEnabled()) {
+            ijkVideoView.stopPlayback();
+            ijkVideoView.release(true);
+            ijkVideoView.stopBackgroundPlay();
+        } else {
+            ijkVideoView.enterBackground();
+        }
+        IjkMediaPlayer.native_profileEnd();
+        mLastPosition = 0;
     }
 
     /**
@@ -740,6 +783,7 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mVideoPlayerBack:
+                onStop();
                 activity.finish();
                 break;
             //显示或隐藏控制面板
@@ -807,20 +851,24 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
     /**
      * 回调相关
      */
-    /**
-     * 回调相关
-     */
     public interface onCallBack {
         //第一次播放
         void startPlay();
+
         //暂停
         void pause();
+
         //播放
         void play();
+
         //播放错误
         void error(String error);
+
         //视频播放结束
         void playEnd();
+
+        //视频关闭
+        void stop();
     }
 
 }
