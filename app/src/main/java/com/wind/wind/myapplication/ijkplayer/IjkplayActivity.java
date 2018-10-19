@@ -32,8 +32,8 @@ public class IjkplayActivity extends BaseActivity {
     @Override
     protected void initData() {
         //把下面3行代码写了就可以播放视频了
+        mVideoPlayer.setScreenScaleType(SCALETYPE_FILLPARENT);
         mVideoPlayer.play("http://flv2.bn.netease.com/videolib3/1611/28/nNTov5571/SD/nNTov5571-mobile.mp4");
-        mVideoPlayer.setScaleType(SCALETYPE_FILLPARENT);
         mVideoPlayer.setOnCallBack(this, new VideoView.onCallBack() {
 
             @Override

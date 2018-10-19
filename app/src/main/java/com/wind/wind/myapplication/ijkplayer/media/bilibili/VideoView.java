@@ -92,7 +92,8 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
     private Activity activity = null;
     //竖屏时控件的高
     private int mViewHeight = 0;
-
+    //视频的裁剪方式
+    private String scaleType;
     /**
      * 可能会剪裁,保持原视频的大小，显示在中心,当原视频的大小超过view的大小超过部分裁剪处理
      */
@@ -716,6 +717,7 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
         ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_FIT_PARENT);
         ijkVideoView.setVideoURI(Uri.parse(url));
         ijkVideoView.start();
+        setScaleType();
     }
 
     /**
@@ -725,10 +727,11 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
      */
     public void playNew(String url) {
         onDestroy();
+        mApp_video_loading.setVisibility(View.VISIBLE);
         mDuration = 0;
-        this.setScaleType(SCALETYPE_FILLPARENT);
         ijkVideoView.setVideoURI(Uri.parse(url));
         ijkVideoView.start();
+        setScaleType();
     }
 
     public void onDestroy() {
@@ -757,17 +760,6 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
         }
         IjkMediaPlayer.native_profileEnd();
         mLastPosition = 0;
-    }
-
-    /**
-     * 返回
-     */
-    public void stopPlayback() {
-        if (ijkVideoView != null) {
-            ijkVideoView.stopPlayback();
-            ijkVideoView = null;
-            mAudioManager.abandonAudioFocus(null);
-        }
     }
 
     /**
@@ -825,19 +817,26 @@ public class VideoView extends ViewGroup implements View.OnClickListener {
      *
      * @param scaleType
      */
-    public void setScaleType(String scaleType) {
-        if (SCALETYPE_FITPARENT.equals(scaleType)) {
-            ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_FIT_PARENT);
-        } else if (SCALETYPE_FILLPARENT.equals(scaleType)) {
-            ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_FILL_PARENT);
-        } else if (SCALETYPE_WRAPCONTENT.equals(scaleType)) {
-            ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_WRAP_CONTENT);
-        } else if (SCALETYPE_FITXY.equals(scaleType)) {
-            ijkVideoView.setAspectRatio(IRenderView.AR_MATCH_PARENT);
-        } else if (SCALETYPE_16_9.equals(scaleType)) {
-            ijkVideoView.setAspectRatio(IRenderView.AR_16_9_FIT_PARENT);
-        } else if (SCALETYPE_4_3.equals(scaleType)) {
-            ijkVideoView.setAspectRatio(IRenderView.AR_4_3_FIT_PARENT);
+
+    public void setScreenScaleType(String scaleType) {
+        this.scaleType = scaleType;
+    }
+
+    public void setScaleType() {
+        if (scaleType != null) {
+            if (SCALETYPE_FITPARENT.equals(scaleType)) {
+                ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_FIT_PARENT);
+            } else if (SCALETYPE_FILLPARENT.equals(scaleType)) {
+                ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_FILL_PARENT);
+            } else if (SCALETYPE_WRAPCONTENT.equals(scaleType)) {
+                ijkVideoView.setAspectRatio(IRenderView.AR_ASPECT_WRAP_CONTENT);
+            } else if (SCALETYPE_FITXY.equals(scaleType)) {
+                ijkVideoView.setAspectRatio(IRenderView.AR_MATCH_PARENT);
+            } else if (SCALETYPE_16_9.equals(scaleType)) {
+                ijkVideoView.setAspectRatio(IRenderView.AR_16_9_FIT_PARENT);
+            } else if (SCALETYPE_4_3.equals(scaleType)) {
+                ijkVideoView.setAspectRatio(IRenderView.AR_4_3_FIT_PARENT);
+            }
         }
     }
 
