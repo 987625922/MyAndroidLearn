@@ -116,5 +116,7 @@ dependencies {
 //    compile(name: 'lyx-library-1.0.3', ext: 'aar')
 //    eventbus
     implementation 'org.greenrobot:eventbus:3.1.1'
+//    livedatabus
+    implementation 'com.jeremyliao:live-event-bus:0.0.1'
 
 }

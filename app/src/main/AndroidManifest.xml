@@ -59,6 +59,8 @@
         <activity android:name="com.wind.androidlearn.butterknifeuse.ButterActivity" />
         <!-- room的使用 -->
         <activity android:name="com.wind.androidlearn.room.RoomActivity" />
+        <!-- bus使用 -->
+        <activity android:name="com.wind.androidlearn.bus.BusActivity" />
     </application>
 
 </manifest>
