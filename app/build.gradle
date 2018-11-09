@@ -9,7 +9,7 @@ def releaseTime() {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.wyt.zdf.myapplication"
+        applicationId "com.wind.android"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -28,10 +28,7 @@ android {
     //签名设置
     signingConfigs {
         sunSign {
-            keyAlias 'sun'
-            keyPassword '123456'
-            storeFile file('F:/Keys/releaseKey.jks')
-            storePassword '123456'
+
         }
     }
 
@@ -42,7 +39,7 @@ android {
             minifyEnabled true
             useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.sunSign
+//            signingConfig signingConfigs.sunSign
         }
         debug {
             minifyEnabled false
@@ -71,6 +68,13 @@ android {
             dirs 'libs'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
 }
 
 dependencies {
@@ -88,12 +92,17 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     //rxandroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 // Because RxAndroid releases are few and far between, it is recommended you also
 // explicitly depend on RxJava's latest version for bug fixes and new features.
 // (see https://github.com/ReactiveX/RxJava/releases for latest 2.x.x version)
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 
     //bilibili
@@ -105,6 +114,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
     //导入aar格式
 //    compile(name: 'lyx-library-1.0.3', ext: 'aar')
-
+//    eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
 
 }

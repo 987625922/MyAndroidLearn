@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.fragment;
+package com.wind.androidlearn.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;

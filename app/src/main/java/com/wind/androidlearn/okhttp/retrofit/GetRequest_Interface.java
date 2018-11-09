@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.okhttp.retrofit;
+package com.wind.androidlearn.okhttp.retrofit;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

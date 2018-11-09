@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.wind.wind.androidlearn.ijkplayer.media.bilibili;
+package com.wind.androidlearn.ijkplayer.media.bilibili;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -39,8 +39,8 @@ import android.widget.MediaController;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
-import com.wind.wind.androidlearn.ijkplayer.application.Settings;
-import com.wind.wind.androidlearn.ijkplayer.services.MediaPlayerService;
+import com.wind.androidlearn.ijkplayer.application.Settings;
+import com.wind.androidlearn.ijkplayer.services.MediaPlayerService;
 import com.wyt.zdf.myapplication.R;
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.download;
+package com.wind.androidlearn.network.download;
 
 /**
  * 下载监听

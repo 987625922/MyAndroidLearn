@@ -1,12 +1,12 @@
-package com.wind.wind.androidlearn.mvp.view;
+package com.wind.androidlearn.mvp.view;
 /**
  * Created by Administrator on 2018/8/21 0021.
  */
 
 import android.app.Activity;
 
-import com.wind.wind.androidlearn.mvp.presenter.UserLoginPresenter;
-import com.wind.wind.androidlearn.mvp.bean.User;
+import com.wind.androidlearn.mvp.presenter.UserLoginPresenter;
+import com.wind.androidlearn.mvp.bean.User;
 
 
 public class UserLoginActivity extends Activity implements IUserLoginView {

@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.converter;
+package com.wind.androidlearn.network.converter;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;

@@ -1,10 +1,10 @@
-package com.wind.wind.androidlearn.bassis.ThradHandle;
+package com.wind.androidlearn.bassis.ThradHandle;
 
 import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Message;
 
-import com.wind.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.BaseActivity;
 
 public class ThreadHandleActivity extends BaseActivity {
     @Override

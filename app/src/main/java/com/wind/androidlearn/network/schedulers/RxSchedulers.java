@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.schedulers;
+package com.wind.androidlearn.network.schedulers;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;

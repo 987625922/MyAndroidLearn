@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.bassis.broadcast;
+package com.wind.androidlearn.bassis.broadcast;
 /**
  * Created by Administrator on 2018/8/25 0025.
  */

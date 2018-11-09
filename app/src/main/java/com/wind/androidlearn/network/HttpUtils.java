@@ -1,10 +1,10 @@
-package com.wind.wind.androidlearn.network;
+package com.wind.androidlearn.network;
 
 import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 
-import com.wind.wind.androidlearn.bassis.Utils.LogUtil;
-import com.wind.wind.androidlearn.network.schedulers.RxSchedulers;
+import com.wind.androidlearn.bassis.Utils.LogUtil;
+import com.wind.androidlearn.network.schedulers.RxSchedulers;
 
 import org.json.JSONObject;
 
@@ -32,7 +32,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-import static com.wind.wind.androidlearn.network.converter.Base64Utils.MD5;
+import static com.wind.androidlearn.network.converter.Base64Utils.MD5;
 
 /**
  * 无加密的网络请求工具

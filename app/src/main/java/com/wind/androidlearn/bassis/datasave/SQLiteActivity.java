@@ -1,10 +1,10 @@
-package com.wind.wind.androidlearn.bassis.datasave;
+package com.wind.androidlearn.bassis.datasave;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.wind.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.BaseActivity;
 
 public class SQLiteActivity extends BaseActivity {
     @Override

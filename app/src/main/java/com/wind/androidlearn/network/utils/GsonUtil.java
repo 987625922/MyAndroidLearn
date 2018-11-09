@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.utils;
+package com.wind.androidlearn.network.utils;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;

@@ -1,10 +1,10 @@
-package com.wind.wind.androidlearn.bassis;
+package com.wind.androidlearn.bassis;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.wind.wind.androidlearn.bassis.Utils.LogUtil;
+import com.wind.androidlearn.bassis.Utils.LogUtil;
 import com.wyt.zdf.myapplication.R;
 
 public class 保存状态Activity extends Activity {

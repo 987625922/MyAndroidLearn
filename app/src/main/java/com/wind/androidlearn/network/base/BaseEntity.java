@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.base;
+package com.wind.androidlearn.network.base;
 
 /**
  * 基础实体类

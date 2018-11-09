@@ -1,4 +1,5 @@
-package com.wind.wind.androidlearn.bassis.Utils;
+package com.wind.androidlearn.bassis.Utils;
+
 /**
  * Created by Administrator on 2018/8/29 0029.
  */

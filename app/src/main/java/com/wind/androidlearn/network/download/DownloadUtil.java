@@ -1,11 +1,11 @@
-package com.wind.wind.androidlearn.network.download;
+package com.wind.androidlearn.network.download;
 
 import android.annotation.SuppressLint;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 
-import com.wind.wind.androidlearn.bassis.Utils.LogUtil;
-import com.wind.wind.androidlearn.network.schedulers.RxSchedulers;
+import com.wind.androidlearn.bassis.Utils.LogUtil;
+import com.wind.androidlearn.network.schedulers.RxSchedulers;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,9 +25,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-import static com.wind.wind.androidlearn.network.download.DownloadInfo.STATUS_FAIL;
-import static com.wind.wind.androidlearn.network.download.DownloadInfo.STATUS_LOADING;
-import static com.wind.wind.androidlearn.network.download.DownloadInfo.STATUS_SUCCESS;
+import static com.wind.androidlearn.network.download.DownloadInfo.STATUS_FAIL;
+import static com.wind.androidlearn.network.download.DownloadInfo.STATUS_LOADING;
+import static com.wind.androidlearn.network.download.DownloadInfo.STATUS_SUCCESS;
 
 
 /**

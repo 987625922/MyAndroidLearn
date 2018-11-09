@@ -1,11 +1,11 @@
-package com.wind.wind.androidlearn.network.converter;
+package com.wind.androidlearn.network.converter;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
-import com.wind.wind.androidlearn.bassis.Utils.LogUtil;
-import com.wind.wind.androidlearn.network.base.BaseEntity;
-import com.wind.wind.androidlearn.network.excption.ResponseErrorException;
+import com.wind.androidlearn.bassis.Utils.LogUtil;
+import com.wind.androidlearn.network.base.BaseEntity;
+import com.wind.androidlearn.network.excption.ResponseErrorException;
 
 import org.json.JSONException;
 import org.json.JSONObject;

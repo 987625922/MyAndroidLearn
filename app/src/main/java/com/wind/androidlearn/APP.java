@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn;
+package com.wind.androidlearn;
 /**
  * Created by Administrator on 2018/8/31 0031.
  */
@@ -8,7 +8,7 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.wind.wind.androidlearn.screenmatch.Density;
+import com.wind.androidlearn.screenmatch.Density;
 
 /**
  * 类 名： APP<br>

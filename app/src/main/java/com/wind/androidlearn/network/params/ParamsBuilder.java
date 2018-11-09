@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.params;
+package com.wind.androidlearn.network.params;
 
 /**
  * 网络参数构建类

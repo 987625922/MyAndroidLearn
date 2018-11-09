@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.okhttp.retrofit;
+package com.wind.androidlearn.okhttp.retrofit;
 
 /**
  * 创建日期：2018/9/8 0008<br>

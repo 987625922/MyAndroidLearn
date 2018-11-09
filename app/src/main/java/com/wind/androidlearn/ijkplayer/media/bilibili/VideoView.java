@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.ijkplayer.media.bilibili;
+package com.wind.androidlearn.ijkplayer.media.bilibili;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

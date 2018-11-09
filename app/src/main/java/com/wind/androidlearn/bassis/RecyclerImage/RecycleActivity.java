@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.bassis.RecyclerImage;
+package com.wind.androidlearn.bassis.RecyclerImage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

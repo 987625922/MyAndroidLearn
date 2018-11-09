@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.wind.wind.androidlearn.ijkplayer.media.bilibili;
+package com.wind.androidlearn.ijkplayer.media.bilibili;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;

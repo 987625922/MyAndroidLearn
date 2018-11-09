@@ -1,4 +1,5 @@
-package com.wind.wind.androidlearn.bassis.Utils;
+package com.wind.androidlearn.bassis.Utils;
+
 
 import android.Manifest;
 import android.content.BroadcastReceiver;

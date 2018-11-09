@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.params;
+package com.wind.androidlearn.network.params;
 
 /**
  * 请求接口参数

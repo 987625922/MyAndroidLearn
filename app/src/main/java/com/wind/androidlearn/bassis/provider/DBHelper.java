@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.bassis.provider;
+package com.wind.androidlearn.bassis.provider;
 /**
  * Created by Administrator on 2018/8/25 0025.
  */

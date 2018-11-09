@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.okhttp;
+package com.wind.androidlearn.okhttp;
 
 import android.app.Activity;
 import android.os.Bundle;

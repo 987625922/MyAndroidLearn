@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.wind.wind.androidlearn.ijkplayer.media.bilibili;
+package com.wind.androidlearn.ijkplayer.media.bilibili;
 
 import android.graphics.SurfaceTexture;
 import android.support.annotation.NonNull;

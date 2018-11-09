@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.base;
+package com.wind.androidlearn.network.base;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.bassis.Utils;
+package com.wind.androidlearn.bassis.Utils;
 
 import android.annotation.SuppressLint;
 import android.net.wifi.ScanResult;

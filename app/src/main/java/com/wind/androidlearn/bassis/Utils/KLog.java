@@ -1,4 +1,5 @@
-package com.wind.wind.androidlearn.bassis.Utils;
+package com.wind.androidlearn.bassis.Utils;
+
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

@@ -1,29 +1,29 @@
-package com.wind.wind.androidlearn.room;
+package com.wind.androidlearn.room;
 
+
+import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
+import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
+import android.arch.persistence.room.Query;
 
 import java.util.List;
 
-import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
 
 @Dao
-interface UserDao {
-    @Query("SELECT * FROM user")
-    List<User> getAll();
+public interface UserEntityDao {
 
-    @Query("SELECT * FROM user WHERE uid IN (:userIds)")
-    List<User> loadAllByIds(int[] userIds);
+    @Query("select * FROM User")
+    List<UserEntity> getUserList();
 
-    @Query("SELECT * FROM user WHERE first_name LIKE :first AND "
-            + "last_name LIKE :last LIMIT 1")
-    User findByName(String first, String last);
+    @Query("select * FROM User WHERE name = :name")
+    UserEntity getUserByName(String name);
 
-    @Insert
-    void insertAll(User... users);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void addUser(UserEntity userEntity);
 
-    @Delete
-    void delete(User user);
+    @Delete()
+    void deleteUser(UserEntity userEntity);
+
 }
 

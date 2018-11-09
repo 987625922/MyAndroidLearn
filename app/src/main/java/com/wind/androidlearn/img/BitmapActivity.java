@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.img;
+package com.wind.androidlearn.img;
 
 import android.app.Activity;
 import android.graphics.Bitmap;

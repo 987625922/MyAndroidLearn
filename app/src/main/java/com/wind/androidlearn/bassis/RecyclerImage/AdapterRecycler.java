@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.bassis.RecyclerImage;
+package com.wind.androidlearn.bassis.RecyclerImage;
 /**
  * Created by Administrator on 2018/8/28 0028.
  */

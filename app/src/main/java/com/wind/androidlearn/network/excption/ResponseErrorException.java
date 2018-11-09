@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network.excption;
+package com.wind.androidlearn.network.excption;
 
 /**
  * 服务器返回数据时，返回码不等于200的异常

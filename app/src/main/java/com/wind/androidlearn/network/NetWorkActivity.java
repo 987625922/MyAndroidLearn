@@ -1,4 +1,4 @@
-package com.wind.wind.androidlearn.network;
+package com.wind.androidlearn.network;
 
 public class NetWorkActivity {
 }

@@ -3,18 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wyt.zdf.myapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
+        android:name="com.wind.androidlearn.APP"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name="com.wind.wind.myapplication.APP"
-        >
-        <activity android:name="com.wind.wind.myapplication.MainActivity">
+        android:theme="@style/AppTheme">
+        <activity android:name="com.wind.androidlearn.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,38 +25,40 @@
         </activity>
 
         <!--BroadcastReceiver广播实现跨进程数据交互-->
-        <service android:name="com.wind.wind.myapplication.bassis.broadcast.MsgService"></service>
-        <activity android:name="com.wind.wind.myapplication.bassis.broadcast.MainActivity"/>
+        <service android:name="com.wind.androidlearn.bassis.broadcast.MsgService"></service>
+        <activity android:name="com.wind.androidlearn.bassis.broadcast.MainActivity" />
 
         <!--binder跨进程数据交互-->
-        <service android:name="com.wind.wind.myapplication.bassis.broadcast.binder.MsgService"></service>
-        <activity android:name="com.wind.wind.myapplication.bassis.broadcast.binder.MainActivity"/>
+        <service android:name="com.wind.androidlearn.bassis.broadcast.binder.MsgService"></service>
+        <activity android:name="com.wind.androidlearn.bassis.broadcast.binder.MainActivity" />
 
         <!--content provider实现-->
         <provider
-            android:name="com.wind.wind.myapplication.bassis.provider.MyProvider"
+            android:name="com.wind.androidlearn.bassis.provider.MyProvider"
             android:authorities="cn.scu.myprovider" />
-        <activity android:name="com.wind.wind.myapplication.bassis.provider.ProviderActivity"
+        <activity
+            android:name="com.wind.androidlearn.bassis.provider.ProviderActivity"
             tools:ignore="DuplicateActivity" />
 
         <!--RecyclerView加载多图-->
-        <activity android:name="com.wind.wind.myapplication.bassis.RecyclerImage.RecycleActivity"></activity>
+        <activity android:name="com.wind.androidlearn.bassis.RecyclerImage.RecycleActivity"></activity>
         <!-- retrofit -->
-        <activity android:name="com.wind.wind.myapplication.okhttp.retrofit.GetRequest"></activity>
+        <activity android:name="com.wind.androidlearn.okhttp.retrofit.GetRequest"></activity>
         <!-- bitmap -->
-        <activity android:name="com.wind.wind.myapplication.img.BitmapActivity"></activity>
+        <activity android:name="com.wind.androidlearn.img.BitmapActivity"></activity>
         <!-- 头条适配方案 -->
-        <activity android:name="com.wind.wind.myapplication.screenmatch.DensityActivity"/>
+        <activity android:name="com.wind.androidlearn.screenmatch.DensityActivity" />
         <!-- fragment使用 -->
-        <activity android:name="com.wind.wind.myapplication.fragment.FragmentActivity"/>
+        <activity android:name="com.wind.androidlearn.fragment.FragmentActivity" />
         <!-- b站视频播放 -->
-        <activity android:name="com.wind.wind.myapplication.ijkplayer.IjkplayActivity"/>
-        <activity android:name="com.wind.wind.myapplication.ijkplayer.VideoPlayerActivity"
-            />
+        <activity android:name="com.wind.androidlearn.ijkplayer.IjkplayActivity" />
+        <activity android:name="com.wind.androidlearn.ijkplayer.VideoPlayerActivity" />
         <!-- viewpager实现广告页 -->
-        <activity android:name="com.wind.wind.myapplication.viewpager.ViewpagerActivity"/>
+        <activity android:name="com.wind.androidlearn.viewpager.ViewpagerActivity" />
         <!-- butter使用 -->
-        <activity android:name="com.wind.wind.myapplication.butterknifeuse.ButterActivity"/>
+        <activity android:name="com.wind.androidlearn.butterknifeuse.ButterActivity" />
+        <!-- room的使用 -->
+        <activity android:name="com.wind.androidlearn.room.RoomActivity" />
     </application>
 
 </manifest>

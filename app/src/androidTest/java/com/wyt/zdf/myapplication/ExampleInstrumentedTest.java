@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.wyt.zdf.myapplication", appContext.getPackageName());
+        assertEquals("com.wyt.zdf.com.wind.androidlearn", appContext.getPackageName());
     }
 }
