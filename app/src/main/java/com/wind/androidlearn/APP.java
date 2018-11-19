@@ -21,6 +21,8 @@ import com.wind.androidlearn.screenmatch.Density;
  * 待做事情：
  */
 public class APP extends Application {
+
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -64,5 +66,9 @@ public class APP extends Application {
 
             }
         });
+
+
     }
+
+
 }

@@ -14,17 +14,21 @@
  * limitations under the License.
  */
 
-package com.example.android.observability.ui;
+package com.wind.androidlearn.aac.ui;
 
-import androidx.lifecycle.ViewModelProviders;
+import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import com.example.android.observability.Injection;
-import com.example.android.persistence.R;
+
+import com.wind.androidlearn.aac.Injection;
+import com.wyt.zdf.myapplication.R;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -48,7 +52,14 @@ public class UserActivity extends AppCompatActivity {
     private UserViewModel mViewModel;
 
     private final CompositeDisposable mDisposable = new CompositeDisposable();
+    public static Intent newIntent(Context context) {
+        Intent intent = new Intent(context, UserActivity.class);
+        return intent;
+    }
 
+    public static void intentTo(Context context) {
+        context.startActivity(newIntent(context));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

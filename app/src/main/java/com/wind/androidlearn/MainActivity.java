@@ -15,8 +15,10 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
+import com.wind.androidlearn.aac.ui.UserActivity;
 import com.wind.androidlearn.bassis.RecyclerImage.RecycleActivity;
 import com.wind.androidlearn.bassis.provider.ProviderActivity;
+import com.wind.androidlearn.bassis.获取联系人;
 import com.wind.androidlearn.bus.BusActivity;
 import com.wind.androidlearn.butterknifeuse.ButterActivity;
 import com.wind.androidlearn.fragment.FragmentActivity;
@@ -154,16 +156,32 @@ public class MainActivity extends Activity {
                 ButterActivity.intentTo(MainActivity.this);
             }
         });
+        //room的使用
         findViewById(R.id.btn13).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 RoomActivity.intentTo(MainActivity.this);
             }
         });
+        //eventbus 和 livedatabus的使用
         findViewById(R.id.btn14).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 BusActivity.intentTo(MainActivity.this);
+            }
+        });
+//                Android Architecture Components的使用
+        findViewById(R.id.btn15).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserActivity.intentTo(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                获取联系人.intentTo(MainActivity.this);
+
             }
         });
     }
@@ -224,13 +242,13 @@ public class MainActivity extends Activity {
      *
      * @param content 分享内容
      */
-    private void shareWeChat(String content){
+    private void shareWeChat(String content) {
         //判断是否安装了微信
 //        if (isClientInstalled(mActivity,"com.tencent.mm")) {
-            Intent weChatIntent = new Intent(Intent.ACTION_SEND);
-            weChatIntent.setPackage("com.tencent.mm");
-            weChatIntent.setType("text/plain");
-            weChatIntent.putExtra(Intent.EXTRA_TEXT, content);
+        Intent weChatIntent = new Intent(Intent.ACTION_SEND);
+        weChatIntent.setPackage("com.tencent.mm");
+        weChatIntent.setType("text/plain");
+        weChatIntent.putExtra(Intent.EXTRA_TEXT, content);
 //            mActivity.startActivity(weChatIntent);
 //        }else {
 //            ToastUtils.showLong("请先安装微信");
@@ -243,12 +261,12 @@ public class MainActivity extends Activity {
      *
      * @param content 分享内容
      */
-    private void shareQQ(String content){
+    private void shareQQ(String content) {
 //        if (isClientInstalled(mActivity,"com.tencent.mobileqq")) {
-            Intent qqIntent = new Intent(Intent.ACTION_SEND);
-            qqIntent.setPackage("com.tencent.mobileqq");
-            qqIntent.setType("text/plain");
-            qqIntent.putExtra(Intent.EXTRA_TEXT, content);
+        Intent qqIntent = new Intent(Intent.ACTION_SEND);
+        qqIntent.setPackage("com.tencent.mobileqq");
+        qqIntent.setType("text/plain");
+        qqIntent.putExtra(Intent.EXTRA_TEXT, content);
 //            mActivity.startActivity(qqIntent);
 //        }else {
 //            ToastUtils.showLong("请先安装QQ");

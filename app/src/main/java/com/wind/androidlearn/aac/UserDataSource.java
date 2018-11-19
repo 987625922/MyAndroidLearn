@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.android.observability;
+package com.wind.androidlearn.aac;
 
-import com.example.android.observability.persistence.User;
+import com.wind.androidlearn.aac.persistence.User;
+
 import io.reactivex.Flowable;
 
 /**

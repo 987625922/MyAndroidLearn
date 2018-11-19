@@ -42,12 +42,7 @@ public class UserEntity {
         this.age = age;
     }
 
-    public UserEntity() {
-    }
-
     public String toString() {
-
         return "name:" + name + ",age:" + age;
     }
 }
-

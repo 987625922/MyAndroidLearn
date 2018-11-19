@@ -18,11 +18,11 @@ android {
         //Build的变量设置 在代码中可以通过BuildConfig获取
         buildConfigField "String", "REQUEST_KEY", '"bLsBMeMaN10pN8z64TQ0fC3fztDlRsPn"'
         //导入so文件
-        sourceSets.main{
+        sourceSets.main {
             jni.srcDirs = []
             jniLibs.srcDir "src/main/libs"
         }
-
+        multiDexEnabled true //规避 64K 限制
     }
 
     //签名设置
@@ -32,14 +32,14 @@ android {
         }
     }
 
-//    签名配置
+    //    签名配置
     buildTypes {
         release {
             buildConfigField "boolean", "DebugMode", "true"//关闭DEBUG
             minifyEnabled true
             useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//            signingConfig signingConfigs.sunSign
+    //            signingConfig signingConfigs.sunSign
         }
         debug {
             minifyEnabled false
@@ -51,10 +51,10 @@ android {
 
     flavorDimensions "default"
     productFlavors {
-        develop{}
-        xiaomi{}
-        huawei{}
-        anzhi{}
+        develop {}
+        xiaomi {}
+        huawei {}
+        anzhi {}
     }
 
     android.applicationVariants.all { variant ->
@@ -83,8 +83,6 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //noinspection GradleCompatible
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.github.bumptech.glide:glide:4.3.1'
@@ -95,13 +93,11 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 
-    implementation "android.arch.persistence.room:runtime:1.1.1"
-    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     //rxandroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
-// Because RxAndroid releases are few and far between, it is recommended you also
-// explicitly depend on RxJava's latest version for bug fixes and new features.
-// (see https://github.com/ReactiveX/RxJava/releases for latest 2.x.x version)
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    // (see https://github.com/ReactiveX/RxJava/releases for latest 2.x.x version)
     implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 
@@ -113,10 +109,20 @@ dependencies {
     implementation 'com.jakewharton:butterknife:9.0.0-rc1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc1'
     //导入aar格式
-//    compile(name: 'lyx-library-1.0.3', ext: 'aar')
-//    eventbus
+    //    compile(name: 'lyx-library-1.0.3', ext: 'aar')
+    //    eventbus
     implementation 'org.greenrobot:eventbus:3.1.1'
-//    livedatabus
+    //    livedatabus
     implementation 'com.jeremyliao:live-event-bus:0.0.1'
 
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    // optional - RxJava support for Room
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+    def lifecycle_version = "1.1.1"
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    implementation "android.arch.lifecycle:viewmodel:$lifecycle_version"
+    //权限申请 https://github.com/tbruyelle/RxPermissions
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
 }

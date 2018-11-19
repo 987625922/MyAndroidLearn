@@ -1,5 +1,6 @@
 package com.wind.androidlearn;
 
+import android.Manifest;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -36,7 +37,6 @@ public class TestActivity extends Activity  {
         textView = findViewById(R.id.textView2);
         MyImageGetter myImageGetter = new MyImageGetter();
         textView.setText(Html.fromHtml(str, myImageGetter, null));
-
 
     }
 

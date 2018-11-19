@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.android.observability.ui;
+package com.wind.androidlearn.aac.ui;
 
-import androidx.lifecycle.ViewModel;
-import com.example.android.observability.UserDataSource;
-import com.example.android.observability.persistence.User;
+import android.arch.lifecycle.ViewModel;
+
+import com.wind.androidlearn.aac.UserDataSource;
+import com.wind.androidlearn.aac.persistence.User;
+
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
 
