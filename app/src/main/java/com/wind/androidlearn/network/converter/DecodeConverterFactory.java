@@ -13,7 +13,7 @@ import retrofit2.Converter;
 import retrofit2.Retrofit;
 
 /**
- * 加密与解密的ConverterFactory - wyt定义的规则
+ * 加密与解密的ConverterFactory
  */
 public final class DecodeConverterFactory extends Converter.Factory {
 

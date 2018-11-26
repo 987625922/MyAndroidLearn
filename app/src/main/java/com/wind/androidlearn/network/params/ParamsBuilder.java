@@ -15,5 +15,5 @@ public abstract class ParamsBuilder {
 
     public Params create(){
         return params;
-    };
+    }
 }

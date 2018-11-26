@@ -16,6 +16,7 @@ import butterknife.BindView;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
 public class RoomActivity extends BaseActivity {
@@ -58,7 +59,13 @@ public class RoomActivity extends BaseActivity {
 
             addRoom().subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(userEntities -> tvContent.setText(userEntities));
+//                    .subscribe(userEntities -> tvContent.setText(userEntities));
+                    .subscribe(new Consumer<String>() {
+                        @Override
+                        public void accept(String userEntities) throws Exception {
+                            tvContent.setText(userEntities);
+                        }
+                    });
         });
 
 

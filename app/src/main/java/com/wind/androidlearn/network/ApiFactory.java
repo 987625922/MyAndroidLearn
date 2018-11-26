@@ -94,11 +94,8 @@ public final class ApiFactory {
                 .create(ApiService.class);
     }
 
-    ;
-
     /**
      * 单例模式获取ApiService
-     * 为wyt爱易学堂定制的网络请求封装类，访问时进行加密、解密操作
      *
      * @return
      */
@@ -113,5 +110,4 @@ public final class ApiFactory {
         return apiService;
     }
 
-    ;
 }

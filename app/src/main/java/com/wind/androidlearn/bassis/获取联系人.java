@@ -115,6 +115,7 @@ public class 获取联系人 extends BaseActivity {
                 i++;
             } while (cursor.moveToNext());
         }
+        cursor.close();
         return arr;
     }
 
