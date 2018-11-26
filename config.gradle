@@ -36,10 +36,11 @@ ext {
             runtime: "1.1.1",
             lifecycle:"1.1.1",
             rxpermissions:"0.10.2",
+            rxpermissionsss:"0.10.2",
 
 
     ]
-    
+
     dependencies = [
             "appcompat_v7"        : "com.android.support:appcompat-v7:${versions["androidSupportSdkVersion"]}",
             "constraint-layout"        : "com.android.support.constraint:constraint-layout:${versions["constraintLayoutVersion"]}",
