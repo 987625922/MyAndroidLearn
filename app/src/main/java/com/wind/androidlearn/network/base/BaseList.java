@@ -3,7 +3,7 @@ package com.wind.androidlearn.network.base;
 import java.util.List;
 
 /**
- * 外语通接口返回的数据经常有如下模式，此类用于替代每个类中list，T这样的数据
+ * 、接口返回的数据经常有如下模式，此类用于替代每个类中list，T这样的数据
  * {
  *  msg:"",
  *  code:"200",
