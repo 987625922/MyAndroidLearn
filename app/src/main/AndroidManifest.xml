@@ -72,6 +72,8 @@
         <activity android:name="com.wind.androidlearn.aac.ui.UserActivity" />
 
         <activity android:name="com.wind.androidlearn.bassis.获取联系人" />
+        <!-- ARouter的使用-->
+        <activity android:name="com.wind.androidlearn.arouter.ARouterUseActivity"/>
     </application>
 
 </manifest>

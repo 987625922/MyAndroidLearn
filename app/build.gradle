@@ -21,6 +21,13 @@ android {
             jniLibs.srcDir "src/main/libs"
         }
         multiDexEnabled true //规避 64K 限制
+
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     //签名设置
@@ -111,4 +118,8 @@ dependencies {
     api rootProject.ext.dependencies["rxpermissions"]
     //导入aar格式
     //    compile(name: 'lyx-library-1.0.3', ext: 'aar')
+    //Arouter路由
+    annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
+    api rootProject.ext.dependencies["arouter_api"]
+    api rootProject.ext.dependencies["arouter_annotation"]
 }

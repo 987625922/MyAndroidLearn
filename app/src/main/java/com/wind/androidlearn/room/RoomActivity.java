@@ -3,7 +3,6 @@ package com.wind.androidlearn.room;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -56,7 +55,6 @@ public class RoomActivity extends BaseActivity {
 
 
         add.setOnClickListener(v -> {
-
             addRoom().subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
 //                    .subscribe(userEntities -> tvContent.setText(userEntities));

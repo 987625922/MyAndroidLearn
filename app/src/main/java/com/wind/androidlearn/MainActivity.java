@@ -1,6 +1,7 @@
 package com.wind.androidlearn;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -15,12 +16,15 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.wind.androidlearn.aac.ui.UserActivity;
 import com.wind.androidlearn.bassis.RecyclerImage.RecycleActivity;
+import com.wind.androidlearn.bassis.Utils.ToastUtils;
 import com.wind.androidlearn.bassis.provider.ProviderActivity;
 import com.wind.androidlearn.bassis.获取联系人;
 import com.wind.androidlearn.bus.BusActivity;
 import com.wind.androidlearn.butterknifeuse.ButterActivity;
+import com.wind.androidlearn.constants.ARouterConfig;
 import com.wind.androidlearn.fragment.FragmentActivity;
 import com.wind.androidlearn.ijkplayer.IjkplayActivity;
 import com.wind.androidlearn.img.BitmapActivity;
@@ -29,6 +33,8 @@ import com.wind.androidlearn.room.RoomActivity;
 import com.wind.androidlearn.screenmatch.DensityActivity;
 import com.wind.androidlearn.viewpager.ViewpagerActivity;
 import com.wyt.zdf.myapplication.R;
+
+import java.util.List;
 
 public class MainActivity extends Activity {
     private static final int REQUEST_CODE_GET_CONTENT = 666;
@@ -181,9 +187,19 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 获取联系人.intentTo(MainActivity.this);
-
             }
         });
+        findViewById(R.id.btn17).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //不带参数传递
+//                ARouter.getInstance().build(ARouterConfig.AROUTER).navigation();
+                ARouter.getInstance().build(ARouterConfig.AROUTER)
+                        .withString("name", "传递过来的参数")
+                        .navigation();
+            }
+        });
+
     }
 
     @Override
@@ -203,7 +219,8 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
-        if (data == null || data.getData() == null || requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE)
+        if (data == null || data.getData() == null ||
+                requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE)
             return;
 
         final Uri uri = data.getData();
@@ -244,15 +261,15 @@ public class MainActivity extends Activity {
      */
     private void shareWeChat(String content) {
         //判断是否安装了微信
-//        if (isClientInstalled(mActivity,"com.tencent.mm")) {
-        Intent weChatIntent = new Intent(Intent.ACTION_SEND);
-        weChatIntent.setPackage("com.tencent.mm");
-        weChatIntent.setType("text/plain");
-        weChatIntent.putExtra(Intent.EXTRA_TEXT, content);
-//            mActivity.startActivity(weChatIntent);
-//        }else {
-//            ToastUtils.showLong("请先安装微信");
-//        }
+        if (isClientInstalled(MainActivity.this, "com.tencent.mm")) {
+            Intent weChatIntent = new Intent(Intent.ACTION_SEND);
+            weChatIntent.setPackage("com.tencent.mm");
+            weChatIntent.setType("text/plain");
+            weChatIntent.putExtra(Intent.EXTRA_TEXT, content);
+            MainActivity.this.startActivity(weChatIntent);
+        } else {
+            ToastUtils.showLong(MainActivity.this,"请先安装微信");
+        }
     }
 
 
@@ -262,16 +279,25 @@ public class MainActivity extends Activity {
      * @param content 分享内容
      */
     private void shareQQ(String content) {
-//        if (isClientInstalled(mActivity,"com.tencent.mobileqq")) {
-        Intent qqIntent = new Intent(Intent.ACTION_SEND);
-        qqIntent.setPackage("com.tencent.mobileqq");
-        qqIntent.setType("text/plain");
-        qqIntent.putExtra(Intent.EXTRA_TEXT, content);
-//            mActivity.startActivity(qqIntent);
-//        }else {
-//            ToastUtils.showLong("请先安装QQ");
-//        }
+        if (isClientInstalled(MainActivity.this, "com.tencent.mobileqq")) {
+            Intent qqIntent = new Intent(Intent.ACTION_SEND);
+            qqIntent.setPackage("com.tencent.mobileqq");
+            qqIntent.setType("text/plain");
+            qqIntent.putExtra(Intent.EXTRA_TEXT, content);
+            MainActivity.this.startActivity(qqIntent);
+        } else {
+            ToastUtils.showLong(MainActivity.this,"请先安装QQ");
+        }
     }
 
+    // 使用Intent queryIntentActivities 判断
+    public static boolean isClientInstalled(Context context, String appPackageName) {
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setPackage(appPackageName);
+        i.setType("image/*");
+        PackageManager pm = context.getPackageManager();
+        @SuppressLint("WrongConstant") List<?> ris = pm.queryIntentActivities(i, PackageManager.GET_ACTIVITIES);
+        return ris != null && ris.size() > 0;
+    }
 
 }

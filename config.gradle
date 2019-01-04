@@ -36,7 +36,9 @@ ext {
             runtime: "1.1.1",
             lifecycle:"1.1.1",
             rxpermissions:"0.10.2",
-
+            arouterApiVersion       : "1.4.0",
+            arouterCompilerVersion  : "1.2.1",
+            arouterannotationVersion: "1.0.4",
 
     ]
 
@@ -76,6 +78,11 @@ ext {
             "lifecycleviewmodel"        : "android.arch.lifecycle:viewmodel:${versions["lifecycle"]}",
 
             "rxpermissions"        : "com.github.tbruyelle:rxpermissions:${versions["rxpermissions"]}",
+            //路由
+            "arouter_api"         : "com.alibaba:arouter-api:${versions["arouterApiVersion"]}",
+            "arouter_compiler"    : "com.alibaba:arouter-compiler:${versions["arouterCompilerVersion"]}",
+            "arouter_annotation"  : "com.alibaba:arouter-annotation:${versions["arouterannotationVersion"]}",
+
 
     ]
 
