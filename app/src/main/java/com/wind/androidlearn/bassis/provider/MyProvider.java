@@ -21,6 +21,11 @@ import android.net.Uri;
  * 注 意：<br>
  * Copyright (c) ： by WaiYuTong.版权所有.<br>
  * 待做事情：
+ *
+ *
+ *
+ *
+ * provider的实现
  */
 public class MyProvider  extends ContentProvider {
 

@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.wind.androidlearn.aac.ui.UserActivity;
 import com.wind.androidlearn.bassis.RecyclerImage.RecycleActivity;
 import com.wind.androidlearn.bassis.Utils.ToastUtils;
@@ -28,10 +29,12 @@ import com.wind.androidlearn.constants.ARouterConfig;
 import com.wind.androidlearn.fragment.FragmentActivity;
 import com.wind.androidlearn.ijkplayer.IjkplayActivity;
 import com.wind.androidlearn.img.BitmapActivity;
+import com.wind.androidlearn.livedata.NameActivity;
 import com.wind.androidlearn.okhttp.retrofit.GetRequest;
 import com.wind.androidlearn.room.RoomActivity;
 import com.wind.androidlearn.screenmatch.DensityActivity;
 import com.wind.androidlearn.viewpager.ViewpagerActivity;
+import com.wind.androidlearn.设计模式.PatternActivity;
 import com.wyt.zdf.myapplication.R;
 
 import java.util.List;
@@ -58,7 +61,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, com.wind.androidlearn.bassis.broadcast.MainActivity.class);
+                intent.setClass(MainActivity.this,
+                        com.wind.androidlearn.bassis.broadcast.MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +71,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, com.wind.androidlearn.bassis.broadcast.binder.MainActivity.class);
+                intent.setClass(MainActivity.this,
+                        com.wind.androidlearn.bassis.broadcast.binder.MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -84,9 +89,11 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    ActivityCompat.requestPermissions(MainActivity.this,
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                             WRITE_EXTERNAL_STORAGE_REQUEST_CODE);
                 }
 
@@ -199,7 +206,30 @@ public class MainActivity extends Activity {
                         .navigation();
             }
         });
-
+        findViewById(R.id.btn18).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NameActivity.intentTo(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn19).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                com.wind.androidlearn.kotlin.MainActivity.Companion.intentTo(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn20).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PatternActivity.intentTo(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn21).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CrashReport.testJavaCrash();
+            }
+        });
     }
 
     @Override
@@ -224,7 +254,8 @@ public class MainActivity extends Activity {
             return;
 
         final Uri uri = data.getData();
-//        final int width = content.getMeasuredWidth() - content.getPaddingLeft() - content.getPaddingRight();
+//        final int width = content.getMeasuredWidth() - content.getPaddingLeft() - content
+// .getPaddingRight();
 //        content.image(uri, width);
         String url = getRealFilePath(MainActivity.this, uri);
         Log.e("--->", url);
@@ -240,7 +271,8 @@ public class MainActivity extends Activity {
         else if (ContentResolver.SCHEME_FILE.equals(scheme)) {
             data = uri.getPath();
         } else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
-            Cursor cursor = context.getContentResolver().query(uri, new String[]{MediaStore.Images.ImageColumns.DATA}, null, null, null);
+            Cursor cursor = context.getContentResolver().query(uri,
+                    new String[]{MediaStore.Images.ImageColumns.DATA}, null, null, null);
             if (null != cursor) {
                 if (cursor.moveToFirst()) {
                     int index = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
@@ -268,7 +300,7 @@ public class MainActivity extends Activity {
             weChatIntent.putExtra(Intent.EXTRA_TEXT, content);
             MainActivity.this.startActivity(weChatIntent);
         } else {
-            ToastUtils.showLong(MainActivity.this,"请先安装微信");
+            ToastUtils.showLong(MainActivity.this, "请先安装微信");
         }
     }
 
@@ -286,7 +318,7 @@ public class MainActivity extends Activity {
             qqIntent.putExtra(Intent.EXTRA_TEXT, content);
             MainActivity.this.startActivity(qqIntent);
         } else {
-            ToastUtils.showLong(MainActivity.this,"请先安装QQ");
+            ToastUtils.showLong(MainActivity.this, "请先安装QQ");
         }
     }
 
@@ -296,7 +328,8 @@ public class MainActivity extends Activity {
         i.setPackage(appPackageName);
         i.setType("image/*");
         PackageManager pm = context.getPackageManager();
-        @SuppressLint("WrongConstant") List<?> ris = pm.queryIntentActivities(i, PackageManager.GET_ACTIVITIES);
+        @SuppressLint("WrongConstant") List<?> ris = pm.queryIntentActivities(i,
+                PackageManager.GET_ACTIVITIES);
         return ris != null && ris.size() > 0;
     }
 

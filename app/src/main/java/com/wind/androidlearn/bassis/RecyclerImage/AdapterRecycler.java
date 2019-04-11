@@ -67,7 +67,6 @@ public class AdapterRecycler extends RecyclerView.Adapter<AdapterRecycler.ViewHo
         Log.e("--->",mData.size()+"");
         return mData == null ? 0 : mData.size();
     }
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView mTv;

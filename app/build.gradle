@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 //butterknife需要添加
 apply plugin: 'com.jakewharton.butterknife'
 
@@ -56,6 +58,7 @@ android {
 
     flavorDimensions "default"
     productFlavors {
+//        多渠道
         develop {}
         xiaomi {}
         huawei {}
@@ -122,4 +125,11 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
     api rootProject.ext.dependencies["arouter_api"]
     api rootProject.ext.dependencies["arouter_annotation"]
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.tencent.bugly:crashreport:2.8.6'
+
+}
+repositories {
+    mavenCentral()
 }

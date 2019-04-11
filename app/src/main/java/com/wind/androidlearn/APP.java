@@ -11,6 +11,7 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.wind.androidlearn.screenmatch.Density;
 
 /**
@@ -40,6 +41,8 @@ public class APP extends Application {
         super.onCreate();
         //头条适配绑定
         Density.setDensity(this);
+
+        CrashReport.initCrashReport(getApplicationContext(), "1", false);
         //在application中监听每一个activity的生命周期
         this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             public void onActivityStopped(Activity activity) {

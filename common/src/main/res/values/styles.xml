@@ -1,0 +1,79 @@
+<resources>
+
+
+    <!--&lt;!&ndash;应用主题&ndash;&gt;-->
+    <!--<style name="AdmTheme" parent="@android:style/Theme.NoTitleBar" />-->
+
+
+    <!--<style name="Theme.AppStartLoadTranslucent" parent="android:Theme">-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+    <!--</style>-->
+
+
+    <!--<style name="HorizontalLine">-->
+        <!--<item name="android:background">@color/gray</item>-->
+        <!--<item name="android:layout_width">match_parent</item>-->
+        <!--<item name="android:layout_height">0.5px</item>-->
+    <!--</style>-->
+
+    <!--<style name="VerticalLine">-->
+        <!--<item name="android:background">@color/gray</item>-->
+        <!--<item name="android:layout_width">0.5dp</item>-->
+        <!--<item name="android:layout_height">match_parent</item>-->
+    <!--</style>-->
+
+    <style name="TextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+
+    <!--Loading Dialog-->
+    <style name="LoadingDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--<style name="DialogStyle" parent="@android:style/Theme.Dialog">-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+    <!--</style>-->
+
+    <!--<style name="AnimSheetBottom" parent="@android:style/Animation.Dialog">-->
+        <!--<item name="android:windowEnterAnimation">@anim/anim_bottom_in</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/anim_bottom_out</item>-->
+    <!--</style>-->
+
+    <!--&lt;!&ndash;拍照对话框&ndash;&gt;-->
+    <!--<style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">-->
+        <!--&lt;!&ndash; 背景透明 &ndash;&gt;-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--&lt;!&ndash; 浮于Activity之上 &ndash;&gt;-->
+        <!--&lt;!&ndash;<item name="android:windowIsFloating">true</item>&ndash;&gt;-->
+        <!--&lt;!&ndash; 边框 &ndash;&gt;-->
+        <!--<item name="android:windowFrame">@null</item>-->
+        <!--&lt;!&ndash; Dialog以外的区域模糊效果 &ndash;&gt;-->
+        <!--<item name="android:backgroundDimEnabled">true</item>-->
+        <!--&lt;!&ndash; 无标题 &ndash;&gt;-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--&lt;!&ndash; 半透明 &ndash;&gt;-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--&lt;!&ndash; Dialog进入及退出动画 &ndash;&gt;-->
+        <!--<item name="android:windowAnimationStyle">@style/AnimSheetBottom</item>-->
+    <!--</style>-->
+
+    <!--<style name="DialogFullscreen">-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+    <!--</style>-->
+
+</resources>

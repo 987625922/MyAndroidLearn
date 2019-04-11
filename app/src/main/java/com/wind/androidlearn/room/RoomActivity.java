@@ -55,6 +55,7 @@ public class RoomActivity extends BaseActivity {
 
 
         add.setOnClickListener(v -> {
+
             addRoom().subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
 //                    .subscribe(userEntities -> tvContent.setText(userEntities));
@@ -64,6 +65,7 @@ public class RoomActivity extends BaseActivity {
                             tvContent.setText(userEntities);
                         }
                     });
+
         });
 
 

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?><!--资源位置,例如一些写死的资源-->
+<resources>
+
+
+
+    <!--小学年级-->
+    <string-array name="xiaoxue_grade">
+        <item>一年级:8</item>
+        <item>二年级:9</item>
+        <item>三年级:10</item>
+        <item>四年级:11</item>
+        <item>五年级:12</item>
+        <item>六年级:13</item>
+    </string-array>
+
+    <!--初中年级-->
+    <string-array name="chuzhong_grade">
+        <item>七年级:15</item>
+        <item>八年级:16</item>
+        <item>九年级:17</item>
+    </string-array>
+
+    <!--高中年级 微课堂-->
+    <string-array name="gaozhong_grade">
+        <item>高一:18</item>
+        <item>高二:19</item>
+        <item>高三:20</item>
+    </string-array>
+
+    <!--高中必修 名师-->
+    <string-array name="gaozhong_compulsory">
+        <item>必修一:21</item>
+        <item>必修二:22</item>
+        <item>必修三:23</item>
+        <item>必修四:24</item>
+        <item>必修五:25</item>
+    </string-array>
+
+    <!--小学科目-->
+    <string-array name="xiaoxue_subject">
+        <item>语文:27</item>
+        <item>数学:28</item>
+        <item>英语:29</item>
+        <item>科学:37</item>
+    </string-array>
+
+
+    <!--&lt;!&ndash;中学科目&ndash;&gt;-->
+    <!--<string-array name="zhongxue_subject">-->
+        <!--<item>语文:27</item>-->
+        <!--<item>数学:28</item>-->
+        <!--<item>英语:29</item>-->
+        <!--<item>物理:30</item>-->
+        <!--<item>化学:31</item>-->
+        <!--<item>地理:32</item>-->
+        <!--<item>生物:33</item>-->
+    <!--</string-array>-->
+
+    <!--初中科目-->
+    <string-array name="chuzhong_subject">
+        <item>语文:27</item>
+        <item>数学:28</item>
+        <item>英语:29</item>
+        <item>物理:30</item>
+        <item>化学:31</item>
+        <item>地理:32</item>
+        <item>生物:33</item>
+        <item>历史:34</item>
+        <item>政治:35</item>
+        <item>科学:37</item>
+    </string-array>
+
+    <!--高中科目-->
+    <string-array name="gaozhong_subject">
+        <item>语文:27</item>
+        <item>数学:28</item>
+        <item>英语:29</item>
+        <item>物理:30</item>
+        <item>化学:31</item>
+        <item>地理:32</item>
+        <item>生物:33</item>
+        <item>历史:34</item>
+        <item>政治:35</item>
+    </string-array>
+
+    <!--专题课堂-->
+    <string-array name="zt_kt">
+        <item>奥数精讲:2</item>
+        <item>妙解教材:19</item>
+        <item>作文指导:11</item>
+        <item>必考点:7</item>
+        <item>英语口语:12</item>
+        <item>英语语法:13</item>
+        <item>英语单词:22</item>
+        <item>综合集萃:14</item>
+
+    </string-array>
+
+    <!--动漫课程-->
+    <string-array name="dm_kt">
+        <item>科学动漫:1</item>
+        <item>少儿英语:5</item>
+        <item>安全知识:15</item>
+        <item>诗词精选:16</item>
+        <item>汉字学习:6</item>
+    </string-array>
+
+    <!--幼儿早教馆-->
+    <string-array name="you_er_zao_jiao_guan">
+        <item >国学经典:3</item>
+        <item >故事小屋:4</item>
+        <item >儿歌童谣:17</item>
+        <item >亲子互动:18</item>
+        <item >格灵英语:5</item>
+        <item >少儿识字:6</item>
+    </string-array>
+    <!--学段-->
+    <string-array name="xue_duan">
+        <item >学前:1</item>
+        <item >小学:2</item>
+        <item >初中:3</item>
+        <item >高中:4</item>
+    </string-array>
+
+    <!--学期-->
+    <string-array name="semester">
+        <item >上册:74</item>
+        <item >下册:75</item>
+        <item >全一册:76</item>
+    </string-array>
+
+    <!-- 出版社 -->
+    <string-array name="press">
+        <item >北京师范大学出版社:39</item>
+        <item >江苏凤凰教育出版社:40</item>
+        <item >译林出版社:41</item>
+        <item >外语教学与研究出版社:42</item>
+        <item >广东教育出版社:43</item>
+        <item >上海教育出版社:44</item>
+        <item >上海外语教育出版社:45</item>
+        <item >北京出版社:46</item>
+        <item >浙江教育出版社:47</item>
+        <item >山东教育出版社:48</item>
+        <item >河北教育出版社:49</item>
+        <item >四川教育出版社:50</item>
+        <item >湖南教育出版社:51</item>
+        <item >语文出版社:52</item>
+        <item >教育科学出版社:53</item>
+        <item >西南师范大学出版社:54</item>
+        <item >广东人民出版社:55</item>
+        <item >科学普及出版社:56</item>
+        <item >科学出版社:57</item>
+        <item >辽宁师范大学出版社:58</item>
+        <item >青岛出版社:59</item>
+        <item >山东科学技术出版社:60</item>
+        <item >湖南少年儿童出版社:61</item>
+        <item >少年儿童出版社:62</item>
+        <item >陕西旅游出版社:63</item>
+        <item >华东师范大学出版社:64</item>
+        <item >清华大学出版社:65</item>
+        <item >江苏科学技术出版社:66</item>
+        <item >上海科学技术出版社:67</item>
+        <item >中国地图出版社:68</item>
+        <item >岳麓书社:69</item>
+        <item >浙江科学出版社:70</item>
+        <item >河北大学出版社:71</item>
+        <item >商务星球出版社:72</item>
+        <item >人民教育出版社:263</item>
+        <item >山东人民出版社:265</item>
+        <!--<item >其他出版社:73</item>-->
+    </string-array>
+
+    <!--专题ID-->
+    <string name="zhuan_ti_id_mskt">98</string>
+    <!--微课堂-->
+    <string name="zhuan_ti_id_wkt">99</string>
+</resources>

@@ -21,6 +21,11 @@ import com.wyt.zdf.myapplication.R;
  * 注 意：<br>
  * Copyright (c) ： by WaiYuTong.版权所有.<br>
  * 待做事情：
+ *
+ *
+ *
+ *
+ * 对provider的读取
  */
 public class ProviderActivity extends AppCompatActivity {
 
