@@ -164,7 +164,7 @@ public class DimenTools_PX {
 
     public static void main(String[] args) {
         //目标设备的屏幕分辨率,size1、size2没有限制要对应宽或高,size1可以是宽或高,size2同理
-        int size1 = 800;
+        int size1 = 720;
         int size2 = 1280;
 
         boolean isPortrait = false;
