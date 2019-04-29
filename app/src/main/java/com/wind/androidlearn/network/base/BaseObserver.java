@@ -21,25 +21,9 @@ public abstract class BaseObserver<T extends BaseEntity> implements Observer<T> 
 
     private static final int ERROR_CODE = -1;
 
-//    private WeakReference<BaseActivity> mActivity;
-
-    public BaseObserver() {
-//        mActivity = new WeakReference<>(activity);
-    }
-
-//    public BaseObserver(BaseFragment fragment){
-//        mActivity = new WeakReference<>((BaseActivity)fragment.getActivity());
-//    }
-
     @Override
     public void onSubscribe(Disposable d) {
-//        if (mActivity!=null && mActivity.get()!=null){
-//            if (!NetworkUtil.isNetworkAvailable(mActivity.get())){
-//                onError(new ResponseErrorException("Network non","网络不可用，请检查",ERROR_CODE));
-//                d.dispose();
-//            }
-//            mActivity.get().addDisponse(d);
-//        }
+
 
     }
 

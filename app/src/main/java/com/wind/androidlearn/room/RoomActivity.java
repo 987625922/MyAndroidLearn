@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 import com.wyt.zdf.myapplication.R;
 
 import java.util.List;

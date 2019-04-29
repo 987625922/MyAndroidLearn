@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Message;
 
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 
 public class ThreadHandleActivity extends BaseActivity {
     @Override

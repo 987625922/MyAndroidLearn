@@ -5,7 +5,7 @@ import android.util.Log;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 import com.wyt.zdf.myapplication.R;
 
 @Route(path = "/test/activity")

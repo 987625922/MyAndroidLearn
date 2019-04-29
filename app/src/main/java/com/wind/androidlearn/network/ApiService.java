@@ -1,7 +1,7 @@
 package com.wind.androidlearn.network;
 
 
-import com.wind.androidlearn.mvp.bean.User;
+import com.wind.androidlearn.network.bean.User;
 import com.wind.androidlearn.network.params.Params;
 
 import io.reactivex.Observable;
@@ -17,4 +17,5 @@ public interface ApiService {
      */
     @POST("api/order/app")
     Observable<User> getAliAppOrder(@Body Params params);
+
 }

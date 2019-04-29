@@ -19,7 +19,6 @@ import android.net.Uri;
  * 作 者：蒋委员长<br>
  * 功 能：<br> Content Provider is a App share data to other app.
  * 注 意：<br>
- * Copyright (c) ： by WaiYuTong.版权所有.<br>
  * 待做事情：
  *
  *

@@ -24,7 +24,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 import com.wind.androidlearn.ijkplayer.media.bilibili.IRenderView;
 import com.wind.androidlearn.ijkplayer.media.bilibili.IjkVideoView;
 import com.wyt.zdf.myapplication.R;

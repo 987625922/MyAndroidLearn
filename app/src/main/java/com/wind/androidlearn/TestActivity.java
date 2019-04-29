@@ -1,6 +1,7 @@
 package com.wind.androidlearn;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
@@ -24,7 +25,6 @@ import com.wyt.zdf.myapplication.R;
  * 作 者：蒋委员长<br>
  * 功 能：<br>
  * 注 意：<br>
- * Copyright (c) ： by WaiYuTong.版权所有.<br>
  * 待做事情：
  */
 public class TestActivity extends Activity {
@@ -38,6 +38,7 @@ public class TestActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        int i = savedInstanceState.getInt("11");
         textView = findViewById(R.id.textView2);
         MyImageGetter myImageGetter = new MyImageGetter();
         textView.setText(Html.fromHtml(str, myImageGetter, null));
@@ -143,5 +144,8 @@ public class TestActivity extends Activity {
         }
     };
 
-
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
 }

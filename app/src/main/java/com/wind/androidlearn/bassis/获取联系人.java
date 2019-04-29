@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 import com.wyt.zdf.myapplication.R;
 
 public class 获取联系人 extends BaseActivity {

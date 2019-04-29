@@ -1,6 +1,6 @@
 package com.wind.androidlearn.network;
 
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 
 public class NetWorkActivity extends BaseActivity {
     @Override

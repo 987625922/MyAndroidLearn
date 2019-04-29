@@ -19,7 +19,6 @@ import com.wyt.zdf.myapplication.R;
  * 作 者：蒋委员长<br>
  * 功 能：<br>
  * 注 意：<br>
- * Copyright (c) ： by WaiYuTong.版权所有.<br>
  * 待做事情：
  *
  *

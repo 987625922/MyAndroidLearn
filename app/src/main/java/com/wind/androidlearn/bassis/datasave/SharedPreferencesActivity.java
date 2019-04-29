@@ -3,7 +3,7 @@ package com.wind.androidlearn.bassis.datasave;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 
 public class SharedPreferencesActivity extends BaseActivity {
     @Override

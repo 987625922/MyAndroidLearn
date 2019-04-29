@@ -7,12 +7,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.tencent.bugly.crashreport.CrashReport;
-import com.wind.androidlearn.screenmatch.Density;
+import com.wind.androidlearn.bassis.Utils.screenmatch.Density;
 
 /**
  * 类 名： APP<br>
@@ -21,7 +20,6 @@ import com.wind.androidlearn.screenmatch.Density;
  * 作 者：蒋委员长<br>
  * 功 能：<br>
  * 注 意：<br>
- * Copyright (c) ： by WaiYuTong.版权所有.<br>
  * 待做事情：
  */
 public class APP extends Application {

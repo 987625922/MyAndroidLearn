@@ -54,24 +54,24 @@
         <!--RecyclerView加载多图-->
         <activity android:name="com.wind.androidlearn.bassis.RecyclerImage.RecycleActivity"></activity>
         <!-- retrofit -->
-        <activity android:name="com.wind.androidlearn.okhttp.retrofit.GetRequest"></activity>
+        <activity android:name="com.wind.androidlearn.okhttp.retrofit.GetRequestActivity"></activity>
         <!-- bitmap -->
         <activity android:name="com.wind.androidlearn.img.BitmapActivity"></activity>
         <!-- 头条适配方案 -->
-        <activity android:name="com.wind.androidlearn.screenmatch.DensityActivity" />
+        <activity android:name="com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity" />
         <!-- fragment使用 -->
-        <activity android:name="com.wind.androidlearn.fragment.FragmentActivity" />
+        <activity android:name="com.wind.androidlearn.bassis.fragment.FragmentActivity" />
         <!-- b站视频播放 -->
         <activity android:name="com.wind.androidlearn.ijkplayer.IjkplayActivity" />
         <activity android:name="com.wind.androidlearn.ijkplayer.VideoPlayerActivity" />
         <!-- viewpager实现广告页 -->
-        <activity android:name="com.wind.androidlearn.viewpager.ViewpagerActivity" />
+        <activity android:name="com.wind.androidlearn.bassis.viewpager.ViewpagerActivity" />
         <!-- butter使用 -->
         <activity android:name="com.wind.androidlearn.butterknifeuse.ButterActivity" />
         <!-- room的使用 -->
         <activity android:name="com.wind.androidlearn.room.RoomActivity" />
         <!-- bus使用 -->
-        <activity android:name="com.wind.androidlearn.bus.BusActivity" />
+        <activity android:name="com.wind.androidlearn.eventbusandlivedatabus.BusActivity" />
         <!-- Android Architecture Components的使用 -->
         <activity android:name="com.wind.androidlearn.aac.ui.UserActivity" />
         <!-- 获取联系人 -->

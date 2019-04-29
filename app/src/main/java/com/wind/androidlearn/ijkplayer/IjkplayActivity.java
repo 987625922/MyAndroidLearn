@@ -3,7 +3,7 @@ package com.wind.androidlearn.ijkplayer;
 import android.content.Context;
 import android.content.Intent;
 
-import com.wind.androidlearn.BaseActivity;
+import com.wind.androidlearn.base.BaseActivity;
 import com.wind.androidlearn.ijkplayer.media.bilibili.VideoView;
 import com.wyt.zdf.myapplication.R;
 
