@@ -1,4 +1,4 @@
-package com.wind.androidlearn.bassis.single;
+package com.wind.androidlearn.设计模式.single;
 /**
  *
  *  单例实现

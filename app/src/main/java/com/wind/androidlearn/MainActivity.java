@@ -18,20 +18,19 @@ import android.view.View;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.tencent.bugly.crashreport.CrashReport;
-import com.wind.androidlearn.bassis.RecyclerImage.RecycleActivity;
+import com.wind.androidlearn.arouter.constants.ARouterConfig;
 import com.wind.androidlearn.bassis.Utils.ToastUtils;
+import com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity;
+import com.wind.androidlearn.bassis.fragment.FragmentActivity;
 import com.wind.androidlearn.bassis.provider.ProviderActivity;
+import com.wind.androidlearn.bassis.viewpager.ViewpagerActivity;
 import com.wind.androidlearn.bassis.获取联系人;
 import com.wind.androidlearn.eventbusandlivedatabus.BusActivity;
-import com.wind.androidlearn.arouter.constants.ARouterConfig;
-import com.wind.androidlearn.bassis.fragment.FragmentActivity;
 import com.wind.androidlearn.ijkplayer.IjkplayActivity;
 import com.wind.androidlearn.img.BitmapActivity;
 import com.wind.androidlearn.livedata.NameActivity;
 import com.wind.androidlearn.okhttp.retrofit.GetRequestActivity;
 import com.wind.androidlearn.room.RoomActivity;
-import com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity;
-import com.wind.androidlearn.bassis.viewpager.ViewpagerActivity;
 import com.wind.androidlearn.设计模式.PatternActivity;
 import com.wyt.zdf.myapplication.R;
 
@@ -49,9 +48,6 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn_recycler).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, RecycleActivity.class);
-                startActivity(intent);
             }
         });
 //        BroadcastReceiver广播实现跨进程数据交互
@@ -183,8 +179,7 @@ public class MainActivity extends Activity {
 //                Android Architecture Components的使用
         findViewById(R.id.btn15).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
             }
         });
         findViewById(R.id.btn16).setOnClickListener(new View.OnClickListener() {
