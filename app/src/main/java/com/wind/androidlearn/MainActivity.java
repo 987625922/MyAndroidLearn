@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn_recycler).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                BitmapActivity.intentTo(MainActivity.this);
             }
         });
 //        BroadcastReceiver广播实现跨进程数据交互
