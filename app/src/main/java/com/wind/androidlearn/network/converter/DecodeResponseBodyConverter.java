@@ -21,7 +21,6 @@ import okhttp3.MediaType;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 
-import static okhttp3.internal.Util.UTF_8;
 
 /**
  * 解码GsonCoverter
@@ -66,16 +65,17 @@ public final class DecodeResponseBodyConverter<T> implements Converter<ResponseB
             }
         }
 
-        MediaType contentType = value.contentType();
-        Charset charset = contentType != null ? contentType.charset(UTF_8) : UTF_8;
+//        MediaType contentType = value.contentType();
+//        Charset charset = contentType != null ? contentType.charset(UTF_8) : UTF_8;
         InputStream inputStream = new ByteArrayInputStream(response.getBytes());
-        Reader reader = new InputStreamReader(inputStream, charset);
-        JsonReader jsonReader = gson.newJsonReader(reader);
+//        Reader reader = new InputStreamReader(inputStream, charset);
+//        JsonReader jsonReader = gson.newJsonReader(reader);
 
         try {
-            return adapter.read(jsonReader);
+//            return adapter.read(jsonReader);
         } finally {
             value.close();
         }
+        return null;
     }
 }

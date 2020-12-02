@@ -17,7 +17,6 @@
     <uses-permission android:name="android.permission.READ_LOGS" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:name="com.wind.androidlearn.APP"
         android:allowBackup="true"
         android:appComponentFactory="whateverString"
@@ -26,6 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
         <activity android:name="com.wind.androidlearn.MainActivity">
@@ -85,6 +85,10 @@
         <activity android:name="com.wind.androidlearn.kotlin.MainActivity" />
         <!-- 设置模式 -->
         <activity android:name="com.wind.androidlearn.设计模式.PatternActivity" />
+
+        <provider
+            android:name="com.wind.androidlearn.bassis.provider.MyProvider"
+            android:authorities="cn.scu.myprovider" />
     </application>
 
 </manifest>

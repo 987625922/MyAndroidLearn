@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.didichuxing.doraemonkit.DoraemonKit;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.wind.androidlearn.bassis.Utils.screenmatch.Density;
 
@@ -43,43 +42,43 @@ public class APP extends Application {
 
         CrashReport.initCrashReport(getApplicationContext(), "1", false);
         //在application中监听每一个activity的生命周期
-        this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
-            public void onActivityStopped(Activity activity) {
-            }
-
-            public void onActivityStarted(Activity activity) {
-            }
-
-            @Override
-            public void onActivityCreated(Activity arg0, Bundle arg1) {
-                // TODO Auto-generated method stub
-                Log.e("--->", "onActivityCreated");
-            }
-
-            @Override
-            public void onActivityDestroyed(Activity arg0) {
-                // TODO Auto-generated method stub
-                Log.e("--->", "onDestroyed");
-            }
-
-            @Override
-            public void onActivityPaused(Activity arg0) {
-                // TODO Auto-generated method stub
-                Log.e("--->", "onPause");
-            }
-
-            @Override
-            public void onActivityResumed(Activity arg0) {
-                // TODO Auto-generated method stub
-                Log.d("application", "---- onActivityResumed: " + arg0.toString());
-            }
-
-            @Override
-            public void onActivitySaveInstanceState(Activity arg0, Bundle arg1) {
-                // TODO Auto-generated method stub
-
-            }
-        });
+//        this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+//            public void onActivityStopped(Activity activity) {
+//            }
+//
+//            public void onActivityStarted(Activity activity) {
+//            }
+//
+//            @Override
+//            public void onActivityCreated(Activity arg0, Bundle arg1) {
+//                // TODO Auto-generated method stub
+//                Log.e("--->", "onActivityCreated");
+//            }
+//
+//            @Override
+//            public void onActivityDestroyed(Activity arg0) {
+//                // TODO Auto-generated method stub
+//                Log.e("--->", "onDestroyed");
+//            }
+//
+//            @Override
+//            public void onActivityPaused(Activity arg0) {
+//                // TODO Auto-generated method stub
+//                Log.e("--->", "onPause");
+//            }
+//
+//            @Override
+//            public void onActivityResumed(Activity arg0) {
+//                // TODO Auto-generated method stub
+//                Log.d("application", "---- onActivityResumed: " + arg0.toString());
+//            }
+//
+//            @Override
+//            public void onActivitySaveInstanceState(Activity arg0, Bundle arg1) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//        });
 
         if (true) {           // These two lines must be written before init, otherwise these configurations will be invalid in the init process
             ARouter.openLog();     // Print log
@@ -88,7 +87,6 @@ public class APP extends Application {
         ARouter.init(application); // As early as possible, it is recommended to initialize in the Application
 
 
-        DoraemonKit.install(application);
 
     }
 
