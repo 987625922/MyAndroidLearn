@@ -27,9 +27,6 @@ import com.wind.androidlearn.bassis.viewpager.ViewpagerActivity;
 import com.wind.androidlearn.bassis.获取联系人;
 import com.wind.androidlearn.eventbusandlivedatabus.BusActivity;
 import com.wind.androidlearn.ijkplayer.IjkplayActivity;
-import com.wind.androidlearn.img.BitmapActivity;
-import com.wind.androidlearn.livedata.NameActivity;
-import com.wind.androidlearn.okhttp.retrofit.GetRequestActivity;
 import com.wind.androidlearn.room.RoomActivity;
 import com.wind.androidlearn.设计模式.PatternActivity;
 import com.wyt.zdf.myapplication.R;
@@ -48,7 +45,6 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn_recycler).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BitmapActivity.intentTo(MainActivity.this);
             }
         });
 //        BroadcastReceiver广播实现跨进程数据交互
@@ -102,18 +98,12 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, GetRequestActivity.class);
-                startActivity(intent);
             }
         });
         //bitmap
         findViewById(R.id.btn6).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, BitmapActivity.class);
-                startActivity(intent);
             }
         });
 //        今日头条适配方案
@@ -202,7 +192,6 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn18).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NameActivity.intentTo(MainActivity.this);
             }
         });
         findViewById(R.id.btn19).setOnClickListener(new View.OnClickListener() {
@@ -243,8 +232,9 @@ public class MainActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
         if (data == null || data.getData() == null ||
-                requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE)
+                requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE) {
             return;
+        }
 
         final Uri uri = data.getData();
 //        final int width = content.getMeasuredWidth() - content.getPaddingLeft() - content
@@ -256,12 +246,14 @@ public class MainActivity extends Activity {
 
 
     public static String getRealFilePath(final Context context, final Uri uri) {
-        if (null == uri) return null;
+        if (null == uri) {
+            return null;
+        }
         final String scheme = uri.getScheme();
         String data = null;
-        if (scheme == null)
+        if (scheme == null) {
             data = uri.getPath();
-        else if (ContentResolver.SCHEME_FILE.equals(scheme)) {
+        } else if (ContentResolver.SCHEME_FILE.equals(scheme)) {
             data = uri.getPath();
         } else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
             Cursor cursor = context.getContentResolver().query(uri,
