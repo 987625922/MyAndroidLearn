@@ -11,7 +11,6 @@ import com.wyt.zdf.myapplication.R;
 
 import java.util.List;
 
-import butterknife.BindView;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -20,9 +19,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RoomActivity extends BaseActivity {
 
-    @BindView(R.id.tv_content)
     TextView tvContent;
-    @BindView(R.id.add)
     Button add;
 
     public static Intent newIntent(Context context) {
@@ -41,7 +38,8 @@ public class RoomActivity extends BaseActivity {
 
     @Override
     protected void findView() {
-
+        tvContent = findViewById(R.id.tv_content);
+        add = findViewById(R.id.add);
     }
 
     @Override

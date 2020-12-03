@@ -16,17 +16,12 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.tencent.bugly.crashreport.CrashReport;
-import com.wind.androidlearn.arouter.constants.ARouterConfig;
 import com.wind.androidlearn.bassis.Utils.ToastUtils;
 import com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity;
 import com.wind.androidlearn.bassis.fragment.FragmentActivity;
 import com.wind.androidlearn.bassis.provider.ProviderActivity;
 import com.wind.androidlearn.bassis.viewpager.ViewpagerActivity;
 import com.wind.androidlearn.bassis.获取联系人;
-import com.wind.androidlearn.eventbusandlivedatabus.BusActivity;
-import com.wind.androidlearn.ijkplayer.IjkplayActivity;
 import com.wind.androidlearn.room.RoomActivity;
 import com.wind.androidlearn.设计模式.PatternActivity;
 import com.wyt.zdf.myapplication.R;
@@ -128,7 +123,6 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn9).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IjkplayActivity.intentTo(MainActivity.this);
             }
         });
         //       viewpager实现广告页
@@ -164,7 +158,6 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn14).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BusActivity.intentTo(MainActivity.this);
             }
         });
 //                Android Architecture Components的使用
@@ -183,10 +176,6 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //不带参数传递
-//                ARouter.getInstance().build(ARouterConfig.AROUTER).navigation();
-                ARouter.getInstance().build(ARouterConfig.AROUTER)
-                        .withString("name", "传递过来的参数")
-                        .navigation();
             }
         });
         findViewById(R.id.btn18).setOnClickListener(new View.OnClickListener() {
@@ -209,7 +198,6 @@ public class MainActivity extends Activity {
         findViewById(R.id.btn21).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CrashReport.testJavaCrash();
             }
         });
     }

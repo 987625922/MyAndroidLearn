@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.wind.androidlearn.bassis.Utils.screenmatch.Density;
 
-import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected Activity mActivity;
@@ -36,7 +35,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         setOrientation();
 
         setContentView(getLayout());
-        ButterKnife.bind(this);
 
         findView();
         setListener();
