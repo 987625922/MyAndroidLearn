@@ -62,7 +62,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param toast toast内容
      */
     public void showToast(String toast) {
-        if (toast != null && !"null".equals(toast) && !"".equals(toast)) {
+        if (toast != null && !toast.isEmpty()) {
             Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
         }
     }

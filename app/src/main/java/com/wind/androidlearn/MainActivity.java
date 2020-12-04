@@ -21,9 +21,7 @@ import com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity;
 import com.wind.androidlearn.bassis.fragment.FragmentActivity;
 import com.wind.androidlearn.bassis.provider.ProviderActivity;
 import com.wind.androidlearn.bassis.viewpager.ViewpagerActivity;
-import com.wind.androidlearn.bassis.获取联系人;
 import com.wind.androidlearn.room.RoomActivity;
-import com.wind.androidlearn.设计模式.PatternActivity;
 import com.wyt.zdf.myapplication.R;
 
 import java.util.List;
@@ -36,12 +34,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //recyclerview页面
-        findViewById(R.id.btn_recycler).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
 //        BroadcastReceiver广播实现跨进程数据交互
         findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,19 +81,7 @@ public class MainActivity extends Activity {
                 startActivityForResult(getImage, REQUEST_CODE_GET_CONTENT);
             }
         });
-        //retrofit
-        findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-        //bitmap
-        findViewById(R.id.btn6).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-//        今日头条适配方案
+        //        今日头条适配方案
         findViewById(R.id.btn7).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,12 +97,6 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, FragmentActivity.class);
                 startActivity(intent);
-            }
-        });
-        //        B站视频播放器使用
-        findViewById(R.id.btn9).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
             }
         });
         //       viewpager实现广告页
@@ -141,12 +115,6 @@ public class MainActivity extends Activity {
                 shareWeChat("分享到微信");
             }
         });
-        //       butter
-        findViewById(R.id.btn12).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
         //room的使用
         findViewById(R.id.btn13).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,54 +122,9 @@ public class MainActivity extends Activity {
                 RoomActivity.intentTo(MainActivity.this);
             }
         });
-        //eventbus 和 livedatabus的使用
-        findViewById(R.id.btn14).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-//                Android Architecture Components的使用
-        findViewById(R.id.btn15).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        findViewById(R.id.btn16).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                获取联系人.intentTo(MainActivity.this);
-            }
-        });
-        findViewById(R.id.btn17).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //不带参数传递
-            }
-        });
-        findViewById(R.id.btn18).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        findViewById(R.id.btn19).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                com.wind.androidlearn.kotlin.MainActivity.Companion.intentTo(MainActivity.this);
-            }
-        });
-        findViewById(R.id.btn20).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PatternActivity.intentTo(MainActivity.this);
-            }
-        });
-        findViewById(R.id.btn21).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
     }
 
+    //横竖屏切换会回调，数据保存
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -211,6 +134,7 @@ public class MainActivity extends Activity {
 
     }
 
+    //横竖屏切换会回调，数据获取
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);

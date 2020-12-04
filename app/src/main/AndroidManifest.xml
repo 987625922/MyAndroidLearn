@@ -28,7 +28,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.wind.androidlearn.MainActivity">
+        <activity
+            android:name="com.wind.androidlearn.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,19 +58,11 @@
         <activity android:name="com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity" />
         <!-- fragment使用 -->
         <activity android:name="com.wind.androidlearn.bassis.fragment.FragmentActivity" />
-        <!-- b站视频播放 -->
-        <activity android:name="com.wind.androidlearn.ijkplayer.IjkplayActivity" />
-        <activity android:name="com.wind.androidlearn.ijkplayer.VideoPlayerActivity" />
         <!-- viewpager实现广告页 -->
         <activity android:name="com.wind.androidlearn.bassis.viewpager.ViewpagerActivity" />
         <!-- room的使用 -->
         <activity android:name="com.wind.androidlearn.room.RoomActivity" />
-        <!-- bus使用 -->
-        <activity android:name="com.wind.androidlearn.eventbusandlivedatabus.BusActivity" />
         <!-- 获取联系人 -->
-        <activity android:name="com.wind.androidlearn.bassis.获取联系人" />
-        <!-- ARouter的使用-->
-        <activity android:name="com.wind.androidlearn.arouter.ARouterUseActivity" />
         <!-- kotlin使用 -->
         <activity android:name="com.wind.androidlearn.kotlin.MainActivity" />
         <!-- 设置模式 -->

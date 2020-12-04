@@ -1,230 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_recycler"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="BroadcastReceiver广播实现跨进程数据交互" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="binder跨进程数据交互" />
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="content provider实现" />
+
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="跳转到系统的图片选择" />
+
+            <Button
+                android:id="@+id/btn7"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="今日头条适配方案" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="图片的三级缓存"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="广播实现跨进程数据交互"
-            app:layout_constraintStart_toEndOf="@+id/btn_recycler"
-            app:layout_constraintTop_toTopOf="@+id/btn_recycler" />
+            <Button
+                android:id="@+id/btn8"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="fragment使用" />
 
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:text="binder跨进程数据交互"
-            app:layout_constraintStart_toStartOf="@+id/btn_recycler"
-            app:layout_constraintTop_toBottomOf="@+id/btn_recycler" />
+            <Button
+                android:id="@+id/btn10"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="viewpager实现广告页" />
 
-        <Button
-            android:id="@+id/btn3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="content provider实现"
-            app:layout_constraintStart_toEndOf="@+id/btn2"
-            app:layout_constraintTop_toTopOf="@+id/btn2" />
+            <Button
+                android:id="@+id/btn11"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="分享到微信" />
 
-        <Button
-            android:id="@+id/btn4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="跳转图片选择"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn2" />
-
-        <Button
-            android:id="@+id/btn5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="retrofit"
-            app:layout_constraintStart_toEndOf="@+id/btn4"
-            app:layout_constraintTop_toBottomOf="@+id/btn2" />
-
-        <Button
-            android:id="@+id/btn6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="bitmap"
-            app:layout_constraintStart_toEndOf="@+id/btn5"
-            app:layout_constraintTop_toBottomOf="@+id/btn3" />
-
-        <Button
-            android:id="@+id/btn7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="今日头条适配方案"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn4" />
-
-        <Button
-            android:id="@+id/btn8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="fragment使用"
-            app:layout_constraintLeft_toRightOf="@id/btn7"
-            app:layout_constraintTop_toBottomOf="@+id/btn4" />
-
-        <Button
-            android:id="@+id/btn9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="B站视频播放使用"
-            app:layout_constraintLeft_toLeftOf="@+id/btn7"
-            app:layout_constraintTop_toBottomOf="@+id/btn7" />
-
-        <Button
-            android:id="@+id/btn10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_corners"
-            android:text="viewpager实现广告页"
-            app:layout_constraintLeft_toRightOf="@id/btn9"
-            app:layout_constraintTop_toBottomOf="@+id/btn7" />
-
-        <Button
-            android:id="@+id/btn11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="分享微信"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn9" />
-
-        <Button
-            android:id="@+id/btn12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text=""
-            app:layout_constraintBottom_toBottomOf="@id/btn11"
-            app:layout_constraintLeft_toRightOf="@id/btn11"
-            app:layout_constraintTop_toTopOf="@id/btn11" />
-
-        <Button
-            android:id="@+id/btn13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="room的使用"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn11" />
-
-        <Button
-            android:id="@+id/btn14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="livedatabus和eventbus的使用"
-            app:layout_constraintBottom_toBottomOf="@id/btn13"
-            app:layout_constraintLeft_toRightOf="@id/btn13"
-            app:layout_constraintTop_toTopOf="@id/btn13" />
-
-        <Button
-            android:id="@+id/btn15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text=""
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn14" />
-
-        <Button
-            android:id="@+id/btn16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="获取手机联系人"
-            app:layout_constraintLeft_toRightOf="@+id/btn15"
-            app:layout_constraintTop_toBottomOf="@+id/btn14" />
-
-        <Button
-            android:id="@+id/btn17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="ARouter的使用"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn15" />
-
-        <Button
-            android:id="@+id/btn18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="livedata的使用"
-            app:layout_constraintLeft_toRightOf="@+id/btn17"
-            app:layout_constraintTop_toBottomOf="@+id/btn15" />
-
-        <Button
-            android:id="@+id/btn19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="kotlin的使用"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn17" />
-
-        <Button
-            android:id="@+id/btn20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="设计模式的使用"
-            app:layout_constraintLeft_toRightOf="@+id/btn19"
-            app:layout_constraintTop_toBottomOf="@+id/btn18" />
-        <Button
-            android:id="@+id/btn21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="bugly使用"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn19" />
-
-    </android.support.constraint.ConstraintLayout>
+            <Button
+                android:id="@+id/btn13"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="room的使用" />
+        </LinearLayout>
+    </LinearLayout>
 </ScrollView>
