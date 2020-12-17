@@ -1,6 +1,9 @@
 package com.wind.androidlearn.设计模式.策略模式;
 
-// 收银台
+/**
+ * 程序要显示广告页，根据不同的客户显示不同的广告页
+ * 可以使用策略模式
+ */
 public class Checkstand {
 
     private ActivityStrategy mActivityStrategy;

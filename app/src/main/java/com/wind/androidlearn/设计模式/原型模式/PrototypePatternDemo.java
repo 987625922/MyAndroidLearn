@@ -1,5 +1,9 @@
 package com.wind.androidlearn.设计模式.原型模式;
 
+/**
+ * 可以在类的属性特别多，但是又要经常对类进行
+ * 拷贝的时候可以用原型模式
+ */
 public class PrototypePatternDemo {
     public static void main(String[] args) {
         ShapeCache.loadCache();
