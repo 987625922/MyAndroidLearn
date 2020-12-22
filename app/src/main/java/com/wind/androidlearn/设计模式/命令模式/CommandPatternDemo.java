@@ -2,7 +2,7 @@ package com.wind.androidlearn.设计模式.命令模式;
 
 /**
  * @Author: LL
- * @Description:
+ * @Description: 通过一个list依次执行类中的方法
  * @Date:Create：in 2020/12/21 10:38
  */
 class CommandPatternDemo {
