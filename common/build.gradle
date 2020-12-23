@@ -100,5 +100,6 @@ dependencies {
     api rootProject.ext.dependencies["rxpermissions"]
 
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 }
