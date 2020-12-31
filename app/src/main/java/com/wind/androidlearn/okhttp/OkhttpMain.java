@@ -1,7 +1,13 @@
 package com.wind.androidlearn.okhttp;
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+
 import java.io.IOException;
-import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -33,7 +39,7 @@ class OkhttpMain {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                System.out.println(TAG + "onFailure: "+ response.body().string());
+                System.out.println(TAG + "onFailure: " + response.body().string());
             }
         });
         call.enqueue(new Callback() {
@@ -44,9 +50,16 @@ class OkhttpMain {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                System.out.println(TAG + "onFailure: "+ response.body().string());
+                System.out.println(TAG + "onFailure: " + response.body().string());
             }
         });
     }
 
+    class mainActivity extends Activity {
+        @Override
+        protected void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            Glide.with(this).load("").into(new ImageView(this));
+        }
+    }
 }

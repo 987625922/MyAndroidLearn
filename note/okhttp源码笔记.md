@@ -53,3 +53,9 @@ Request request = new Request.Builder()
 ### 6.Interceptor
 
 	##### 拦截器,将复杂的网络请求逻辑分散到每个拦截器中
+
+- RetryAndFollowUpInterceptor 重试和失败重定向拦截器
+- BridgeInterceptor 桥接和适配拦截器
+- CacheInterceptor 缓存拦截器
+- ConnectInterceptor 连接拦截器，建立可用连接
+- CallServerInterceptor 负责将我们的请求写进网络流
