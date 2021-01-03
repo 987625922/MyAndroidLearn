@@ -55,7 +55,25 @@
             android:name="com.wind.androidlearn.bassis.provider.ProviderActivity"
             tools:ignore="DuplicateActivity" />
         <!-- 头条适配方案 -->
-        <activity android:name="com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity" />
+        <activity android:name="com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity">
+            <!-- 隐式调用 -->
+            <!--   scheme://host:port/path|pathPrefix|pathPattern         -->
+            <!--       Intent intent = new Intent();
+                    intent.setAction("com.learn.action.enter");
+                    intent.setData(Uri.parse("learn1://learn.com:8888/first?message=Hello FirstActivity"));
+                    startActivity(intent);       -->
+            <intent-filter>
+                <action android:name="com.learn.action.enter" />
+                <action android:name="com.learn.action.enter1" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+                <data
+                    android:host="learn.com"
+                    android:path="/first"
+                    android:port="8888"
+                    android:scheme="learn1" />
+            </intent-filter>
+        </activity>
         <!-- fragment使用 -->
         <activity android:name="com.wind.androidlearn.bassis.fragment.FragmentActivity" />
         <!-- viewpager实现广告页 -->
