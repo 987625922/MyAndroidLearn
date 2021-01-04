@@ -65,8 +65,10 @@
             <intent-filter>
                 <action android:name="com.learn.action.enter" />
                 <action android:name="com.learn.action.enter1" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.ALTERNATIVE" />
+
                 <data
                     android:host="learn.com"
                     android:path="/first"
@@ -85,7 +87,8 @@
         <activity android:name="com.wind.androidlearn.kotlin.MainActivity" />
         <!-- 设置模式 -->
         <activity android:name="com.wind.androidlearn.设计模式.PatternActivity" />
-
+        <!--     dialogFragment的使用   -->
+        <activity android:name="com.wind.androidlearn.bassis.dialogfragment.DialogFragmentUseActivity" />
         <provider
             android:name="com.wind.androidlearn.bassis.provider.MyProvider"
             android:authorities="cn.scu.myprovider" />

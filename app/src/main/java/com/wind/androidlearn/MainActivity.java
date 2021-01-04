@@ -10,8 +10,6 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -20,6 +18,7 @@ import android.view.View;
 
 import com.wind.androidlearn.bassis.Utils.ToastUtils;
 import com.wind.androidlearn.bassis.Utils.screenmatch.DensityActivity;
+import com.wind.androidlearn.bassis.dialogfragment.DialogFragmentUseActivity;
 import com.wind.androidlearn.bassis.fragment.FragmentActivity;
 import com.wind.androidlearn.bassis.provider.ProviderActivity;
 import com.wind.androidlearn.bassis.viewpager.ViewpagerActivity;
@@ -123,6 +122,12 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 RoomActivity.intentTo(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn14).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragmentUseActivity.intentTo(MainActivity.this);
             }
         });
     }

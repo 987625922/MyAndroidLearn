@@ -11,5 +11,9 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
-
+<!--  dialogFragment的主题  -->
+    <style name="NoticeDialogStyle" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
 </resources>
