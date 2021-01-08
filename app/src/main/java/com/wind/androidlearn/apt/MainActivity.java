@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.LinkedList;
+
 /**
  * @Author: LL
  * @Description: 使用了APT注解的类
