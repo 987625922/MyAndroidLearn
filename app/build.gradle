@@ -11,9 +11,7 @@ android {
         targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        //Build的变量设置 在代码中可以通过BuildConfig获取
-        buildConfigField "String", "REQUEST_KEY", '"bLsBMeMaN10pN8z64TQ0fC3fztDlRsPn"'
+
         //导入so文件
         sourceSets.main {
             jni.srcDirs = []

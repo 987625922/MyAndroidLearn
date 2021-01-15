@@ -15,7 +15,6 @@ android {
             }
         }
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //储存目录
         buildConfigField "String", "FILE_DIRECTORY", '"wyt"'
         //网络请求秘钥

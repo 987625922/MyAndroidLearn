@@ -1,10 +1,11 @@
 package com.wind.androidlearn.bassis.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.wyt.zdf.myapplication.R;
 
@@ -16,9 +17,10 @@ public class FragmentActivity extends AppCompatActivity {
 
     private int currentPage = 0;
 
-    private Fragment homeFragment = new Fragment();
-    private Fragment weikeFragment = new Fragment();
-    private Fragment infoFragment = new Fragment();
+    private OneFragment homeOneFragment = new OneFragment();
+    private OneFragment weikeOneFragment = new OneFragment();
+    private OneFragment infoOneFragment = new OneFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,26 +67,26 @@ public class FragmentActivity extends AppCompatActivity {
         //检查Fragment是否存在
         switch (pageType) {
             case PAGE_INFO:
-                if (this.infoFragment == null) {
-                    this.infoFragment = (Fragment) fragmentManager.findFragmentByTag(Fragment.class.getSimpleName());
-                    if (this.infoFragment == null) {
-                        this.infoFragment = new Fragment();
+                if (this.infoOneFragment == null) {
+                    this.infoOneFragment = (OneFragment) fragmentManager.findFragmentByTag(OneFragment.class.getSimpleName());
+                    if (this.infoOneFragment == null) {
+                        this.infoOneFragment = new OneFragment();
                     }
                 }
                 break;
             case PAGE_WEIKE:
-                if (this.weikeFragment == null) {
-                    this.weikeFragment = (Fragment) fragmentManager.findFragmentByTag(Fragment.class.getSimpleName());
-                    if (this.weikeFragment == null) {
-                        this.weikeFragment = new Fragment();
+                if (this.weikeOneFragment == null) {
+                    this.weikeOneFragment = (OneFragment) fragmentManager.findFragmentByTag(OneFragment.class.getSimpleName());
+                    if (this.weikeOneFragment == null) {
+                        this.weikeOneFragment = new OneFragment();
                     }
                 }
                 break;
             case PAGE_HOME:
-                if (this.homeFragment == null) {
-                    this.homeFragment = (Fragment) fragmentManager.findFragmentByTag(Fragment.class.getSimpleName());
-                    if (this.homeFragment == null) {
-                        this.homeFragment = new Fragment();
+                if (this.homeOneFragment == null) {
+                    this.homeOneFragment = (OneFragment) fragmentManager.findFragmentByTag(OneFragment.class.getSimpleName());
+                    if (this.homeOneFragment == null) {
+                        this.homeOneFragment = new OneFragment();
                     }
                 }
                 break;
@@ -95,13 +97,13 @@ public class FragmentActivity extends AppCompatActivity {
 
         switch (pageType) {
             case PAGE_INFO:
-                fragmentTransaction.replace(R.id.fragmentContainer, this.infoFragment);
+                fragmentTransaction.replace(R.id.fragmentContainer, this.infoOneFragment);
                 break;
             case PAGE_WEIKE:
-                fragmentTransaction.replace(R.id.fragmentContainer, this.weikeFragment);
+                fragmentTransaction.replace(R.id.fragmentContainer, this.weikeOneFragment);
                 break;
             case PAGE_HOME:
-                fragmentTransaction.replace(R.id.fragmentContainer, this.homeFragment);
+                fragmentTransaction.replace(R.id.fragmentContainer, this.homeOneFragment);
                 break;
         }
 

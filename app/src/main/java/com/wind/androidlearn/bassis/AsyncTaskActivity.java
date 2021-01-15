@@ -6,9 +6,10 @@ package com.wind.androidlearn.bassis;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wyt.zdf.myapplication.R;
 

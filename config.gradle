@@ -64,12 +64,12 @@ ext {
 
             "live-event-bus": "com.jeremyliao:live-event-bus:${versions["liveeventbus"]}",
 
-            "runtime": "android.arch.persistence.room:runtime:${versions["runtime"]}",
-            "compiler": "android.arch.persistence.room:compiler:${versions["runtime"]}",
-            "roomrxjava2": "android.arch.persistence.room:rxjava2:${versions["runtime"]}",
+            "runtime": 'androidx.room:room-runtime:2.0.0',
+            "compiler": 'androidx.room:room-compiler:2.0.0',
+            "roomrxjava2": 'androidx.room:room-rxjava2:2.0.0',
 
-            "lifecycleextensions": "android.arch.lifecycle:extensions:${versions["lifecycle"]}",
-            "lifecycleviewmodel": "android.arch.lifecycle:viewmodel:${versions["lifecycle"]}",
+            "lifecycleextensions": 'androidx.lifecycle:lifecycle-extensions:2.0.0',
+            "lifecycleviewmodel": 'androidx.lifecycle:lifecycle-viewmodel:2.0.0',
 
             "rxpermissions": "com.github.tbruyelle:rxpermissions:${versions["rxpermissions"]}",
             //路由

@@ -2,7 +2,7 @@ package com.wind.androidlearn.bassis;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.wind.androidlearn.bassis.Utils.LogUtil;
 import com.wyt.zdf.myapplication.R;
