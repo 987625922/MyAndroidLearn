@@ -19,12 +19,19 @@ android {
         buildConfigField "String", "FILE_DIRECTORY", '"wyt"'
         //网络请求秘钥
         buildConfigField "String", "REQUEST_KEY", '"bLsBMeMaN10pN8z64TQ0fC3fztDlRsPn"'
+
+
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 //    flavorDimensions "default"

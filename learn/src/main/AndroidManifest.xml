@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pony.learn">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.learn.learn">
 
     <application
         android:allowBackup="true"
@@ -9,6 +10,63 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Myandroidlearn">
+        <activity
+            android:name="com.learn.learn.MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--BroadcastReceiver广播实现跨进程数据交互-->
+        <service android:name="com.learn.learn.bassis.broadcast.MsgService"></service>
+        <activity android:name="com.learn.learn.bassis.broadcast.MainActivity" />
+
+        <!--binder跨进程数据交互-->
+        <service android:name="com.learn.learn.bassis.broadcast.binder.MsgService"></service>
+        <activity android:name="com.learn.learn.bassis.broadcast.binder.MainActivity" />
+
+        <!--content provider实现-->
+        <provider
+            android:name="com.learn.learn.bassis.provider.MyProvider"
+            android:authorities="cn.scu.myprovider" />
+        <activity
+            android:name="com.learn.learn.bassis.provider.ProviderActivity"
+            tools:ignore="DuplicateActivity" />
+        <!-- fragment使用 -->
+        <activity android:name="com.learn.learn.bassis.fragment.FragmentActivity">
+            <!-- 隐式调用 -->
+            <!--   scheme://host:port/path|pathPrefix|pathPattern         -->
+            <!--       Intent intent = new Intent();
+                    intent.setAction("com.learn.action.enter");
+                    intent.setData(Uri.parse("learn1://learn.com:8888/first?message=Hello FirstActivity"));
+                    startActivity(intent);       -->
+            <intent-filter>
+                <action android:name="com.learn.action.enter" />
+                <action android:name="com.learn.action.enter1" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.ALTERNATIVE" />
+
+                <data
+                    android:host="learn.com"
+                    android:path="/first"
+                    android:port="8888"
+                    android:scheme="learn1" />
+            </intent-filter>
+        </activity>
+        <!-- viewpager实现广告页 -->
+        <activity android:name="com.learn.learn.bassis.viewpager.ViewpagerActivity" />
+        <!-- room的使用 -->
+        <activity android:name="com.learn.learn.room.RoomActivity" />
+        <!-- 获取联系人 -->
+        <!-- kotlin使用 -->
+        <activity android:name="com.learn.learn.kotlin.MainActivity" />
+        <!-- 设置模式 -->
+        <activity android:name="com.learn.learn.设计模式.PatternActivity" />
     </application>
 
 </manifest>
