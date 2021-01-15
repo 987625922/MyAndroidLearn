@@ -44,17 +44,22 @@
     <remote-repository>
       <option name="id" value="D:\Sdk\extras\m2repository" />
       <option name="name" value="D:\Sdk\extras\m2repository" />
-      <option name="url" value="file:/D:/Sdk/extras/m2repository/" />
+      <option name="url" value="file:/$PROJECT_DIR$/../../../Sdk/extras/m2repository/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="D:\Sdk\extras\google\m2repository" />
       <option name="name" value="D:\Sdk\extras\google\m2repository" />
-      <option name="url" value="file:/D:/Sdk/extras/google/m2repository/" />
+      <option name="url" value="file:/$PROJECT_DIR$/../../../Sdk/extras/google/m2repository/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="D:\Sdk\extras\android\m2repository" />
       <option name="name" value="D:\Sdk\extras\android\m2repository" />
-      <option name="url" value="file:/D:/Sdk/extras/android/m2repository/" />
+      <option name="url" value="file:/$PROJECT_DIR$/../../../Sdk/extras/android/m2repository/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven3" />
+      <option name="name" value="maven3" />
+      <option name="url" value="https://dl.bintray.com/kotlin/kotlin-eap" />
     </remote-repository>
   </component>
 </project>

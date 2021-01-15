@@ -3,9 +3,10 @@ package com.wind.androidlearn.base;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.wind.androidlearn.bassis.Utils.screenmatch.Density;
 

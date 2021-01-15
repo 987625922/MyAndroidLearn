@@ -2,9 +2,8 @@ package com.wind.androidlearn.apt;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
-import java.util.LinkedList;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * @Author: LL

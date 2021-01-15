@@ -46,15 +46,6 @@ android {
         }
     }
 
-    flavorDimensions "default"
-    productFlavors {
-//        多渠道
-        develop {}
-        xiaomi {}
-        huawei {}
-        anzhi {}
-    }
-
     //导入aar
     repositories {
         flatDir {

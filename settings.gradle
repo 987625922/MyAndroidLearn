@@ -1,1 +1,3 @@
+include ':componentbase'
+include ':learn'
 include ':app', ':common'
