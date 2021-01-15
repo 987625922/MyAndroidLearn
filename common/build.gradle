@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -8,12 +10,6 @@ android {
         targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
-            }
-        }
 
         //储存目录
         buildConfigField "String", "FILE_DIRECTORY", '"wyt"'
@@ -42,12 +38,18 @@ android {
 //        huawei {}
 //        anzhi {}
 //    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/annotations.pro'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["kotlin_ktx"]
+//    api rootProject.ext.dependencies["kotlinx-coroutines-core"]
+//    api rootProject.ext.dependencies["kotlinx-coroutines-android"]
     api rootProject.ext.dependencies["recyclerview"]
     api rootProject.ext.dependencies["constraintLayout"]
     //    evenbus
@@ -75,5 +77,5 @@ dependencies {
     api rootProject.ext.dependencies["lifecycleextensions"]
     api rootProject.ext.dependencies["lifecycleviewmodel"]
     //权限申请 https://github.com/tbruyelle/RxPermissions
-    api rootProject.ext.dependencies["rxpermissions"]
+//    api rootProject.ext.dependencies["rxpermissions"]
 }

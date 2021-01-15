@@ -13,18 +13,18 @@ public class ThreadHandleActivity extends BaseActivity {
     }
 
     @Override
-    protected void findView() {
-
-    }
-
-    @Override
-    protected void setListener() {
+    protected void initView() {
 
     }
 
     @Override
     protected void initData() {
         new ThreadB().start();
+    }
+
+    @Override
+    protected void start() {
+
     }
 
     @SuppressLint("HandlerLeak")

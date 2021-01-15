@@ -16,11 +16,11 @@ import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
-import com.wyt.common.Utils.ToastUtils;
 import com.learn.learn.bassis.fragment.FragmentActivity;
 import com.learn.learn.bassis.provider.ProviderActivity;
 import com.learn.learn.bassis.viewpager.ViewpagerActivity;
 import com.learn.learn.room.RoomActivity;
+import com.wyt.common.utils.ToastUtil;
 
 import java.util.List;
 
@@ -188,7 +188,7 @@ public class MainActivity extends Activity {
             weChatIntent.putExtra(Intent.EXTRA_TEXT, content);
             MainActivity.this.startActivity(weChatIntent);
         } else {
-            ToastUtils.showLong(MainActivity.this, "请先安装微信");
+            ToastUtil.showLong(MainActivity.this, "请先安装微信");
         }
     }
 
@@ -206,7 +206,7 @@ public class MainActivity extends Activity {
             qqIntent.putExtra(Intent.EXTRA_TEXT, content);
             MainActivity.this.startActivity(qqIntent);
         } else {
-            ToastUtils.showLong(MainActivity.this, "请先安装QQ");
+            ToastUtil.showLong(MainActivity.this, "请先安装QQ");
         }
     }
 

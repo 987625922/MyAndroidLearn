@@ -1,4 +1,4 @@
-if (isRunAlone.toBoolean()) {
+if (isRunLearnAlone.toBoolean()) {
     apply plugin: 'com.android.application'
     apply plugin: 'kotlin-android-extensions'
     apply plugin: 'kotlin-android'
@@ -12,7 +12,7 @@ android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
 
     defaultConfig {
-        if (isRunAlone.toBoolean()) {
+        if (isRunLearnAlone.toBoolean()) {
             applicationId "com.pony.learn"
         }
         minSdkVersion rootProject.ext.versions.minSdkVersion
@@ -20,16 +20,11 @@ android {
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
-        }
     }
 
     sourceSets {
         main {
-            if (isRunAlone.toBoolean()) {
+            if (isRunLearnAlone.toBoolean()) {
                 manifest.srcFile 'src/main/manifest/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -43,6 +38,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    packagingOptions {
+        exclude 'META-INF/proguard/annotations.pro'
     }
 }
 

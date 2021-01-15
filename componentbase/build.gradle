@@ -12,7 +12,9 @@ android {
         versionName rootProject.ext.versions.versionName
 
     }
-
+    packagingOptions {
+        exclude 'META-INF/proguard/annotations.pro'
+    }
 }
 
 dependencies {

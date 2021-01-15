@@ -37,12 +37,14 @@ public class ViewpagerActivity extends BaseActivity implements  ViewPager.OnPage
     }
 
     @Override
-    protected void findView() {
+    protected void initView() {
         viewPager = findViewById(R.id.viewpager);
     }
 
+
     @Override
-    protected void setListener() {
+    protected void initData() {
+
         // 实例化ArrayList对象
         views = new ArrayList<View>();
 
@@ -51,11 +53,6 @@ public class ViewpagerActivity extends BaseActivity implements  ViewPager.OnPage
 
         // 实例化ViewPager适配器
         vpAdapter = new ViewPagerAdapter(views);
-
-    }
-
-    @Override
-    protected void initData() {
 
         // 定义一个布局并设置参数
         LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(
@@ -77,6 +74,11 @@ public class ViewpagerActivity extends BaseActivity implements  ViewPager.OnPage
         // 设置监听
         viewPager.addOnPageChangeListener(this);
         initPoint();
+    }
+
+    @Override
+    protected void start() {
+
     }
 
     /**

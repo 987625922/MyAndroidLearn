@@ -2,10 +2,11 @@ package com.learn.learn.bassis;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.annotation.Nullable;
 
 import com.learn.learn.R;
-import com.wyt.common.Utils.LogUtil;
 
 public class 保存状态Activity extends Activity {
     @Override
@@ -24,7 +25,7 @@ public class 保存状态Activity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         //保存videoview的状态
 //        outState.putInt("currentposition", videoView.getCurrentPosition());
-        LogUtil.w("tag", "onSaveInstanceState");
+        Log.w("tag", "onSaveInstanceState");
         super.onSaveInstanceState(outState);
     }
 }

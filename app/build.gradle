@@ -55,11 +55,12 @@ android {
         sourceCompatibility 1.8
     }
     packagingOptions {
-        exclude 'META-INF/proguard/androidx-annotations.pro'
+        exclude 'META-INF/proguard/annotations.pro'
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":common")
+    runtimeOnly project(':learn')
 }

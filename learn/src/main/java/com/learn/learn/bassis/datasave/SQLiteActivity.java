@@ -13,12 +13,7 @@ public class SQLiteActivity extends BaseActivity {
     }
 
     @Override
-    protected void findView() {
-
-    }
-
-    @Override
-    protected void setListener() {
+    protected void initView() {
 
     }
 
@@ -28,6 +23,11 @@ public class SQLiteActivity extends BaseActivity {
         StuDBHelper dbHelper = new StuDBHelper(SQLiteActivity.this, "stu_db", null, 1);
         //得到一个可读的SQLiteDatabase对象
         SQLiteDatabase db = dbHelper.getReadableDatabase();
+    }
+
+    @Override
+    protected void start() {
+
     }
 
     //更新数据

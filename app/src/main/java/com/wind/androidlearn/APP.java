@@ -9,7 +9,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.wyt.common.Utils.screenmatch.Density;
+import com.wyt.common.utils.screenmatch.Density;
 
 /**
  * 类 名： APP<br>

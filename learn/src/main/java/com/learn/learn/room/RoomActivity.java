@@ -1,11 +1,9 @@
 package com.learn.learn.room;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.TextView;
-
 
 import com.learn.learn.R;
 import com.wyt.common.base.BaseActivity;
@@ -38,21 +36,18 @@ public class RoomActivity extends BaseActivity {
     }
 
     @Override
-    protected void findView() {
+    protected void initView() {
         tvContent = findViewById(R.id.tv_content);
         add = findViewById(R.id.add);
     }
 
     @Override
-    protected void setListener() {
+    protected void initData() {
 
     }
 
-    @SuppressLint("CheckResult")
     @Override
-    protected void initData() {
-
-
+    protected void start() {
         add.setOnClickListener(v -> {
 
             addRoom().subscribeOn(Schedulers.io())
@@ -66,8 +61,6 @@ public class RoomActivity extends BaseActivity {
                     });
 
         });
-
-
     }
 
     private Observable<String> addRoom() {
