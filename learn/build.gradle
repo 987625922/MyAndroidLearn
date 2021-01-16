@@ -1,11 +1,11 @@
 if (isRunLearnAlone.toBoolean()) {
     apply plugin: 'com.android.application'
-    apply plugin: 'kotlin-android-extensions'
     apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
 } else {
     apply plugin: 'com.android.library'
-    apply plugin: 'kotlin-android-extensions'
     apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
 }
 
 android {
@@ -38,9 +38,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    packagingOptions {
-        exclude 'META-INF/proguard/annotations.pro'
     }
 }
 

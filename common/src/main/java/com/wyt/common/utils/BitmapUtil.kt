@@ -6,8 +6,8 @@ import android.graphics.drawable.Drawable
 import android.os.Environment
 import android.util.Base64
 import android.view.View
-//import kotlinx.coroutines.Dispatchers
-//import kotlinx.coroutines.withContext
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -217,21 +217,21 @@ object BitmapUtil {
     /**
      * base64转图片
      */
-//    suspend fun baseToBitmap(value: String?): Bitmap = withContext(Dispatchers.IO) {
-//        val decodedString: ByteArray = if (value?.contains(",")!!) {
-//            Base64.decode(
-//                value.split(",")[1],
-//                Base64.DEFAULT
-//            )
-//        } else {
-//            Base64.decode(
-//                value,
-//                Base64.DEFAULT
-//            )
-//        }
-//
-//        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
-//    }
+    suspend fun baseToBitmap(value: String?): Bitmap = withContext(Dispatchers.IO) {
+        val decodedString: ByteArray = if (value?.contains(",")!!) {
+            Base64.decode(
+                value.split(",")[1],
+                Base64.DEFAULT
+            )
+        } else {
+            Base64.decode(
+                value,
+                Base64.DEFAULT
+            )
+        }
+
+        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+    }
 
     /**
      * drawable转图片

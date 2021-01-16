@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 
 android {
@@ -53,9 +53,6 @@ android {
     compileOptions {
         targetCompatibility 1.8
         sourceCompatibility 1.8
-    }
-    packagingOptions {
-        exclude 'META-INF/proguard/annotations.pro'
     }
 }
 

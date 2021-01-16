@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -39,17 +40,12 @@ android {
 //        anzhi {}
 //    }
 
-    packagingOptions {
-        exclude 'META-INF/proguard/annotations.pro'
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["kotlin_ktx"]
-//    api rootProject.ext.dependencies["kotlinx-coroutines-core"]
-//    api rootProject.ext.dependencies["kotlinx-coroutines-android"]
     api rootProject.ext.dependencies["recyclerview"]
     api rootProject.ext.dependencies["constraintLayout"]
     //    evenbus
@@ -73,9 +69,8 @@ dependencies {
     api rootProject.ext.dependencies["runtime"]
     annotationProcessor rootProject.ext.dependencies["compiler"]
     api rootProject.ext.dependencies["roomrxjava2"]
-    // ViewModel and LiveData
+    // ViewModel and LiveData and 协程
     api rootProject.ext.dependencies["lifecycleextensions"]
-    api rootProject.ext.dependencies["lifecycleviewmodel"]
-    //权限申请 https://github.com/tbruyelle/RxPermissions
-//    api rootProject.ext.dependencies["rxpermissions"]
+    api rootProject.ext.dependencies["lifecycle_livedata_ktx"]
+    api rootProject.ext.dependencies["lifecycle_viewmodel_ktx"]
 }
