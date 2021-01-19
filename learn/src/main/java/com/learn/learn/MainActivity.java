@@ -11,11 +11,13 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.learn.learn.bassis.fragment.FragmentActivity;
 import com.learn.learn.bassis.provider.ProviderActivity;
 import com.learn.learn.bassis.viewpager.ViewpagerActivity;
@@ -24,9 +26,21 @@ import com.wyt.common.utils.ToastUtil;
 
 import java.util.List;
 
+/**
+ * 学习首页
+ */
+@Route(path = "/learn/main")
 public class MainActivity extends Activity {
     private static final int REQUEST_CODE_GET_CONTENT = 666;
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 444;
+
+    private static Intent newIntent(Context context) {
+        return new Intent(context, MainActivity.class);
+    }
+
+    private static void intentTo(Context context) {
+        context.startActivity(newIntent(context));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

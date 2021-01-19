@@ -1,3 +1,5 @@
+include ':assemblyshare'
+include ':login'
 include ':componentbase'
 include ':learn'
 include ':app', ':common'

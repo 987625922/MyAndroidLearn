@@ -1,9 +1,10 @@
 package com.learn.componentbase.service;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 /**
  * @Author: LL
@@ -28,6 +29,7 @@ public interface IAccountService {
 
     /**
      * 创建 UserFragment
+     *
      * @param activity
      * @param containerId
      * @param manager

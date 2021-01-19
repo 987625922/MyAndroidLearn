@@ -13,11 +13,7 @@
             android:name="com.learn.learn.MainActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!--BroadcastReceiver广播实现跨进程数据交互-->

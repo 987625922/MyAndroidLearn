@@ -9,7 +9,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.wyt.common.AppConfig;
+import com.wyt.common.BuildConfig;
+import com.wyt.common.base.BaseApplication;
 import com.wyt.common.utils.screenmatch.Density;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * 类 名： APP<br>
@@ -20,7 +26,7 @@ import com.wyt.common.utils.screenmatch.Density;
  * 注 意：<br>
  * 待做事情：
  */
-public class APP extends Application {
+public class APP extends BaseApplication {
 
     private static APP application;
 
@@ -35,6 +41,16 @@ public class APP extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        // 初始化 ARouter
+        if (isDebug()) {           // 这两行必须写在init之前，否则这些配置在init过程中将无效
+            ARouter.openLog();     // 打印日志
+            ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+        }
+        ARouter.init(this);
+
+        initModuleApp(this);
+        initModuleData(this);
         //头条适配绑定
         Density.setDensity(this);
 
@@ -73,8 +89,44 @@ public class APP extends Application {
 
             }
         });
-
     }
 
 
+    @Override
+    public void initModuleApp(@NotNull Application application) {
+        for (String moduleApp : AppConfig.moduleApps) {
+            try {
+                Class clazz = Class.forName(moduleApp);
+                BaseApplication baseApp = (BaseApplication) clazz.newInstance();
+                baseApp.initModuleApp(this);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void initModuleData(@NotNull Application application) {
+        for (String moduleApp : AppConfig.moduleApps) {
+            try {
+                Class clazz = Class.forName(moduleApp);
+                BaseApplication baseApp = (BaseApplication) clazz.newInstance();
+                baseApp.initModuleData(this);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private boolean isDebug() {
+        return BuildConfig.DEBUG;
+    }
 }

@@ -19,7 +19,11 @@ android {
         targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     sourceSets {
@@ -44,5 +48,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":common")
+    annotationProcessor  rootProject.ext.dependencies["arouter_compiler"]
 
 }
