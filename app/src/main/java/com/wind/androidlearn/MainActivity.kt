@@ -27,5 +27,4 @@ class MainActivity:BaseActivity() {
             ARouter.getInstance().build("/account/login").navigation()
         }
     }
-
 }

@@ -6,6 +6,7 @@ if (isRunLoginAlone.toBoolean()) {
     apply plugin: 'com.android.library'
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-android-extensions'
+    apply plugin: 'kotlin-kapt'
 }
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -48,6 +49,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":common")
-    annotationProcessor  rootProject.ext.dependencies["arouter_compiler"]
+    kapt rootProject.ext.dependencies["arouter_compiler"]
 
 }
