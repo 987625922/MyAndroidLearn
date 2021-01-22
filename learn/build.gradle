@@ -49,5 +49,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":common")
     annotationProcessor  rootProject.ext.dependencies["arouter_compiler"]
-
+    implementation 'com.jakewharton:disklrucache:2.0.2'
 }

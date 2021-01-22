@@ -62,6 +62,8 @@
         <activity android:name="com.learn.learn.kotlin.MainActivity" />
         <!-- 设置模式 -->
         <activity android:name="com.learn.learn.设计模式.PatternActivity" />
+        <!--     DiskLruCache的使用   -->
+        <activity android:name=".cache.DiskLruCacheActivity" />
     </application>
 
 </manifest>

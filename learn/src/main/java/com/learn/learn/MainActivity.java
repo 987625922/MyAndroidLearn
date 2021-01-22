@@ -21,6 +21,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.learn.learn.bassis.fragment.FragmentActivity;
 import com.learn.learn.bassis.provider.ProviderActivity;
 import com.learn.learn.bassis.viewpager.ViewpagerActivity;
+import com.learn.learn.cache.DiskLruCacheActivity;
 import com.learn.learn.room.RoomActivity;
 import com.wyt.common.utils.ToastUtil;
 
@@ -92,6 +93,12 @@ public class MainActivity extends Activity {
                 getImage.addCategory(Intent.CATEGORY_OPENABLE);
                 getImage.setType("image/*");
                 startActivityForResult(getImage, REQUEST_CODE_GET_CONTENT);
+            }
+        });
+        findViewById(R.id.btn7).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DiskLruCacheActivity.intentTo(MainActivity.this);
             }
         });
         //        fragment使用
