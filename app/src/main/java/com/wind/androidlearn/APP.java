@@ -28,12 +28,9 @@ import org.jetbrains.annotations.NotNull;
  */
 public class APP extends BaseApplication {
 
-    private static APP application;
-
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-        application = this;
         //MultiDex分包方法 必须最先初始化
 //        MultiDex.install(this);
     }

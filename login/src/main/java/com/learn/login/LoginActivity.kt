@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        tvState = findViewById<View>(R.id.tv_login_state) as TextView
+        tvState = findViewById(R.id.tv_login_state)
     }
 
     fun login(view: View?) {
