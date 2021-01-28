@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.app_acitivity_main.*
  * @Description:
  * @Date:Create：in  2021/1/19 14:29
  */
-class MainActivity:BaseActivity() {
+class MainActivity : BaseActivity() {
     override fun start() {
     }
 

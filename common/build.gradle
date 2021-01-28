@@ -77,6 +77,8 @@ dependencies {
     api rootProject.ext.dependencies["lifecycleextensions"]
     api rootProject.ext.dependencies["lifecycle_livedata_ktx"]
     api rootProject.ext.dependencies["lifecycle_viewmodel_ktx"]
+    api rootProject.ext.dependencies["lifecycle-runtime-ktx"]
+    api rootProject.ext.dependencies["paging_runtime"]
     //阿里路由
     api rootProject.ext.dependencies["arouter_api"]
     annotationProcessor  rootProject.ext.dependencies["arouter_compiler"]

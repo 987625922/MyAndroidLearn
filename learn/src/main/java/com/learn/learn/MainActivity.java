@@ -22,6 +22,7 @@ import com.learn.learn.bassis.fragment.FragmentActivity;
 import com.learn.learn.bassis.provider.ProviderActivity;
 import com.learn.learn.bassis.viewpager.ViewpagerActivity;
 import com.learn.learn.cache.DiskLruCacheActivity;
+import com.learn.learn.jetpack.LifecycleLearnActivity;
 import com.learn.learn.room.RoomActivity;
 import com.wyt.common.utils.ToastUtil;
 
@@ -134,6 +135,12 @@ public class MainActivity extends Activity {
             }
         });
 
+        findViewById(R.id.btn15).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LifecycleLearnActivity.intentTo(MainActivity.this);
+            }
+        });
     }
 
     //横竖屏切换会回调，数据保存

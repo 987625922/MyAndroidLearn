@@ -8,76 +8,79 @@ ext {
     isModule = false
     //版本号
     versions = [
-            applicationId           : "com.wind.android",        //应用ID
-            versionCode             : 1,                    //版本号
-            versionName             : "1.0.0",              //版本名称
+            applicationId            : "com.wind.android",        //应用ID
+            versionCode              : 1,                    //版本号
+            versionName              : "1.0.0",              //版本名称
 
-            compileSdkVersion       : 30,
-            buildToolsVersion       : "29.0.2",
-            minSdkVersion           : 19,
-            targetSdkVersion        : 30,
+            compileSdkVersion        : 30,
+            buildToolsVersion        : "29.0.2",
+            minSdkVersion            : 19,
+            targetSdkVersion         : 30,
 
-            glideVersion: "4.9.0",
-            okhttp3Version: "3.14.9",
-            retrofitVersion: "2.5.0",
-            convertergsonVersion: "2.0.2",
+            glideVersion             : "4.9.0",
+            okhttp3Version           : "3.14.9",
+            retrofitVersion          : "2.5.0",
+            convertergsonVersion     : "2.0.2",
             logginginterceptorVersion: "3.9.0",
-            adapterrxjava2: "2.3.0",
-            rxandroid: "2.1.1",
-            rxjava: "2.2.6",
-            adapterrxjava: "2.0.0-beta4",
-            butterknife: "10.2.3",
-            eventbus: "3.1.1",
-            liveeventbus: "0.0.1",
-            runtime: "1.1.1",
-            lifecycle:"1.1.1",
-            rxpermissions:"0.10.2",
-            arouterApiVersion       : "1.5.1",
-            arouterCompilerVersion  : "1.5.1",
-            arouterannotationVersion: "1.0.6",
-            appcompatVersion:"1.0.0",
-            kotlinKtxVersion:"1.2.0",
-            recyclerviewVersion:"1.0.0-beta01",
-            constraintlayoutVersion:"1.1.3"
+            adapterrxjava2           : "2.3.0",
+            rxandroid                : "2.1.1",
+            rxjava                   : "2.2.6",
+            adapterrxjava            : "2.0.0-beta4",
+            butterknife              : "10.2.3",
+            eventbus                 : "3.1.1",
+            liveeventbus             : "0.0.1",
+            runtime                  : "1.1.1",
+            lifecycle                : "1.1.1",
+            rxpermissions            : "0.10.2",
+            arouterApiVersion        : "1.5.1",
+            arouterCompilerVersion   : "1.5.1",
+            arouterannotationVersion : "1.0.6",
+            appcompatVersion         : "1.0.0",
+            kotlinKtxVersion         : "1.2.0",
+            recyclerviewVersion      : "1.0.0-beta01",
+            constraintlayoutVersion  : "1.1.3",
+            pagingVersion           : "3.0.0-alpha02"
     ]
 
     dependencies = [
-            "appcompat":"androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
+            "appcompat"              : "androidx.appcompat:appcompat:${versions["appcompatVersion"]}",
 
-            "kotlin_ktx":"androidx.core:core-ktx:${versions["kotlinKtxVersion"]}",
+            "kotlin_ktx"             : "androidx.core:core-ktx:${versions["kotlinKtxVersion"]}",
 
-            "recyclerview":"androidx.recyclerview:recyclerview:${versions["recyclerviewVersion"]}",
-            "constraintLayout":"androidx.constraintlayout:constraintlayout:${versions["constraintlayoutVersion"]}",
-            "glide": "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
-            "glideCompiler":"com.github.bumptech.glide:compiler:${versions["glideVersion"]}",
-            "okhttp3": "com.squareup.okhttp3:okhttp:${versions["okhttp3Version"]}",
-            "retrofit2": "com.squareup.retrofit2:retrofit:${versions["retrofitVersion"]}",
-            "converter-gson": "com.squareup.retrofit2:converter-gson:${versions["convertergsonVersion"]}",
-            "logging-interceptor": "com.squareup.okhttp3:logging-interceptor:${versions["logginginterceptorVersion"]}",
-            "adapter-rxjava2": "com.squareup.retrofit2:adapter-rxjava2:${versions["adapterrxjava2"]}",
+            "recyclerview"           : "androidx.recyclerview:recyclerview:${versions["recyclerviewVersion"]}",
+            "constraintLayout"       : "androidx.constraintlayout:constraintlayout:${versions["constraintlayoutVersion"]}",
+            "glide"                  : "com.github.bumptech.glide:glide:${versions["glideVersion"]}",
+            "glideCompiler"          : "com.github.bumptech.glide:compiler:${versions["glideVersion"]}",
+            "okhttp3"                : "com.squareup.okhttp3:okhttp:${versions["okhttp3Version"]}",
+            "retrofit2"              : "com.squareup.retrofit2:retrofit:${versions["retrofitVersion"]}",
+            "converter-gson"         : "com.squareup.retrofit2:converter-gson:${versions["convertergsonVersion"]}",
+            "logging-interceptor"    : "com.squareup.okhttp3:logging-interceptor:${versions["logginginterceptorVersion"]}",
+            "adapter-rxjava2"        : "com.squareup.retrofit2:adapter-rxjava2:${versions["adapterrxjava2"]}",
 
-            "rxandroid": "io.reactivex.rxjava2:rxandroid:${versions["rxandroid"]}",
-            "rxjava": "io.reactivex.rxjava2:rxjava:${versions["rxjava"]}",
+            "rxandroid"              : "io.reactivex.rxjava2:rxandroid:${versions["rxandroid"]}",
+            "rxjava"                 : "io.reactivex.rxjava2:rxjava:${versions["rxjava"]}",
 
-            "butterknife": "com.jakewharton:butterknife:${versions["butterknife"]}",
-            "butterknife-compiler": "com.jakewharton:butterknife-compiler:${versions["butterknife"]}",
+            "butterknife"            : "com.jakewharton:butterknife:${versions["butterknife"]}",
+            "butterknife-compiler"   : "com.jakewharton:butterknife-compiler:${versions["butterknife"]}",
 
-            "eventbus": "org.greenrobot:eventbus:${versions["eventbus"]}",
+            "eventbus"               : "org.greenrobot:eventbus:${versions["eventbus"]}",
 
-            "live-event-bus": "com.jeremyliao:live-event-bus:${versions["liveeventbus"]}",
+            "live-event-bus"         : "com.jeremyliao:live-event-bus:${versions["liveeventbus"]}",
 
-            "runtime": 'androidx.room:room-runtime:2.0.0',
-            "compiler": 'androidx.room:room-compiler:2.0.0',
-            "roomrxjava2": 'androidx.room:room-rxjava2:2.0.0',
+            "runtime"                : 'androidx.room:room-runtime:2.0.0',
+            "compiler"               : 'androidx.room:room-compiler:2.0.0',
+            "roomrxjava2"            : 'androidx.room:room-rxjava2:2.0.0',
 
-            "lifecycleextensions": 'androidx.lifecycle:lifecycle-extensions:2.2.0',
-            "lifecycle_livedata_ktx": 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0',
+            "lifecycleextensions"    : 'androidx.lifecycle:lifecycle-extensions:2.2.0',
+            "lifecycle_livedata_ktx" : 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0',
             "lifecycle_viewmodel_ktx": 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0',
-
-            "rxpermissions": "com.github.tbruyelle:rxpermissions:${versions["rxpermissions"]}",
+            "lifecycle-runtime-ktx"  : 'androidx.lifecycle:lifecycle-runtime-ktx:2.2.0',
+            "rxpermissions"          : "com.github.tbruyelle:rxpermissions:${versions["rxpermissions"]}",
             //路由
-            "arouter_api": "com.alibaba:arouter-api:${versions["arouterApiVersion"]}",
-            "arouter_compiler": "com.alibaba:arouter-compiler:${versions["arouterCompilerVersion"]}",
-            "arouter_annotation": "com.alibaba:arouter-annotation:${versions["arouterannotationVersion"]}",
+            "arouter_api"            : "com.alibaba:arouter-api:${versions["arouterApiVersion"]}",
+            "arouter_compiler"       : "com.alibaba:arouter-compiler:${versions["arouterCompilerVersion"]}",
+            "arouter_annotation"     : "com.alibaba:arouter-annotation:${versions["arouterannotationVersion"]}",
+            "paging_runtime"         : "androidx.paging:paging-runtime:${versions["pagingVersion"]}",
+
     ]
 }

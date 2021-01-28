@@ -7,8 +7,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
         <activity
             android:name="com.learn.learn.MainActivity"
             android:configChanges="orientation|screenSize"
@@ -64,6 +63,8 @@
         <activity android:name="com.learn.learn.设计模式.PatternActivity" />
         <!--     DiskLruCache的使用   -->
         <activity android:name=".cache.DiskLruCacheActivity" />
+        <!--   jetpack的lifecycler的使用     -->
+        <activity android:name=".jetpack.LifecycleLearnActivity" />
     </application>
 
 </manifest>
