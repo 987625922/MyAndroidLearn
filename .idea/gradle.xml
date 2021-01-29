@@ -16,6 +16,9 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/export_account" />
             <option value="$PROJECT_DIR$/learn" />
+            <option value="$PROJECT_DIR$/lifecycle_annotation" />
+            <option value="$PROJECT_DIR$/lifecycle_api" />
+            <option value="$PROJECT_DIR$/lifecycle_apt" />
             <option value="$PROJECT_DIR$/login" />
           </set>
         </option>

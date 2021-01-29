@@ -1,3 +1,6 @@
+include ':lifecycle_apt'
+include ':lifecycle_api'
+include ':lifecycle_annotation'
 include ':export_account'
 include ':assemblyshare'
 include ':login'

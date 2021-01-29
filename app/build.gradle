@@ -73,6 +73,10 @@ dependencies {
     runtimeOnly project(':assemblyshare')
     kapt rootProject.ext.dependencies["arouter_compiler"]
 
+    implementation project(":lifecycle_annotation")
+    implementation project(":lifecycle_api")
+    annotationProcessor  project(":lifecycle_apt")
+
     // Required -- JUnit 4 framework
     testImplementation 'junit:junit:4.12'
     // Optional -- Robolectric environment

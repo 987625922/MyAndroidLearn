@@ -81,6 +81,5 @@ ext {
             "arouter_compiler"       : "com.alibaba:arouter-compiler:${versions["arouterCompilerVersion"]}",
             "arouter_annotation"     : "com.alibaba:arouter-annotation:${versions["arouterannotationVersion"]}",
             "paging_runtime"         : "androidx.paging:paging-runtime:${versions["pagingVersion"]}",
-
     ]
 }
