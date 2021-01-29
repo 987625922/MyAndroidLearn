@@ -49,6 +49,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":common")
+    implementation project(":export_account")
     kapt rootProject.ext.dependencies["arouter_compiler"]
 
 }

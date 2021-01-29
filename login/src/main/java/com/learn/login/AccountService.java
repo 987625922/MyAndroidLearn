@@ -1,29 +1,40 @@
 package com.learn.login;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import com.learn.componentbase.service.IAccountService;
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.wyt.export_account.bean.UserInfo;
+import com.wyt.export_account.router.AccountRouter;
+import com.wyt.export_account.service.IAccountService;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 
 /**
  * @Author: LL
  * @Description:
  * @Date:Create：in 2021/1/19 15:04
  */
-class AccountService implements IAccountService {
+@Route(path = AccountRouter.PATH_SERVICE_ACCOUNT)
+public class AccountService implements IAccountService {
+
+    private UserInfo userInfo;
+
     @Override
     public boolean isLogin() {
-        return AccountUtils.userInfo != null;
+        return userInfo != null;
     }
 
     @Override
     public String getAccountId() {
-
-        return AccountUtils.userInfo == null ? null : AccountUtils.userInfo.getAccountId();
+        return userInfo == null ? null : userInfo.getAccountId();
     }
 
     @Override
@@ -33,6 +44,22 @@ class AccountService implements IAccountService {
         transaction.add(containerId, userFragment, tag);
         transaction.commit();
         return userFragment;
+    }
+
+    @Override
+    public void init(Context context) {
+        //初始化工作，服务注入时会调用，可忽略
+    }
+
+    @Override
+    public void setUserInfo(@Nullable UserInfo userInfo) {
+        this.userInfo = userInfo;
+    }
+
+    @NotNull
+    @Override
+    public UserInfo getUserInfo() {
+        return userInfo;
     }
 }
 

@@ -11,7 +11,7 @@ import com.learn.learn.databinding.AdapterPagingBinding
 
 /**
  * @Author: LL
- * @Description:
+ * @Description:pagingAdapter的使用
  * @Date:Create：in  2021/1/28 15:48
  */
 class PagingAdapter constructor(val context: Context) : PagingDataAdapter<String, PagingAdapter.ViewHolder>(DiffCallback()) {

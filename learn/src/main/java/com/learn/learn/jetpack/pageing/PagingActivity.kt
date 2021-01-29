@@ -41,7 +41,8 @@ class PagingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding.rlMain.layoutManager = LinearLayoutManager(this)
-        mBinding.rlMain.adapter = adapter
+        //设置adapter并带上另一个布局
+        mBinding.rlMain.adapter = adapter.withLoadStateFooter(footer = FooterLoadStateAdapter { adapter.retry() })
 
         job = vm.viewModelScope.launch {
             vm.strs.collect {

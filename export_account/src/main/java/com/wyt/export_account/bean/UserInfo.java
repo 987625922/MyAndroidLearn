@@ -1,11 +1,11 @@
-package com.learn.login;
+package com.wyt.export_account.bean;
 
 /**
  * @Author: LL
  * @Description:
  * @Date:Create：in 2021/1/19 15:01
  */
-class UserInfo {
+public class UserInfo {
     private String accountId;
     private String userName;
 

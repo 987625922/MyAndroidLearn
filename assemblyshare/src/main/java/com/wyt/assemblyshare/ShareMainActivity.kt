@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.learn.componentbase.ServiceFactory
+import com.wyt.export_account.AccountServiceUtil
 
 @Route(path = "/share/main")
 class ShareMainActivity : AppCompatActivity() {
@@ -25,7 +25,7 @@ class ShareMainActivity : AppCompatActivity() {
     }
 
     private fun share() {
-        if (ServiceFactory.getInstance().accountService.isLogin) {
+        if (AccountServiceUtil.getService().isLogin()) {
             Toast.makeText(this, "分享成功", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "分享失败：用户未登录", Toast.LENGTH_SHORT).show()

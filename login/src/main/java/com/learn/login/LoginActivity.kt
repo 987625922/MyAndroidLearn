@@ -6,6 +6,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import com.wyt.export_account.AccountServiceUtil
+import com.wyt.export_account.bean.UserInfo
 
 /**
  * @Author: LL
@@ -27,16 +29,16 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun login(view: View?) {
-        AccountUtils.userInfo = UserInfo("10086", "Admin")
+        AccountServiceUtil.getService().setUserInfo(UserInfo("10086", "Admin"))
         updateLoginState()
     }
 
     private fun updateLoginState() {
-        tvState!!.text = "这里是登录界面：" + if (AccountUtils.userInfo == null) "未登录" else AccountUtils.userInfo.userName
+        tvState!!.text = "这里是登录界面：" + if (AccountServiceUtil.getService().getUserInfo() == null) "未登录" else AccountServiceUtil.getService().getUserInfo().userName
     }
 
     fun exit(view: View?) {
-        AccountUtils.userInfo = null
+        AccountServiceUtil.getService().setUserInfo(null)
         updateLoginState()
     }
 

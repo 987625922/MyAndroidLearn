@@ -46,8 +46,6 @@ public class APP extends BaseApplication {
         }
         ARouter.init(this);
 
-        initModuleApp(this);
-        initModuleData(this);
         //头条适配绑定
         Density.setDensity(this);
 
@@ -86,41 +84,6 @@ public class APP extends BaseApplication {
 
             }
         });
-    }
-
-
-    @Override
-    public void initModuleApp(@NotNull Application application) {
-        for (String moduleApp : AppConfig.moduleApps) {
-            try {
-                Class clazz = Class.forName(moduleApp);
-                BaseApplication baseApp = (BaseApplication) clazz.newInstance();
-                baseApp.initModuleApp(this);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    @Override
-    public void initModuleData(@NotNull Application application) {
-        for (String moduleApp : AppConfig.moduleApps) {
-            try {
-                Class clazz = Class.forName(moduleApp);
-                BaseApplication baseApp = (BaseApplication) clazz.newInstance();
-                baseApp.initModuleData(this);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (InstantiationException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     private boolean isDebug() {

@@ -2,8 +2,8 @@ package com.learn.login;
 
 import android.app.Application;
 
-import com.learn.componentbase.ServiceFactory;
 import com.wyt.common.base.BaseApplication;
+import com.wyt.export_account.AccountServiceUtil;
 
 /**
  * @Author: LL
@@ -15,17 +15,5 @@ public class LoginApp extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        initModuleApp(this);
-        initModuleData(this);
-    }
-
-    @Override
-    public void initModuleApp(Application application) {
-        ServiceFactory.getInstance().setAccountService(new AccountService());
-    }
-
-    @Override
-    public void initModuleData(Application application) {
-
     }
 }
