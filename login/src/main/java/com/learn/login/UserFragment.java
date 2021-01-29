@@ -9,15 +9,19 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.wyt.export_account.AccountServiceUtil;
+import com.wyt.export_account.router.AccountRouter;
 
 
 /**
  * @Author: LL
- * @Description:
+ * @Description: 添加到路由，给其他module使用
  * @Date:Create：in 2021/1/19 15:06
  */
-class UserFragment extends Fragment {
+@Route(path = AccountRouter.PATH_FRAGMENT_ACCOUNT)
+public class UserFragment extends Fragment {
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

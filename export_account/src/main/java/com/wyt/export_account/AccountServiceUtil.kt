@@ -6,7 +6,7 @@ import com.wyt.export_account.service.IAccountService
 
 /**
  * @Author: LL
- * @Description:
+ * @Description: 共享工具
  * @Date:Create：in  2021/1/29 15:20
  */
 object AccountServiceUtil {

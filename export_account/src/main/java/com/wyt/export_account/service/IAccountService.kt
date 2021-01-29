@@ -9,7 +9,7 @@ import com.wyt.export_account.bean.UserInfo
 
 /**
  * @Author: LL
- * @Description:
+ * @Description: 共享的服务接口，通过路由给其他module使用
  * @Date:Create：in  2021/1/29 15:14
  */
 interface IAccountService : IProvider {

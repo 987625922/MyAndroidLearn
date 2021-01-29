@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * @Author: LL
- * @Description:
+ * @Description: 路由服务，其他module可以通过路由调用
  * @Date:Create：in 2021/1/19 15:04
  */
 @Route(path = AccountRouter.PATH_SERVICE_ACCOUNT)
