@@ -53,7 +53,7 @@ public class AppLikeProcessor extends AbstractProcessor {
 
     @Override
     public SourceVersion getSupportedSourceVersion() {
-        return SourceVersion.RELEASE_7;
+        return SourceVersion.latestSupported();
     }
 
     @Override
@@ -73,7 +73,7 @@ public class AppLikeProcessor extends AbstractProcessor {
             }
             boolean checkInterfaceFlag = false;
             for (TypeMirror mirror : mirrorList) {
-                if ("com.hm.lifecycle.api.IAppLike".equals(mirror.toString())) {
+                if ("com.wyt.lifecycle_api.IAppLike".equals(mirror.toString())) {
                     checkInterfaceFlag = true;
                 }
             }

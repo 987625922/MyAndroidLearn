@@ -19,7 +19,7 @@ interface RobotApiService {
      * 请求apk信息
      */
     @POST("php/watch/versions.api/get_infos")
-    suspend fun getApkInfo(
+    fun getApkInfo(
         @Body map: Map<String, String>
     ): Datast
 

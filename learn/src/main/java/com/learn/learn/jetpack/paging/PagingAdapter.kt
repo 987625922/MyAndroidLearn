@@ -1,4 +1,4 @@
-package com.learn.learn.jetpack.pageing
+package com.learn.learn.jetpack.paging
 
 import android.content.Context
 import android.view.LayoutInflater

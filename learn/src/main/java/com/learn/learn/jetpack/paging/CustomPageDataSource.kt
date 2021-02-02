@@ -1,4 +1,4 @@
-package com.learn.learn.jetpack.pageing
+package com.learn.learn.jetpack.paging
 
 import androidx.paging.PagingSource
 
