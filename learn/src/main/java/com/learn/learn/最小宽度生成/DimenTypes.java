@@ -1,6 +1,6 @@
 package com.learn.learn.最小宽度生成;
 
-public enum  DimenTypes {
+public enum DimenTypes {
 
     //适配Android 3.2以上   大部分手机的sw值集中在  300-460之间
     DP_sw__300(300),  // values-sw300
@@ -43,7 +43,37 @@ public enum  DimenTypes {
     DP_sw__670(670),
     DP_sw__680(680),
     DP_sw__690(690),
-    DP_sw__700(700);
+    DP_sw__700(700),
+    DP_sw__710(710),
+    DP_sw__720(720),
+    DP_sw__730(730),
+    DP_sw__740(740),
+    DP_sw__750(750),
+    DP_sw__760(760),
+    DP_sw__770(770),
+    DP_sw__780(780),
+    DP_sw__790(790),
+    DP_sw__800(800),
+    DP_sw__810(810),
+    DP_sw__820(820),
+    DP_sw__830(830),
+    DP_sw__840(840),
+    DP_sw__850(850),
+    DP_sw__860(860),
+    DP_sw__870(870),
+    DP_sw__880(880),
+    DP_sw__890(890),
+    DP_sw__900(900),
+    DP_sw__910(910),
+    DP_sw__920(920),
+    DP_sw__930(930),
+    DP_sw__940(940),
+    DP_sw__950(950),
+    DP_sw__960(960),
+    DP_sw__970(970),
+    DP_sw__980(980),
+    DP_sw__990(990),
+    DP_sw__1000(1000);
     // 想生成多少自己以此类推
 
 
@@ -51,8 +81,6 @@ public enum  DimenTypes {
      * 屏幕最小宽度
      */
     private int swWidthDp;
-
-
 
 
     DimenTypes(int swWidthDp) {

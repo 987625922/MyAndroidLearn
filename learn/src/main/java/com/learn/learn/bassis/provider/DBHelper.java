@@ -16,7 +16,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * 注 意：<br>
  * 待做事情：
  */
-public class DBHelper  extends SQLiteOpenHelper {
+class DBHelper  extends SQLiteOpenHelper {
 
     // 数据库名
     private static final String DATABASE_NAME = "finch.db";
