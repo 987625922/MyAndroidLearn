@@ -6,13 +6,14 @@ import android.util.Log;
 import com.wyt.lifecycle_annotation.AppLifeCycle;
 import com.wyt.lifecycle_api.IAppLike;
 
+
 /**
  * @Author: LL
  * @Description:
  * @Date:Create：in 2021/1/29 17:23
  */
 @AppLifeCycle
-class ModuleAAppLike implements IAppLike {
+public class ModuleAAppLike implements IAppLike {
 
     @Override
     public int getPriority() {

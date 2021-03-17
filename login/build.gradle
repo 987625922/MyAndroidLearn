@@ -2,6 +2,7 @@ if (isRunLoginAlone.toBoolean()) {
     apply plugin: 'com.android.application'
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-android-extensions'
+    apply plugin: 'kotlin-kapt'
 } else {
     apply plugin: 'com.android.library'
     apply plugin: 'kotlin-android'
@@ -51,5 +52,4 @@ dependencies {
     implementation project(":common")
     implementation project(":export_account")
     kapt rootProject.ext.dependencies["arouter_compiler"]
-
 }

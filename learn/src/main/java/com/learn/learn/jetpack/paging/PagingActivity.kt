@@ -46,6 +46,7 @@ class PagingActivity : AppCompatActivity() {
         mBinding.rlMain.layoutManager = LinearLayoutManager(this)
         //设置adapter并带上另一个布局
         mBinding.rlMain.adapter = adapter.withLoadStateFooter(footer = FooterLoadStateAdapter { adapter.retry() })
+//        mBinding.rlMain.adapter.notifyDataSetChanged()
         /**
          * 这个方法是当新的PagingData被提交并且显示的回调
          */

@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -57,10 +58,10 @@ dependencies {
     api rootProject.ext.dependencies["eventbus"]
     //butterknife
     api rootProject.ext.dependencies["butterknife"]
-    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    kapt rootProject.ext.dependencies["butterknife-compiler"]
     // glide
     api rootProject.ext.dependencies["glide"]
-    annotationProcessor rootProject.ext.dependencies["glideCompiler"]
+    kapt rootProject.ext.dependencies["glideCompiler"]
     //retrofit封装okhttp，converter-gson为retrofit提供解析
     api rootProject.ext.dependencies["okhttp3"]
     api rootProject.ext.dependencies["retrofit2"]
@@ -72,7 +73,7 @@ dependencies {
     api rootProject.ext.dependencies["rxjava"]
     //   room
     api rootProject.ext.dependencies["runtime"]
-    annotationProcessor rootProject.ext.dependencies["compiler"]
+    kapt rootProject.ext.dependencies["compiler"]
     api rootProject.ext.dependencies["roomrxjava2"]
     // ViewModel and LiveData and 协程
     api rootProject.ext.dependencies["lifecycleextensions"]
@@ -82,6 +83,6 @@ dependencies {
     api rootProject.ext.dependencies["paging_runtime"]
     //阿里路由
     api rootProject.ext.dependencies["arouter_api"]
-    annotationProcessor  rootProject.ext.dependencies["arouter_compiler"]
+    kapt  rootProject.ext.dependencies["arouter_compiler"]
 
 }

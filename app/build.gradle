@@ -78,7 +78,7 @@ dependencies {
 
     implementation project(":lifecycle_annotation")
     implementation project(":lifecycle_api")
-    annotationProcessor  project(":lifecycle_apt")
+    annotationProcessor project(":lifecycle_apt")
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

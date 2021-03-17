@@ -12,7 +12,7 @@ import com.wyt.lifecycle_api.IAppLike;
  * @Date:Create：in 2021/1/29 17:24
  */
 @AppLifeCycle
-class ModuleBAppLike implements IAppLike {
+public class ModuleBAppLike implements IAppLike {
 
     @Override
     public int getPriority() {

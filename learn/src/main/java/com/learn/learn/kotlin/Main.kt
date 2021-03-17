@@ -14,7 +14,6 @@ var stringRepresentation: String = "1"
     }
 
 fun main(args: Array<String>) {
-    println("${array1.size}")
     stringRepresentation = "23"
     println(stringRepresentation)
     //扩展函数的使用

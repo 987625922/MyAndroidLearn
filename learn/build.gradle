@@ -2,10 +2,12 @@ if (isRunLearnAlone.toBoolean()) {
     apply plugin: 'com.android.application'
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-android-extensions'
+    apply plugin: 'kotlin-kapt'
 } else {
     apply plugin: 'com.android.library'
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-android-extensions'
+    apply plugin: 'kotlin-kapt'
 }
 
 android {
@@ -21,8 +23,11 @@ android {
         versionName rootProject.ext.versions.versionName
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                arguments = [AROUTER_MODULE_NAME: project.getName(),eventBusIndex: 'org.greenrobot.eventbusperf.MyEventBusIndex']
             }
+//            annotationProcessorOptions {
+//                arguments = []
+//            }
         }
     }
 
@@ -52,6 +57,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":common")
-    annotationProcessor  rootProject.ext.dependencies["arouter_compiler"]
+    kapt rootProject.ext.dependencies["arouter_compiler"]
+    kapt rootProject.ext.dependencies["eventbus-annotation-processor"]
     implementation 'com.jakewharton:disklrucache:2.0.2'
 }
