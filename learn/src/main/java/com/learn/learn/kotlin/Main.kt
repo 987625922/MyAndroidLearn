@@ -18,7 +18,11 @@ fun main(args: Array<String>) {
     println(stringRepresentation)
     //扩展函数的使用
     val list = mutableListOf(1, 2, 3)
-    list.swap(0, 2) // “swap()”内部的“this”会保存“list”的值
+    list.swap(0, 1) // “swap()”内部的“this”会保存“list”的值
+    list.forEach {
+        println(it)
+    }
+    println(list.lastIndex)
 }
 
 /**
