@@ -65,6 +65,8 @@
         <activity android:name=".cache.DiskLruCacheActivity" />
         <!--   jetpack的lifecycler的使用     -->
         <activity android:name=".jetpack.LifecycleLearnActivity" />
+        <!--        eventbus -->
+        <activity android:name=".eventbus.EventBusActivity" />
     </application>
 
 </manifest>

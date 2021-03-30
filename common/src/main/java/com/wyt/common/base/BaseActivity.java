@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.wyt.common.utils.StatusBarUtils;
 import com.wyt.common.utils.WindowUtil;
 
 /**
@@ -24,6 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getLayout());
         WindowUtil.setHideVirtualKey(getWindow());
+//        StatusBarUtils.setTransparent(getWindow());
         initView();
         initData();
         start();

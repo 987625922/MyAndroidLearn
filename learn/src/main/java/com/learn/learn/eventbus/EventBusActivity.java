@@ -1,5 +1,7 @@
 package com.learn.learn.eventbus;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -16,7 +18,16 @@ import org.greenrobot.eventbus.ThreadMode;
  * @Description:
  * @Date:Create：in 2021/3/11 13:47
  */
-class EventBusActivity extends AppCompatActivity {
+public class EventBusActivity extends AppCompatActivity {
+
+    private static Intent newIntent(Context context) {
+        return new Intent(context, EventBusActivity.class);
+    }
+
+    public static void intentTo(Context context) {
+        context.startActivity(newIntent(context));
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

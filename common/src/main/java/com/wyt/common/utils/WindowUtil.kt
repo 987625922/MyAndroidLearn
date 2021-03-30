@@ -24,12 +24,12 @@ object WindowUtil {
         var isTranslucentOrFloating = false
         try {
             val styleableRes =
-                Class.forName("com.android.internal.R\$styleable")
-                    .getField("Window")[null] as IntArray
+                    Class.forName("com.android.internal.R\$styleable")
+                            .getField("Window")[null] as IntArray
             val ta = context.obtainStyledAttributes(styleableRes)
             val m = ActivityInfo::class.java.getMethod(
-                "isTranslucentOrFloating",
-                TypedArray::class.java
+                    "isTranslucentOrFloating",
+                    TypedArray::class.java
             )
             m.isAccessible = true
             isTranslucentOrFloating = m.invoke(null, ta) as Boolean
@@ -48,7 +48,7 @@ object WindowUtil {
     fun fixOrientation(activity: Activity?) {
         try {
             val field =
-                Activity::class.java.getDeclaredField("mActivityInfo")
+                    Activity::class.java.getDeclaredField("mActivityInfo")
             field.isAccessible = true
             val o = field[activity] as ActivityInfo
             o.screenOrientation = -1
@@ -66,11 +66,13 @@ object WindowUtil {
     @JvmStatic
     fun setHideVirtualKey(window: Window) {
         //保持布局状态
-        var uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or  //布局位于状态栏下方
-                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or  //全屏
-                View.SYSTEM_UI_FLAG_FULLSCREEN or  //隐藏导航栏
+        var uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN or  //隐藏导航栏
                 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+
         uiOptions = if (Build.VERSION.SDK_INT >= 19) {
             uiOptions or 0x00001000
         } else {
@@ -103,13 +105,14 @@ object WindowUtil {
      */
     fun printWindowsSize(context: Context) {
         val wm =
-            context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+                context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val dm = DisplayMetrics()
         wm.defaultDisplay.getMetrics(dm)
         val width = dm.widthPixels
         val height = dm.heightPixels
         Log.i("当前屏幕分辨率：宽: $width  高: $height")
     }
+
     private var density = -1f
     private var widthPixels = -1
     private var heightPixels = -1

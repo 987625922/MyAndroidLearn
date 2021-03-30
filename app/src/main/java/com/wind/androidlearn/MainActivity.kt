@@ -11,11 +11,10 @@ import kotlinx.android.synthetic.main.app_acitivity_main.*
  * @Date:Create：in  2021/1/19 14:29
  */
 class MainActivity : BaseActivity() {
-    override fun start() {
-    }
 
-    override fun initData() {
-    }
+    override fun start() {}
+
+    override fun initData() {}
 
     override fun getLayout() = R.layout.app_acitivity_main
 

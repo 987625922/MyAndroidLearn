@@ -9,40 +9,76 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_80"
+            android:background="@drawable/bg_36cdff_6777ff"
+            android:gravity="center"
+            android:text="学习"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/qb_px_28" />
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/qb_px_10"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn1"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BroadcastReceiver广播实现跨进程数据交互" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="BroadcastReceiver广播实现跨进程数据交互"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/btn2"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="binder跨进程数据交互" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="binder跨进程数据交互"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/btn3"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="content provider实现" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="content provider实现"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/btn4"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="跳转到系统的图片选择" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="跳转到系统的图片选择"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/btn7"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DiskLruCache的使用" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="DiskLruCache的使用"
+                android:textColor="#ffffff" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,47 +88,77 @@
 
             <Button
                 android:id="@+id/btn8"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="fragment使用" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="fragment使用"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/btn10"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="viewpager实现广告页" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="viewpager实现广告页"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/btn11"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="分享到微信" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="分享到微信"
+                android:textColor="#ffffff" />
 
             <Button
                 android:id="@+id/btn13"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="room的使用" />
-
-            <Button
-                android:id="@+id/btn14"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="dialog的使用" />
-
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="room的使用"
+                android:textColor="#ffffff" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_20"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn15"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="jetpack的使用" />
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="jetpack的使用"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/btn16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="eventbus的使用"
+                android:textColor="#ffffff" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -22,8 +22,10 @@ import com.learn.learn.bassis.fragment.FragmentActivity;
 import com.learn.learn.bassis.provider.ProviderActivity;
 import com.learn.learn.bassis.viewpager.ViewpagerActivity;
 import com.learn.learn.cache.DiskLruCacheActivity;
+import com.learn.learn.eventbus.EventBusActivity;
 import com.learn.learn.jetpack.LifecycleLearnActivity;
 import com.learn.learn.room.RoomActivity;
+import com.wyt.common.utils.StatusBarUtils;
 import com.wyt.common.utils.ToastUtil;
 
 import java.util.List;
@@ -36,18 +38,11 @@ public class MainActivity extends Activity {
     private static final int REQUEST_CODE_GET_CONTENT = 666;
     private static final int WRITE_EXTERNAL_STORAGE_REQUEST_CODE = 444;
 
-    private static Intent newIntent(Context context) {
-        return new Intent(context, MainActivity.class);
-    }
-
-    private static void intentTo(Context context) {
-        context.startActivity(newIntent(context));
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        StatusBarUtils.setTransparent(getWindow());
 
 //        BroadcastReceiver广播实现跨进程数据交互
         findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
@@ -141,9 +136,17 @@ public class MainActivity extends Activity {
                 LifecycleLearnActivity.intentTo(MainActivity.this);
             }
         });
+        findViewById(R.id.btn16).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventBusActivity.intentTo(MainActivity.this);
+            }
+        });
     }
 
-    //横竖屏切换会回调，数据保存
+    /**
+     * 横竖屏切换会回调，数据保存
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -153,7 +156,9 @@ public class MainActivity extends Activity {
 
     }
 
-    //横竖屏切换会回调，数据获取
+    /**
+     * 横竖屏切换会回调，数据获取
+     */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -238,7 +243,9 @@ public class MainActivity extends Activity {
         }
     }
 
-    // 使用Intent queryIntentActivities 判断
+    /**
+     * 使用Intent queryIntentActivities 判断
+     */
     public static boolean isClientInstalled(Context context, String appPackageName) {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setPackage(appPackageName);
