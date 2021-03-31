@@ -5,9 +5,9 @@
     <application
         android:name=".app.LearnApp"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="learn"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/NoActionBar">
         <activity
             android:name="com.learn.learn.MainActivity"
             android:configChanges="orientation|screenSize"
@@ -20,6 +20,19 @@
         </activity>
         <!--     DiskLruCache的使用   -->
         <activity android:name=".cache.DiskLruCacheActivity" />
+        <!-- viewpager实现广告页 -->
+        <activity android:name="com.learn.learn.bassis.viewpager.ViewpagerActivity" />
+        <!-- room的使用 -->
+        <activity android:name="com.learn.learn.room.RoomActivity" />
+        <!-- 获取联系人 -->
+        <!-- kotlin使用 -->
+        <activity android:name="com.learn.learn.kotlin.MainActivity" />
+        <!-- 设置模式 -->
+        <activity android:name="com.learn.learn.设计模式.PatternActivity" />
+        <!--   jetpack的lifecycler的使用     -->
+        <activity android:name=".jetpack.LifecycleLearnActivity" />
+        <!--        eventbus -->
+        <activity android:name=".eventbus.EventBusActivity" />
     </application>
 
 </manifest>
