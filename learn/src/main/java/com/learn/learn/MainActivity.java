@@ -142,6 +142,12 @@ public class MainActivity extends Activity {
                 EventBusActivity.intentTo(MainActivity.this);
             }
         });
+        findViewById(R.id.btn17).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                com.learn.learn.bassis.broadcast.binder.MainActivity.intentTo(MainActivity.this);
+            }
+        });
     }
 
     /**

@@ -84,6 +84,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_10"
             android:orientation="horizontal">
 
             <Button
@@ -158,6 +159,16 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_4c7afa_10"
                 android:text="eventbus的使用"
+                android:textColor="#ffffff" />
+            <Button
+                android:id="@+id/btn17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
+                android:layout_weight="1"
+                android:background="@drawable/bg_4c7afa_10"
+                android:text="service bind的使用"
                 android:textColor="#ffffff" />
         </LinearLayout>
     </LinearLayout>

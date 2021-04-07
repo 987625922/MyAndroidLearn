@@ -33,6 +33,9 @@
         <activity android:name=".jetpack.LifecycleLearnActivity" />
         <!--        eventbus -->
         <activity android:name=".eventbus.EventBusActivity" />
+
+        <activity android:name=".bassis.broadcast.binder.MainActivity"/>
+        <service android:name=".bassis.broadcast.binder.MsgService"/>
     </application>
 
 </manifest>

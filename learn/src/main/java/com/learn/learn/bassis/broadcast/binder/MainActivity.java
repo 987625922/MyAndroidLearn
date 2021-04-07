@@ -31,11 +31,18 @@ public class MainActivity  extends Activity {
     private ProgressBar mProgressBar;
 
 
+    private static Intent newIntent(Context context){
+        return new Intent(context,MainActivity.class);
+    }
+
+    public static void intentTo(Context context){
+        context.startActivity(newIntent(context));
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         //绑定Service
         Intent intent = new Intent(MainActivity.this,MsgService.class);

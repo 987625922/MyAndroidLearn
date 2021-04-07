@@ -76,12 +76,18 @@ public class MsgService extends Service {
         }).start();
     }
 
+    @Override
+    public void onCreate() {
+        System.out.println("调用了onCreate方法");
+        super.onCreate();
+    }
 
     /**
      * 返回一个Binder对象
      */
     @Override
     public IBinder onBind(Intent intent) {
+        System.out.println("调用了onBind方法");
         return new MsgBinder();
     }
 
