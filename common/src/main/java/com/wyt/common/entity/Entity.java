@@ -1,11 +1,14 @@
 package com.wyt.common.entity;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * @Author: LL
  * @Description:
  * @Date:Create：in 2021/3/26 16:43
  */
-public class Entity {
+public class Entity implements Parcelable {
     public Entity() {
     }
 
@@ -15,6 +18,23 @@ public class Entity {
 
     private String name;
     public int id;
+
+    protected Entity(Parcel in) {
+        name = in.readString();
+        id = in.readInt();
+    }
+
+    public static final Creator<Entity> CREATOR = new Creator<Entity>() {
+        @Override
+        public Entity createFromParcel(Parcel in) {
+            return new Entity(in);
+        }
+
+        @Override
+        public Entity[] newArray(int size) {
+            return new Entity[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -41,5 +61,22 @@ public class Entity {
         return "Entity{" +
                 "name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+    }
+
+    public void readFromParcel(Parcel dest) {
+        //注意，此处的读值顺序应当是和writeToParcel()方法中一致的
+        id = dest.readInt();
+        name = dest.readString();
     }
 }

@@ -148,6 +148,12 @@ public class MainActivity extends Activity {
                 com.learn.learn.bassis.broadcast.binder.MainActivity.intentTo(MainActivity.this);
             }
         });
+        findViewById(R.id.btnBluetoothUse).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                com.learn.learn.bassis.蓝牙.MainActivity.intentTo(MainActivity.this);
+            }
+        });
     }
 
     /**

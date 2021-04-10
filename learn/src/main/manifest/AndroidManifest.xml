@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.learn.learn">
 
+    <!--    首先需要AndroidManifest.xml文件中添加操作蓝牙的权限。-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!--    允许程序连接到已配对的蓝牙设备。-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
     <application
         android:name=".app.LearnApp"
         android:icon="@mipmap/ic_launcher"
@@ -36,6 +41,8 @@
 
         <activity android:name=".bassis.broadcast.binder.MainActivity"/>
         <service android:name=".bassis.broadcast.binder.MsgService"/>
+        <!--    蓝牙的使用    -->
+        <activity android:name=".bassis.蓝牙.MainActivity" />
     </application>
 
 </manifest>
