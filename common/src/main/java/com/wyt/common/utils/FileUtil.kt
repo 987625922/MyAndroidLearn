@@ -52,6 +52,7 @@ object FileUtil {
         return false
     }
 
+    @JvmStatic
     fun createNewFile(path: String) {
         val file = File(path)
         if (!file.exists()) {

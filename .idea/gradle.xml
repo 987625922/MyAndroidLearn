@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/lifecycle_api" />
             <option value="$PROJECT_DIR$/lifecycle_apt" />
             <option value="$PROJECT_DIR$/login" />
+            <option value="$PROJECT_DIR$/pluginframework" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
