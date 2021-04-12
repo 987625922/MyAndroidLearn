@@ -1,4 +1,4 @@
-package com.wind.pluginframework;
+package com.wyt.common.plugin;
 
 import android.app.Activity;
 import android.os.Bundle;

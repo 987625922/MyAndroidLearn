@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wind.pluginframework">
-
     <application
-        android:allowBackup="true"
+        android:name=".App"
         android:icon="@mipmap/ic_launcher"
-        android:label="插件化"
-        android:supportsRtl="true">
-    <activity android:name=".MainActivity"/>
+        android:label="learn"
+        android:supportsRtl="true"
+        android:theme="@style/NoActionBar">
+        <activity android:name=".MainActivity"/>
+
     </application>
 </manifest>

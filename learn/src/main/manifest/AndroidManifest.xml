@@ -43,6 +43,9 @@
         <service android:name=".bassis.broadcast.binder.MsgService"/>
         <!--    蓝牙的使用    -->
         <activity android:name=".bassis.蓝牙.MainActivity" />
+
+        <activity android:name=".插件化宿主首页.MainActivity"/>
+        <activity android:name=".插件化宿主首页.ProxyActivity"/>
     </application>
 
 </manifest>
