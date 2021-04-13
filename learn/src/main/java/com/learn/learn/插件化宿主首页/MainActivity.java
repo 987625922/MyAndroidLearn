@@ -1,5 +1,6 @@
 package com.learn.learn.插件化宿主首页;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
  * 插件化的首页
  */
 public class MainActivity extends AppCompatActivity {
+
+    private static Intent newIntent(Context context) {
+        return new Intent(context, MainActivity.class);
+    }
+
+    public static void intentTo(Context context) {
+        context.startActivity(newIntent(context));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

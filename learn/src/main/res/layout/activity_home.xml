@@ -160,6 +160,7 @@
                 android:background="@drawable/bg_4c7afa_10"
                 android:text="eventbus的使用"
                 android:textColor="#ffffff" />
+
             <Button
                 android:id="@+id/btn17"
                 android:layout_width="match_parent"
@@ -170,12 +171,18 @@
                 android:background="@drawable/bg_4c7afa_10"
                 android:text="service bind的使用"
                 android:textColor="#ffffff" />
+
             <Button
                 android:id="@+id/btnBluetoothUse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="打开蓝牙使用"
-                />
+                android:text="打开蓝牙使用" />
+
+            <Button
+                android:id="@+id/btn18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打开插件化学习" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

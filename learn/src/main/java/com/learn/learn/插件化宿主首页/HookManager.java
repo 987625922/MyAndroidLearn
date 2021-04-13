@@ -69,7 +69,7 @@ public class HookManager {
             try {
                 os.close();
                 is.close();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }

@@ -14,9 +14,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.learn.learn.bassis.fragment.FragmentActivity;
 import com.learn.learn.bassis.provider.ProviderActivity;
@@ -29,6 +26,9 @@ import com.wyt.common.utils.StatusBarUtils;
 import com.wyt.common.utils.ToastUtil;
 
 import java.util.List;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 /**
  * 学习首页
@@ -142,7 +142,7 @@ public class MainActivity extends Activity {
                 EventBusActivity.intentTo(MainActivity.this);
             }
         });
-        findViewById(R.id.btn17).setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.btn17).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 com.learn.learn.bassis.broadcast.binder.MainActivity.intentTo(MainActivity.this);
@@ -152,6 +152,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 com.learn.learn.bassis.蓝牙.MainActivity.intentTo(MainActivity.this);
+            }
+        });
+        findViewById(R.id.btn18).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                com.learn.learn.插件化宿主首页.MainActivity.intentTo(MainActivity.this);
             }
         });
     }

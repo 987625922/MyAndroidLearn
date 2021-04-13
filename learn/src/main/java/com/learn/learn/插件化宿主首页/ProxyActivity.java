@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * 插件化代理的activity
+ * 打开另一个apk的页面的占用的activity
  */
 public class ProxyActivity extends AppCompatActivity {
 
@@ -34,10 +35,10 @@ public class ProxyActivity extends AppCompatActivity {
             pluginObj.attach(this);//注入上下文
             pluginObj.onCreate(new Bundle());//一定要调用onCreate
         } catch (Exception e) {
-            if (e.getClass().getSimpleName() .equals("ClassCastException")){
+            if (e.getClass().getSimpleName().equals("ClassCastException")) {
                 //我这里是直接拿到异常判断的 ，也可的 拿到上面的plugClass对象判断有没有实现我们的接口
                 finish();
-                Toast.makeText(this,"非法页面",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "非法页面", Toast.LENGTH_LONG).show();
                 return;
             }
             e.printStackTrace();
@@ -48,7 +49,7 @@ public class ProxyActivity extends AppCompatActivity {
     //然后取出来，启动我们的占坑的activity 在我们真正要启动的赛进去
     @Override
     public void startActivity(Intent intent) {
-        String className1=intent.getStringExtra("ClassName");
+        String className1 = intent.getStringExtra("ClassName");
         Intent intent1 = new Intent(this, ProxyActivity.class);
         intent1.putExtra("ClassName", className1);
         super.startActivity(intent1);
